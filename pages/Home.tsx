@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const headshotPath = "<img src="/headshot.jpg">";
+const headshotPath = "/headshot.jpg";
 const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=135bec&color=fff&size=512";
 
 const Home: React.FC = () => {
