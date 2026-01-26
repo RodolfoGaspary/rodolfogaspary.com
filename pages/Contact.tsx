@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Path for your own image in deployment
-const headshotPath = "./assets/headshot.jpg";
+const headshotPath = "/headshot.jpg";
 const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=135bec&color=fff&size=512";
 
 const Contact: React.FC = () => {
