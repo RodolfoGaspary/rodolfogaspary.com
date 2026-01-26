@@ -49,7 +49,7 @@ const Home: React.FC = () => {
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 flex flex-col gap-2 transition-transform duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2">
-              <span className="text-primary font-black text-3xl">+10 años</span>
+              <span className="text-primary font-black text-3xl">+7 años</span>
               <span className="text-slate-500 text-sm font-bold uppercase tracking-wider">De Experiencia Técnica</span>
             </div>
           </div>
@@ -156,7 +156,7 @@ const Home: React.FC = () => {
             Reserva una sesión estratégica inicial. Analizaremos tu situación actual y determinaremos el mejor camino a seguir.
           </p>
           <Link to="/contacto" className="h-16 px-12 bg-white text-primary rounded-xl text-lg font-bold flex items-center justify-center hover:bg-slate-100 transition-all hover:scale-105 active:scale-95 shadow-xl">
-            Hablar con Rodolfo
+            Contacto
           </Link>
         </div>
       </section>

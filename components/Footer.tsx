@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
         <Link to="/" className="flex items-center gap-3 group">
           <Logo className="size-6" />
-          <span className="font-bold">Rodolfo Gaspary © 2024</span>
+          <span className="font-bold">Rodolfo Gaspary © 2026</span>
         </Link>
         <div className="flex gap-8 text-sm font-bold text-slate-500">
           <a href="#" className="hover:text-primary transition-colors">LinkedIn</a>
