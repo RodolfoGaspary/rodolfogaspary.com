@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// To use your own image: 
+// 1. Create a folder named 'assets' in your project root.
+// 2. Place your image file inside and name it 'headshot.jpg'.
 const headshotPath = "/headshot.jpg";
 const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=135bec&color=fff&size=512";
 
