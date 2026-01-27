@@ -243,9 +243,9 @@ const Contact: React.FC = () => {
                 disabled={isSubmitting}
               >
                 <option value="">Selecciona un rango</option>
-                <option value="small">$2,000 – $4,000</option>
-                <option value="medium">$4,000 – $8,000</option>
-                <option value="large">+$8,000</option>
+                <option value="small">$200 – $500</option>
+                <option value="medium">$500 – $1,500</option>
+                <option value="large">+$1,500</option>
               </select>
             </div>
             <div className="flex flex-col gap-2">
@@ -259,8 +259,8 @@ const Contact: React.FC = () => {
                 disabled={isSubmitting}
               >
                 <option value="">¿Para cuándo?</option>
-                <option value="asap">Lo antes posible</option>
-                <option value="1month">En 1-2 meses</option>
+                <option value="urgent">Lo antes posible</option>
+                <option value="1-2month">En 1-2 meses</option>
                 <option value="planning">Planificando a futuro</option>
               </select>
             </div>
