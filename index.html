@@ -35,6 +35,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <!-- Site icons (local favicon placed in `public/favicon.png`) -->
+    <link rel="icon" href="/favicon.png" sizes="any">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -92,6 +95,16 @@
 }
 </script>
 <link rel="stylesheet" href="/index.css">
+        <!-- JSON-LD Organization schema with logo to help Google identify site logo -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Rodolfo Gaspary",
+            "url": "https://rodolfogaspary.com/",
+            "logo": "https://rodolfogaspary.com/favicon.png"
+        }
+        </script>
 </head>
 <body class="bg-white dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased">
     <div id="root"></div>
