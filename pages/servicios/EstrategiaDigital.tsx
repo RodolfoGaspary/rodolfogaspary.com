@@ -5,13 +5,13 @@ const EstrategiaDigital: React.FC = () => {
   useEffect(() => {
     const links: HTMLLinkElement[] = [];
     const es = document.createElement('link');
-    es.rel = 'alternate'; es.hreflang = 'es'; es.href = 'https://rodolfogaspary.com/servicios/estrategia-digital';
+    es.rel = 'alternate'; es.hreflang = 'es'; es.href = 'https://www.rodolfogaspary.com/servicios/estrategia-digital';
     document.head.appendChild(es); links.push(es);
     const en = document.createElement('link');
-    en.rel = 'alternate'; en.hreflang = 'en'; en.href = 'https://rodolfogaspary.com/services/digital-strategy';
+    en.rel = 'alternate'; en.hreflang = 'en'; en.href = 'https://www.rodolfogaspary.com/services/digital-strategy';
     document.head.appendChild(en); links.push(en);
     const x = document.createElement('link');
-    x.rel = 'alternate'; x.hreflang = 'x-default'; x.href = 'https://rodolfogaspary.com/servicios/estrategia-digital';
+    x.rel = 'alternate'; x.hreflang = 'x-default'; x.href = 'https://www.rodolfogaspary.com/servicios/estrategia-digital';
     document.head.appendChild(x); links.push(x);
     return () => links.forEach(l => l.remove());
   }, []);

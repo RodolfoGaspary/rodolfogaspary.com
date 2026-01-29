@@ -5,13 +5,13 @@ const WebDevelopment: React.FC = () => {
   useEffect(() => {
     const links: HTMLLinkElement[] = [];
     const en = document.createElement('link');
-    en.rel = 'alternate'; en.hreflang = 'en'; en.href = 'https://rodolfogaspary.com/services/web-development';
+    en.rel = 'alternate'; en.hreflang = 'en'; en.href = 'https://www.rodolfogaspary.com/services/web-development';
     document.head.appendChild(en); links.push(en);
     const es = document.createElement('link');
-    es.rel = 'alternate'; es.hreflang = 'es'; es.href = 'https://rodolfogaspary.com/servicios/desarrollo-web';
+    es.rel = 'alternate'; es.hreflang = 'es'; es.href = 'https://www.rodolfogaspary.com/servicios/desarrollo-web';
     document.head.appendChild(es); links.push(es);
     const x = document.createElement('link');
-    x.rel = 'alternate'; x.hreflang = 'x-default'; x.href = 'https://rodolfogaspary.com/services/web-development';
+    x.rel = 'alternate'; x.hreflang = 'x-default'; x.href = 'https://www.rodolfogaspary.com/services/web-development';
     document.head.appendChild(x); links.push(x);
     return () => links.forEach(l => l.remove());
   }, []);
