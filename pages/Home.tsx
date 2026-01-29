@@ -46,7 +46,7 @@ const Home: React.FC = () => {
             <div className="aspect-square bg-slate-200 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-slate-200 dark:border-slate-700">
               <img 
                 src={headshotPath} 
-                alt="Rodolfo Gaspary" 
+                alt="Rodolfo Gaspary — Desarrollador Web y Consultor de Estrategia Digital en Lima, Perú" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.src = fallbackUrl;

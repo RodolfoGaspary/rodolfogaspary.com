@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
           <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-slate-100 dark:bg-slate-800 rounded-2xl shadow-md border-2 border-white dark:border-slate-700 overflow-hidden">
              <img 
                 src={headshotPath} 
-                alt="Rodolfo Gaspary" 
+                alt="Rodolfo Gaspary — Desarrollador Web y Consultor de Estrategia Digital en Lima, Perú" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.src = fallbackUrl;
