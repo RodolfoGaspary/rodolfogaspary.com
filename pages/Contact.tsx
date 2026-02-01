@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 const headshotPath = "./headshot.jpg";
 const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=135bec&color=fff&size=512";
@@ -15,6 +16,24 @@ const ACCESS_KEY = "e59636fb-b225-431e-9591-b767aa7fe3b8";
 
 const Contact: React.FC = () => {
   const location = useLocation();
+
+  usePageSEO({
+    title: 'Contacto — Rodolfo Gaspary | Consultor Web Lima, Peru',
+    description: 'Contacta a Rodolfo Gaspary para una consulta estrategica sobre desarrollo web, SEO o estrategia digital. Respuesta garantizada en 24-48 horas.',
+    keywords: 'contacto consultor web lima, consultoria web peru, presupuesto desarrollo web',
+    canonical: '/contacto',
+    hreflang: [
+      { lang: 'es', href: 'https://www.rodolfogaspary.com/contacto' },
+      { lang: 'x-default', href: 'https://www.rodolfogaspary.com/contacto' },
+    ],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contacto — Rodolfo Gaspary',
+      url: 'https://www.rodolfogaspary.com/contacto',
+      description: 'Formulario de contacto para consultas de desarrollo web y estrategia digital.',
+    },
+  });
 
   useEffect(() => {
     if (location.hash) {
@@ -42,11 +61,11 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // 1. Honeypot check: If botcheck is filled, it's a bot.
     if (formData.botcheck) {
       console.warn("Spam detected");
-      return; 
+      return;
     }
 
     setIsSubmitting(true);
@@ -99,7 +118,7 @@ const Contact: React.FC = () => {
             Gracias, {formData.nombre}. Revisaré tus detalles y te responderé personalmente a tu correo desde <strong>info@rodolfogaspary.com</strong>.
           </p>
         </div>
-        <button 
+        <button
           onClick={() => setIsSuccess(false)}
           className="text-primary font-bold hover:underline"
         >
@@ -127,21 +146,21 @@ const Contact: React.FC = () => {
       <section className="flex flex-col gap-6">
         <div className="flex items-center gap-5 p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:shadow-md">
           <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-slate-100 dark:bg-slate-800 rounded-2xl shadow-md border-2 border-white dark:border-slate-700 overflow-hidden">
-             <img 
-                src={headshotPath} 
-                alt="Rodolfo Gaspary — Desarrollador Web y Consultor de Estrategia Digital en Lima, Perú" 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = fallbackUrl;
-                }}
-              />
+            <img
+              src={headshotPath}
+              alt="Rodolfo Gaspary — Desarrollador Web y Consultor de Estrategia Digital en Lima, Perú"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = fallbackUrl;
+              }}
+            />
           </div>
           <div className="flex flex-col">
             <h3 className="text-slate-900 dark:text-white text-lg font-bold">Rodolfo Gaspary</h3>
             <p className="text-primary text-xs font-semibold uppercase tracking-wider">Consultor de Estrategia Digital</p>
             <div className="flex items-center gap-2 mt-1 text-slate-500 text-xs">
-               <span className="material-symbols-outlined text-[14px]">verified</span>
-               <span>Respuesta garantizada en 24-48h</span>
+              <span className="material-symbols-outlined text-[14px]">verified</span>
+              <span>Respuesta garantizada en 24-48h</span>
             </div>
           </div>
         </div>
@@ -150,36 +169,36 @@ const Contact: React.FC = () => {
       {/* Main Form */}
       <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
-        
+
         <form onSubmit={handleSubmit} className="flex flex-col gap-8 relative z-10">
           {/* Honeypot field (hidden from humans) */}
-          <input 
-            type="checkbox" 
-            name="botcheck" 
-            className="hidden" 
-            style={{ display: 'none' }} 
-            onChange={(e) => setFormData({...formData, botcheck: e.target.checked ? 'true' : ''})}
+          <input
+            type="checkbox"
+            name="botcheck"
+            className="hidden"
+            style={{ display: 'none' }}
+            onChange={(e) => setFormData({ ...formData, botcheck: e.target.checked ? 'true' : '' })}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Nombre</label>
-              <input 
+              <input
                 name="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base" 
+                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
                 placeholder="Tu nombre completo" required type="text"
                 disabled={isSubmitting}
               />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Correo electrónico</label>
-              <input 
+              <input
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base" 
+                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
                 placeholder="tu@correo.com" required type="email"
                 disabled={isSubmitting}
               />
@@ -189,22 +208,22 @@ const Contact: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Empresa / Proyecto</label>
-              <input 
+              <input
                 name="empresa"
                 value={formData.empresa}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base" 
+                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
                 placeholder="Nombre del negocio" required type="text"
                 disabled={isSubmitting}
               />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Sitio web <span className="text-[10px] opacity-60">(si ya tienes)</span></label>
-              <input 
+              <input
                 name="website"
                 value={formData.website}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base" 
+                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
                 placeholder="https://..." type="url"
                 disabled={isSubmitting}
               />
@@ -214,11 +233,11 @@ const Contact: React.FC = () => {
           <div className="flex flex-col gap-2">
             <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">¿Cuál es tu situación actual?</label>
             <div className="relative">
-              <select 
+              <select
                 name="situacion"
                 value={formData.situacion}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none bg-none shadow-none" 
+                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none bg-none shadow-none"
                 required
                 disabled={isSubmitting}
               >
@@ -233,11 +252,11 @@ const Contact: React.FC = () => {
 
           <div className="flex flex-col gap-2">
             <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">¿Qué desafío quieres superar?</label>
-            <textarea 
+            <textarea
               name="problema"
               value={formData.problema}
               onChange={handleChange}
-              className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base min-h-[100px]" 
+              className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base min-h-[100px]"
               placeholder="Ej: Mi web no genera leads, el mensaje no es claro..." required
               disabled={isSubmitting}
             ></textarea>
@@ -246,11 +265,11 @@ const Contact: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Rango de inversión</label>
-              <select 
+              <select
                 name="inversion"
                 value={formData.inversion}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none" 
+                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none"
                 required
                 disabled={isSubmitting}
               >
@@ -262,11 +281,11 @@ const Contact: React.FC = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Urgencia</label>
-              <select 
+              <select
                 name="plazos"
                 value={formData.plazos}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none" 
+                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none"
                 required
                 disabled={isSubmitting}
               >
@@ -279,8 +298,8 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="pt-4 flex flex-col gap-6">
-            <button 
-              className={`w-full flex items-center justify-center rounded-2xl h-16 text-white text-lg font-bold transition-all gap-3 shadow-lg ${isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-primary hover:bg-blue-700 active:scale-[0.98] cursor-pointer shadow-primary/20'}`} 
+            <button
+              className={`w-full flex items-center justify-center rounded-2xl h-16 text-white text-lg font-bold transition-all gap-3 shadow-lg ${isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-primary hover:bg-blue-700 active:scale-[0.98] cursor-pointer shadow-primary/20'}`}
               type="submit"
               disabled={isSubmitting}
             >
@@ -288,7 +307,7 @@ const Contact: React.FC = () => {
               {!isSubmitting && <span className="material-symbols-outlined">send</span>}
               {isSubmitting && <div className="size-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>}
             </button>
-            
+
             <div className="flex items-center justify-center gap-2 text-slate-400 dark:text-slate-500 text-xs">
               <span className="material-symbols-outlined text-sm">lock</span>
               <span>Formulario encriptado y protegido contra spam</span>
@@ -296,6 +315,16 @@ const Contact: React.FC = () => {
           </div>
         </form>
       </section>
+      {/* Internal Links */}
+      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-slate-200 dark:border-slate-800 pt-8 pb-12">
+        <Link
+          to="/contact"
+          className="text-primary font-bold hover:underline flex items-center gap-1"
+        >
+          <span className="material-symbols-outlined text-base">translate</span>
+          View in English
+        </Link>
+      </nav>
     </div>
   );
 };

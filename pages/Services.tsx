@@ -1,10 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 const Services: React.FC = () => {
   const { hash } = useLocation();
   const [activeSummary, setActiveSummary] = useState<{ title: string; content: string } | null>(null);
+
+  usePageSEO({
+    title: 'Servicios — Desarrollo Web y Estrategia Digital | Rodolfo Gaspary',
+    description: 'Servicios de desarrollo web estrategico, auditoria SEO, optimizacion de conversion y asesoria digital continua para empresas en Lima, Peru y a nivel global.',
+    keywords: 'servicios web lima, desarrollo web peru, auditoria SEO, optimizacion conversion, consultoria digital',
+    canonical: '/servicios',
+    hreflang: [
+      { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios' },
+      { lang: 'x-default', href: 'https://www.rodolfogaspary.com/servicios' },
+    ],
+  });
 
   useEffect(() => {
     if (hash) {
@@ -35,7 +47,7 @@ const Services: React.FC = () => {
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setActiveSummary(null)}></div>
           <div className="relative bg-white dark:bg-slate-900 w-full max-w-md p-8 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 animate-in fade-in zoom-in duration-300">
-            <button 
+            <button
               onClick={() => setActiveSummary(null)}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
             >
@@ -45,7 +57,7 @@ const Services: React.FC = () => {
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
               {activeSummary.content}
             </p>
-            <button 
+            <button
               onClick={() => setActiveSummary(null)}
               className="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold py-3 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
             >
@@ -57,9 +69,9 @@ const Services: React.FC = () => {
 
       {/* Hero Section */}
       <section className="mb-20 text-center md:text-left group">
-        <div 
-          className="relative overflow-hidden rounded-xl bg-background-dark p-8 md:p-16 flex flex-col items-center justify-center text-center border border-white/10 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/10" 
-          style={{ 
+        <div
+          className="relative overflow-hidden rounded-xl bg-background-dark p-8 md:p-16 flex flex-col items-center justify-center text-center border border-white/10 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/10"
+          style={{
             backgroundImage: 'linear-gradient(135deg, rgba(19, 91, 236, 0.25) 0%, rgba(16, 22, 34, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5pgMY4pzOSlqLqQ3gblQC5cqwkiQBOwo3YBw2kDGeo3Rx27FC7j1-dKKGjrNwFVvoX83T1ceYMNWg7oIWuy9_3mQJU5xwTCRqD0cCedUAIzM3vj1sJstqYrG7YB4Bbqe5m4MLYkSAMmqLedZ2oR5WfMZwplgaQz2CE26CplF4WImHH00LgvkFjaEuI_Z7MRhx3T7ek6jQ8j9Hd8pVR3Puv17-XXrKikC11JQB5ma4XyXX-ZC0bnb62i7HjmCWnEouRIAVzzuFuFLT")',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
@@ -74,7 +86,66 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Package 1: Initial Phase */}
+      {/* Service Landing Pages */}
+      <section className="mb-20">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">Explora en detalle</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Link
+            to="/servicios/desarrollo-web"
+            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+          >
+            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+              <span className="material-symbols-outlined">code</span>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Desarrollo Web</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Sitios y aplicaciones enfocados en resultados.</p>
+            </div>
+            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </Link>
+          <Link
+            to="/servicios/estrategia-digital"
+            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+          >
+            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+              <span className="material-symbols-outlined">trending_up</span>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Estrategia Digital y SEO</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Posicionamiento, conversion y crecimiento organico.</p>
+            </div>
+            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </Link>
+          <Link
+            to="/services/web-development"
+            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+          >
+            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+              <span className="material-symbols-outlined">language</span>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Web Development <span className="text-xs font-normal text-slate-400">(EN)</span></h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Conversion-focused websites for global clients.</p>
+            </div>
+            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </Link>
+          <Link
+            to="/services/digital-strategy"
+            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+          >
+            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+              <span className="material-symbols-outlined">language</span>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Digital Strategy & SEO <span className="text-xs font-normal text-slate-400">(EN)</span></h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Data-driven growth and search optimization.</p>
+            </div>
+            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </Link>
+        </div>
+      </section>
+
+
       <section id="auditoria" className="mb-24 scroll-mt-24">
         <div className="flex items-center gap-2 mb-6 text-primary animate-pulse">
           <span className="material-symbols-outlined">analytics</span>
@@ -167,14 +238,14 @@ const Services: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Asesoría y Optimización Continua</h2>
             <p className="text-lg text-white/70 mb-8 italic">"Para negocios que tratan su web como un sistema vivo que evoluciona con el mercado."</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <button 
+              <button
                 onClick={() => setActiveSummary(summaries.revision)}
                 className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all group/card"
               >
                 <h4 className="font-bold text-primary mb-1 group-hover/card:translate-x-1 transition-transform">Revisión Mensual</h4>
                 <p className="text-sm text-white/60">Análisis de métricas y ajuste de tácticas según rendimiento.</p>
               </button>
-              <button 
+              <button
                 onClick={() => setActiveSummary(summaries.prioritario)}
                 className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all group/card"
               >
@@ -190,6 +261,16 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Internal Links */}
+      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-slate-200 dark:border-slate-800 pt-8 pb-12">
+        <Link
+          to="/services"
+          className="text-primary font-bold hover:underline flex items-center gap-1"
+        >
+          <span className="material-symbols-outlined text-base">translate</span>
+          View in English
+        </Link>
+      </nav>
     </div>
   );
 };

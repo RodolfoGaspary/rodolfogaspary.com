@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rodolfo Gaspary — Desarrollo Web y Estrategia Digital | Lima, Perú</title>
-    
+    <title>Rodolfo Gaspary — Desarrollo Web y Estrategia Digital | Lima, Peru</title>
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Desarrollo web en Lima y estrategia digital: sitios web, e‑commerce, SEO y consultoría para empresas en Perú y globalmente. Transformo sitios en herramientas de crecimiento." />
-    <meta name="keywords" content="web development, desarrollo web peru, estrategia digital lima, digital strategy, consultor web lima, rodolfo gaspary, desarrollo de paginas web, la mejor o el merjo, the best web design, the best website, webpage" />
+    <meta name="description" content="Desarrollo web en Lima y estrategia digital: sitios web, e-commerce, SEO y consultoria para empresas en Peru y globalmente. Transformo sitios en herramientas de crecimiento." />
+    <meta name="keywords" content="web development, desarrollo web peru, estrategia digital lima, digital strategy, consultor web lima, rodolfo gaspary, desarrollo de paginas web, SEO lima, consultoria digital peru" />
     <meta name="author" content="Rodolfo Gaspary" />
-    
+
     <!-- Geographic Meta Tags for Lima, Peru -->
     <meta name="geo.region" content="PE-LMA" />
     <meta name="geo.placename" content="Lima" />
@@ -21,137 +21,84 @@
     <meta property="og:url" content="https://www.rodolfogaspary.com/" />
     <meta property="og:title" content="Rodolfo Gaspary | Web Development & Strategy" />
     <meta property="og:description" content="Expert web development and digital strategy. Transform your website into a growth tool." />
-    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/C4E03AQEHSqKBewQ6xw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1553755230286?e=1770854400&v=beta&t=urLfoSoqCkThXP2Fn2uiPQN8xmBpdL7jbmEsZbN-AC4" />
+    <meta property="og:image" content="https://www.rodolfogaspary.com/headshot.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Rodolfo Gaspary | Web Development" />
     <meta property="twitter:description" content="Professional web development and digital strategy services. Results-oriented consulting." />
-    <meta property="twitter:image" content="https://media.licdn.com/dms/image/v2/C4E03AQEHSqKBewQ6xw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1553755230286?e=1770854400&v=beta&t=urLfoSoqCkThXP2Fn2uiPQN8xmBpdL7jbmEsZbN-AC4" />
+    <meta property="twitter:image" content="https://www.rodolfogaspary.com/headshot.jpg" />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="canonical" href="https://www.rodolfogaspary.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <!-- Site icons (local favicon placed in `public/favicon.png` and `public/favicon.ico`) -->
+    <!-- Site icons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
     <link rel="icon" href="/favicon.png" sizes="any">
     <link rel="apple-touch-icon" href="/favicon.png">
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#135bec",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#0f172a",
-                    },
-                    fontFamily: {
-                        "display": ["Roboto", "sans-serif"],
-                        "sans": ["Roboto", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "3xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
+    <link rel="stylesheet" href="/index.css">
+
+    <!-- JSON-LD Organization schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Rodolfo Gaspary",
+        "url": "https://www.rodolfogaspary.com/",
+        "logo": "https://www.rodolfogaspary.com/favicon.png"
+    }
     </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .hero-gradient {
-            background: radial-gradient(circle at top right, rgba(19, 91, 236, 0.05) 0%, transparent 50%);
-        }
-        input::placeholder, textarea::placeholder {
-            color: #94a3b8;
-            font-size: 0.875rem;
-        }
-        
-        /* Subtle global animations */
-        .hover-lift {
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-        }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-        <!-- JSON-LD Organization schema with logo to help Google identify site logo -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Rodolfo Gaspary",
-            "url": "https://www.rodolfogaspary.com/",
-            "logo": "https://www.rodolfogaspary.com/favicon.png"
-        }
-        </script>
-        <!-- LocalBusiness and Service structured data (metadata-only; not visible) -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Rodolfo Gaspary",
-            "url": "https://www.rodolfogaspary.com/",
-            "logo": "https://www.rodolfogaspary.com/favicon.png",
-            "image": "https://www.rodolfogaspary.com/favicon.png",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Lima",
-                "addressRegion": "Lima",
-                "addressCountry": "PE"
+    <!-- LocalBusiness structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Rodolfo Gaspary",
+        "url": "https://www.rodolfogaspary.com/",
+        "logo": "https://www.rodolfogaspary.com/favicon.png",
+        "image": "https://www.rodolfogaspary.com/headshot.jpg",
+        "email": "info@rodolfogaspary.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lima",
+            "addressRegion": "Lima",
+            "addressCountry": "PE"
+        },
+        "areaServed": ["PE", "Global"],
+        "sameAs": ["https://www.linkedin.com/in/rodolfo-gaspary"]
+    }
+    </script>
+    <!-- Service ItemList structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "Service",
+                "name": "Web Development",
+                "description": "Responsive websites, e-commerce, performance optimization and modern web apps.",
+                "provider": { "@type": "LocalBusiness", "name": "Rodolfo Gaspary", "url": "https://www.rodolfogaspary.com/" }
             },
-            "areaServed": ["PE", "Global"],
-            "sameAs": ["https://www.linkedin.com/in/rodolfogaspary"]
-        }
-        </script>
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "Service",
-                    "name": "Web Development",
-                    "description": "Responsive websites, e-commerce, performance optimization and modern web apps.",
-                    "provider": { "@type": "LocalBusiness", "name": "Rodolfo Gaspary", "url": "https://www.rodolfogaspary.com/" }
-                },
-                {
-                    "@type": "Service",
-                    "name": "Digital Strategy & SEO",
-                    "description": "Digital strategy, SEO, and conversion-focused consulting for Peruvian and international businesses.",
-                    "provider": { "@type": "LocalBusiness", "name": "Rodolfo Gaspary", "url": "https://www.rodolfogaspary.com/" }
-                }
-            ]
-        }
-        </script>
-        <!-- Hreflang: Spanish (primary) and English (fallback) -->
-        <link rel="alternate" href="https://www.rodolfogaspary.com/" hreflang="es" />
-        <link rel="alternate" href="https://www.rodolfogaspary.com/services/web-development" hreflang="en" />
+            {
+                "@type": "Service",
+                "name": "Digital Strategy & SEO",
+                "description": "Digital strategy, SEO, and conversion-focused consulting for Peruvian and international businesses.",
+                "provider": { "@type": "LocalBusiness", "name": "Rodolfo Gaspary", "url": "https://www.rodolfogaspary.com/" }
+            }
+        ]
+    }
+    </script>
+    <!-- Hreflang: Spanish (primary), English, and default -->
+    <link rel="alternate" href="https://www.rodolfogaspary.com/" hreflang="es" />
+    <link rel="alternate" href="https://www.rodolfogaspary.com/services/web-development" hreflang="en" />
+    <link rel="alternate" href="https://www.rodolfogaspary.com/" hreflang="x-default" />
 </head>
 <body class="bg-white dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased">
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
