@@ -13,6 +13,28 @@ const Header: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Path mapping for language switching
+  const getOppositeLanguagePath = () => {
+    const path = location.pathname;
+
+    // Spanish to English
+    if (path === '/') return '/en';
+    if (path === '/servicios') return '/services';
+    if (path === '/contacto') return '/contact';
+    if (path === '/servicios/desarrollo-web') return '/services/web-development';
+    if (path === '/servicios/estrategia-digital') return '/services/digital-strategy';
+
+    // English to Spanish
+    if (path === '/en') return '/';
+    if (path === '/services') return '/servicios';
+    if (path === '/contact') return '/contacto';
+    if (path === '/services/web-development') return '/servicios/desarrollo-web';
+    if (path === '/services/digital-strategy') return '/servicios/estrategia-digital';
+
+    // Default fallback
+    return isEnglish ? '/' : '/en';
+  };
+
   const navLinks = isEnglish ? [
     { to: '/en', label: 'Home' },
     { to: '/services', label: 'Services' },
@@ -25,6 +47,24 @@ const Header: React.FC = () => {
 
   const ctaLabel = isEnglish ? 'Start a conversation' : 'Iniciar una conversación';
   const ctaLink = isEnglish ? '/contact' : '/contacto';
+
+  const LanguageSwitcher = ({ mobile = false }: { mobile?: boolean }) => (
+    <div className={`flex items-center gap-2 ${mobile ? 'justify-center border-t border-slate-200 dark:border-slate-800 pt-4' : ''}`}>
+      <Link
+        to={isEnglish ? getOppositeLanguagePath() : location.pathname}
+        className={`text-xs font-bold px-2 py-1 rounded transition-colors ${!isEnglish ? 'bg-primary text-white' : 'text-slate-500 hover:text-primary dark:text-slate-400'}`}
+      >
+        ES
+      </Link>
+      <span className="text-slate-300 dark:text-slate-700">|</span>
+      <Link
+        to={isEnglish ? location.pathname : getOppositeLanguagePath()}
+        className={`text-xs font-bold px-2 py-1 rounded transition-colors ${isEnglish ? 'bg-primary text-white' : 'text-slate-500 hover:text-primary dark:text-slate-400'}`}
+      >
+        EN
+      </Link>
+    </div>
+  );
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
@@ -44,6 +84,11 @@ const Header: React.FC = () => {
               {link.label}
             </Link>
           ))}
+
+          <div className="h-4 w-px bg-slate-200 dark:bg-slate-800" />
+
+          <LanguageSwitcher />
+
           <Link to={ctaLink} className="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all shadow-md active:scale-95">
             {ctaLabel}
           </Link>
@@ -68,6 +113,7 @@ const Header: React.FC = () => {
           <Link to={ctaLink} className="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold text-center" onClick={() => setIsMenuOpen(false)}>
             {ctaLabel}
           </Link>
+          <LanguageSwitcher mobile />
         </div>
       )}
     </header>
