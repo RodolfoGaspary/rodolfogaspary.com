@@ -15,28 +15,55 @@ const DesarrolloWeb: React.FC = () => {
   }, [location]);
 
   usePageSEO({
-    title: 'Desarrollo Web en Lima, Peru | Rodolfo Gaspary',
-    description: 'Desarrollo web profesional en Lima, Peru. Sitios responsivos, plataformas e-commerce y aplicaciones web modernas construidas para convertir y escalar tu negocio.',
-    keywords: 'desarrollo web Lima, desarrollador web Peru, paginas web Lima, e-commerce Peru, diseno web responsivo Lima',
-    canonical: '/servicios/desarrollo-web',
+    title: 'Desarrollo Web en Lima, Perú | Rodolfo Gaspary',
+    description: 'Desarrollo web profesional en Lima, Perú. Sitios responsivos, plataformas e-commerce y aplicaciones web modernas construidas para convertir y escalar tu negocio.',
+    keywords: 'desarrollo web Lima, desarrollador web Perú, páginas web Lima, e-commerce Perú, diseño web responsivo Lima',
+    lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios/desarrollo-web' },
       { lang: 'en', href: 'https://www.rodolfogaspary.com/services/web-development' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/servicios/desarrollo-web' },
     ],
-    jsonLd: {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: 'Desarrollo Web',
-      serviceType: 'Web Development',
-      areaServed: ['Lima', 'Peru', 'Global'],
-      provider: {
-        '@type': 'LocalBusiness',
-        name: 'Rodolfo Gaspary',
-        url: 'https://www.rodolfogaspary.com',
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Inicio',
+            'item': 'https://www.rodolfogaspary.com/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Servicios',
+            'item': 'https://www.rodolfogaspary.com/servicios'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': 'Desarrollo Web',
+            'item': 'https://www.rodolfogaspary.com/servicios/desarrollo-web'
+          }
+        ]
       },
-      description: 'Desarrollo web profesional en Lima, Peru. Sitios responsivos, plataformas e-commerce y aplicaciones web modernas.',
-    },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        'name': 'Desarrollo Web',
+        serviceType: 'Web Development',
+        areaServed: ['Lima', 'Perú', 'Global'],
+        provider: {
+          '@type': 'LocalBusiness',
+          name: 'Rodolfo Gaspary',
+          url: 'https://www.rodolfogaspary.com',
+        },
+        description: 'Desarrollo web profesional en Lima, Perú. Sitios responsivos, plataformas e-commerce y aplicaciones web modernas.',
+      },
+    ],
+    canonical: '/servicios/desarrollo-web',
   });
 
   return (
@@ -50,7 +77,7 @@ const DesarrolloWeb: React.FC = () => {
           Construyo sitios web y aplicaciones enfocadas en resultados reales. Cada proyecto
           parte de tus objetivos comerciales para crear una presencia digital que convierte
           visitantes en clientes y escala junto con tu negocio. Si buscas un desarrollador web
-          en Lima que entienda tanto el codigo como la estrategia, estas en el lugar correcto.
+          en Lima que entienda tanto el código como la estrategia, estás en el lugar correcto.
         </p>
       </section>
 
@@ -63,25 +90,25 @@ const DesarrolloWeb: React.FC = () => {
               icon: 'search',
               step: '01',
               title: 'Descubrimiento',
-              desc: 'Analizo tu negocio, audiencia y competencia para definir los requisitos tecnicos y objetivos de conversion antes de escribir una sola linea de codigo.',
+              desc: 'Analizo tu negocio, audiencia y competencia para definir los requisitos técnicos y objetivos de conversión antes de escribir una sola línea de código.',
             },
             {
               icon: 'account_tree',
               step: '02',
               title: 'Arquitectura',
-              desc: 'Diseño la estructura del sitio, flujos de usuario y seleccion de tecnologias para garantizar rendimiento, escalabilidad y una experiencia de usuario optima.',
+              desc: 'Diseño la estructura del sitio, flujos de usuario y selección de tecnologías para garantizar rendimiento, escalabilidad y una experiencia de usuario óptima.',
             },
             {
               icon: 'code',
               step: '03',
               title: 'Desarrollo',
-              desc: 'Construyo tu sitio con codigo limpio, responsivo y optimizado para SEO. Cada componente se prueba para asegurar velocidad y compatibilidad en todos los dispositivos.',
+              desc: 'Construyo tu sitio con código limpio, responsivo y optimizado para SEO. Cada componente se prueba para asegurar velocidad y compatibilidad en todos los dispositivos.',
             },
             {
               icon: 'rocket_launch',
               step: '04',
-              title: 'Lanzamiento y Optimizacion',
-              desc: 'Despliego tu proyecto en produccion, configuro analitica y monitoreo, y realizo ajustes continuos basados en datos reales de tus usuarios.',
+              title: 'Lanzamiento y Optimización',
+              desc: 'Despliego tu proyecto en producción, configuro analítica y monitoreo, y realizo ajustes continuos basados en datos reales de tus usuarios.',
             },
           ].map((item) => (
             <div
@@ -106,12 +133,12 @@ const DesarrolloWeb: React.FC = () => {
         <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-6">Lo Que Obtienes</h2>
         <ul className="space-y-4">
           {[
-            'Sitio web responsivo y optimizado para velocidad, accesibilidad y SEO tecnico.',
-            'Plataforma e-commerce con pasarela de pagos segura y panel de administracion.',
-            'Integracion con herramientas de analitica, CRM y automatizacion de marketing.',
-            'Codigo fuente documentado, mantenible y de tu propiedad total.',
-            'Configuracion de hosting, dominio, SSL y despliegue en produccion.',
-            'Soporte post-lanzamiento con ajustes basados en metricas reales.',
+            'Sitio web responsivo y optimizado para velocidad, accesibilidad y SEO técnico.',
+            'Plataforma e-commerce con pasarela de pagos segura y panel de administración.',
+            'Integración con herramientas de analítica, CRM y automatización de marketing.',
+            'Código fuente documentado, mantenible y de tu propiedad total.',
+            'Configuración de hosting, dominio, SSL y despliegue en producción.',
+            'Soporte post-lanzamiento con ajustes basados en métricas reales.',
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-3">
               <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
@@ -125,12 +152,12 @@ const DesarrolloWeb: React.FC = () => {
       <section className="mb-16">
         <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-6">Para Quien Es</h2>
         <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-          Este servicio de desarrollo web esta pensado para pequenas y medianas empresas en Lima y Peru
-          que necesitan mas que una pagina bonita: necesitan una herramienta digital que genere
-          resultados. Tambien trabajo con startups que buscan construir su primer producto web,
+          Este servicio de desarrollo web está pensado para pequeñas y medianas empresas en Lima y Perú
+          que necesitan más que una página bonita: necesitan una herramienta digital que genere
+          resultados. También trabajo con startups que buscan construir su primer producto web,
           agencias que requieren un desarrollador de confianza para proyectos puntuales y negocios
           internacionales que quieren expandirse al mercado hispanohablante con una presencia web
-          solida y culturalmente relevante.
+          sólida y culturalmente relevante.
         </p>
       </section>
 
@@ -140,51 +167,51 @@ const DesarrolloWeb: React.FC = () => {
         <div className="flex flex-col gap-4">
           <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
             <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
-              Que tecnologias utilizas?
+              ¿Qué tecnologías utilizas?
               <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
             </summary>
             <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Trabajo con React, TypeScript, Next.js, Tailwind CSS y Node.js como tecnologias
-              principales. Para e-commerce utilizo soluciones como Shopify o WooCommerce segun
+              Trabajo con React, TypeScript, Next.js, Tailwind CSS y Node.js como tecnologías
+              principales. Para e-commerce utilizo soluciones como Shopify o WooCommerce según
               las necesidades del proyecto. Siempre elijo la herramienta que mejor se adapte a
-              los objetivos de tu negocio, no la que este de moda.
+              los objetivos de tu negocio, no la que esté de moda.
             </p>
           </details>
 
           <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
             <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
-              Cuanto tiempo toma un proyecto tipico?
+              ¿Cuánto tiempo toma un proyecto típico?
               <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
             </summary>
             <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
               Un sitio web corporativo o landing page suele estar listo en 3 a 4 semanas.
-              Proyectos mas complejos como plataformas e-commerce o aplicaciones web pueden
+              Proyectos más complejos como plataformas e-commerce o aplicaciones web pueden
               tomar entre 6 y 10 semanas dependiendo del alcance. Siempre defino un
-              cronograma claro desde el primer dia.
+              cronograma claro desde el primer día.
             </p>
           </details>
 
           <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
             <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
-              Trabajas con clientes internacionales?
+              ¿Trabajas con clientes internacionales?
               <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
             </summary>
             <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Si. Aunque estoy basado en Lima, Peru, trabajo regularmente con empresas en
-              Estados Unidos, Europa y America Latina. Me comunico en espanol e ingles y
-              gestiono proyectos de forma remota con herramientas de colaboracion modernas.
+              Sí. Aunque estoy basado en Lima, Perú, trabajo regularmente con empresas en
+              Estados Unidos, Europa y América Latina. Me comunico en español e inglés y
+              gestiono proyectos de forma remota con herramientas de colaboración modernas.
             </p>
           </details>
 
           <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
             <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
-              Que sucede despues del lanzamiento?
+              ¿Qué sucede después del lanzamiento?
               <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
             </summary>
             <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Despues del lanzamiento ofrezco un periodo de soporte para ajustes y
-              correcciones. Tambien puedo acompanar tu proyecto a largo plazo con
-              mantenimiento continuo, optimizacion de rendimiento y nuevas funcionalidades
+              Después del lanzamiento ofrezco un periodo de soporte para ajustes y
+              correcciones. También puedo acompañar tu proyecto a largo plazo con
+              mantenimiento continuo, optimización de rendimiento y nuevas funcionalidades
               a medida que tu negocio crece.
             </p>
           </details>
@@ -197,13 +224,13 @@ const DesarrolloWeb: React.FC = () => {
           Hablemos sobre tu proyecto
         </h2>
         <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto">
-          Cuentame que necesitas y te respondere con un plan claro, sin compromiso.
+          Cuéntame qué necesitas y te responderé con un plan claro, sin compromiso.
         </p>
         <Link
           to="/contacto"
           className="inline-flex items-center h-14 px-10 bg-primary text-white rounded-xl text-lg font-bold hover:bg-blue-700 hover:shadow-xl transition-all hover:scale-105 active:scale-95"
         >
-          Iniciar una conversacion
+          Iniciar una conversación
         </Link>
       </section>
 

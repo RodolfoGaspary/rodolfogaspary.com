@@ -19,6 +19,7 @@ const DigitalStrategy: React.FC = () => {
     description: 'Data-driven digital strategy and SEO consulting in Lima, Peru. SEO audits, conversion optimization, content strategy, and growth roadmaps for businesses locally and internationally.',
     keywords: 'digital strategy Lima, SEO consultant Peru, SEO audit Lima, conversion optimization, digital marketing consultant Lima',
     canonical: '/services/digital-strategy',
+    lang: 'en',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios/estrategia-digital' },
       { lang: 'en', href: 'https://www.rodolfogaspary.com/services/digital-strategy' },
@@ -26,16 +27,64 @@ const DigitalStrategy: React.FC = () => {
     ],
     jsonLd: {
       '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: 'Digital Strategy & SEO',
-      serviceType: 'Digital Strategy',
-      description: 'Data-driven digital strategy and SEO consulting for businesses in Lima, Peru and internationally.',
-      areaServed: ['Lima', 'Peru', 'Global'],
-      provider: {
-        '@type': 'LocalBusiness',
-        name: 'Rodolfo Gaspary',
-        url: 'https://www.rodolfogaspary.com',
-      },
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            {
+              '@type': 'ListItem',
+              'position': 1,
+              'name': 'Home',
+              'item': 'https://www.rodolfogaspary.com/en'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 2,
+              'name': 'Services',
+              'item': 'https://www.rodolfogaspary.com/services'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 3,
+              'name': 'Digital Strategy',
+              'item': 'https://www.rodolfogaspary.com/services/digital-strategy'
+            }
+          ]
+        },
+        {
+          '@type': 'ProfessionalService',
+          'name': 'Digital Strategy & SEO',
+          'image': 'https://www.rodolfogaspary.com/headshot.jpg',
+          'url': 'https://www.rodolfogaspary.com/services/digital-strategy',
+          'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': 'Lima',
+            'addressCountry': 'PE'
+          },
+          'description': 'Data-driven digital strategy and SEO consulting in Lima, Peru. SEO audits, conversion optimization, and growth roadmaps.'
+        },
+        {
+          '@type': 'FAQPage',
+          'mainEntity': [
+            {
+              '@type': 'Question',
+              'name': 'What does an SEO audit include?',
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': 'An SEO audit covers technical health (speed, errors, usability), on-page factors, off-page signals, and competition analysis.'
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': 'How do you measure success?',
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': 'I use KPIs like organic traffic growth, keyword ranking improvements, and conversion rate changes.'
+              }
+            }
+          ]
+        }
+      ]
     },
   });
 

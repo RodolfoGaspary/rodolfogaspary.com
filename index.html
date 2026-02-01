@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rodolfo Gaspary — Desarrollo Web y Estrategia Digital | Lima, Peru</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Desarrollo web en Lima y estrategia digital: sitios web, e-commerce, SEO y consultoria para empresas en Peru y globalmente. Transformo sitios en herramientas de crecimiento." />
-    <meta name="keywords" content="web development, desarrollo web peru, estrategia digital lima, digital strategy, consultor web lima, rodolfo gaspary, desarrollo de paginas web, SEO lima, consultoria digital peru" />
+    <meta name="description"
+        content="Desarrollo web en Lima y estrategia digital: sitios web, e-commerce, SEO y consultoria para empresas en Peru y globalmente. Transformo sitios en herramientas de crecimiento." />
+    <meta name="keywords"
+        content="web development, desarrollo web peru, estrategia digital lima, digital strategy, consultor web lima, rodolfo gaspary, desarrollo de paginas web, SEO lima, consultoria digital peru" />
     <meta name="author" content="Rodolfo Gaspary" />
 
     <!-- Geographic Meta Tags for Lima, Peru -->
@@ -20,20 +23,24 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.rodolfogaspary.com/" />
     <meta property="og:title" content="Rodolfo Gaspary | Web Development & Strategy" />
-    <meta property="og:description" content="Expert web development and digital strategy. Transform your website into a growth tool." />
+    <meta property="og:description"
+        content="Expert web development and digital strategy. Transform your website into a growth tool." />
     <meta property="og:image" content="https://www.rodolfogaspary.com/headshot.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Rodolfo Gaspary | Web Development" />
-    <meta property="twitter:description" content="Professional web development and digital strategy services. Results-oriented consulting." />
+    <meta property="twitter:description"
+        content="Professional web development and digital strategy services. Results-oriented consulting." />
     <meta property="twitter:image" content="https://www.rodolfogaspary.com/headshot.jpg" />
 
     <link rel="canonical" href="https://www.rodolfogaspary.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <!-- Site icons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
@@ -41,26 +48,17 @@
     <link rel="apple-touch-icon" href="/favicon.png">
     <link rel="stylesheet" href="/index.css">
 
-    <!-- JSON-LD Organization schema -->
+    <!-- Core structured data (ProfessionalService) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Rodolfo Gaspary",
-        "url": "https://www.rodolfogaspary.com/",
-        "logo": "https://www.rodolfogaspary.com/favicon.png"
-    }
-    </script>
-    <!-- LocalBusiness structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "ProfessionalService",
         "name": "Rodolfo Gaspary",
         "url": "https://www.rodolfogaspary.com/",
         "logo": "https://www.rodolfogaspary.com/favicon.png",
         "image": "https://www.rodolfogaspary.com/headshot.jpg",
         "email": "info@rodolfogaspary.com",
+        "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lima",
@@ -68,28 +66,31 @@
             "addressCountry": "PE"
         },
         "areaServed": ["PE", "Global"],
-        "sameAs": ["https://www.linkedin.com/in/rodolfo-gaspary"]
-    }
-    </script>
-    <!-- Service ItemList structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-            {
-                "@type": "Service",
-                "name": "Web Development",
-                "description": "Responsive websites, e-commerce, performance optimization and modern web apps.",
-                "provider": { "@type": "LocalBusiness", "name": "Rodolfo Gaspary", "url": "https://www.rodolfogaspary.com/" }
-            },
-            {
-                "@type": "Service",
-                "name": "Digital Strategy & SEO",
-                "description": "Digital strategy, SEO, and conversion-focused consulting for Peruvian and international businesses.",
-                "provider": { "@type": "LocalBusiness", "name": "Rodolfo Gaspary", "url": "https://www.rodolfogaspary.com/" }
-            }
-        ]
+        "sameAs": [
+            "https://www.linkedin.com/in/rodolfo-gaspary"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Web Development",
+                        "description": "High-performance websites and e-commerce solutions."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Digital Strategy & SEO",
+                        "description": "Growth roadmaps, SEO audits and conversion optimization."
+                    }
+                }
+            ]
+        }
     }
     </script>
     <!-- Hreflang: Spanish (primary), English, and default -->
@@ -97,8 +98,11 @@
     <link rel="alternate" href="https://www.rodolfogaspary.com/services/web-development" hreflang="en" />
     <link rel="alternate" href="https://www.rodolfogaspary.com/" hreflang="x-default" />
 </head>
-<body class="bg-white dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased">
+
+<body
+    class="bg-white dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

@@ -10,11 +10,12 @@ interface PageSEOConfig {
   description: string;
   keywords?: string;
   canonical: string;
+  lang?: string;
   hreflang?: HreflangEntry[];
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
-  jsonLd?: Record<string, unknown>;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const BASE_URL = 'https://www.rodolfogaspary.com';
@@ -38,9 +39,13 @@ function setMetaTag(property: string, content: string, isProperty = false) {
 export function usePageSEO(config: PageSEOConfig) {
   useEffect(() => {
     const prevTitle = document.title;
+    const prevLang = document.documentElement.lang;
 
-    // Title
+    // Title & Lang
     document.title = config.title;
+    if (config.lang) {
+      document.documentElement.lang = config.lang;
+    }
 
     // Meta description
     setMetaTag('description', config.description);
@@ -91,22 +96,28 @@ export function usePageSEO(config: PageSEOConfig) {
     }
 
     // JSON-LD
-    let jsonLdScript: HTMLScriptElement | null = null;
+    document.querySelectorAll('script[data-dynamic-jsonld]').forEach(el => el.remove());
+
     if (config.jsonLd) {
-      jsonLdScript = document.createElement('script');
-      jsonLdScript.type = 'application/ld+json';
-      jsonLdScript.setAttribute('data-dynamic-jsonld', 'true');
-      jsonLdScript.textContent = JSON.stringify(config.jsonLd);
-      document.head.appendChild(jsonLdScript);
+      const schemas = Array.isArray(config.jsonLd) ? config.jsonLd : [config.jsonLd];
+      schemas.forEach((schema, index) => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.setAttribute('data-dynamic-jsonld', 'true');
+        script.setAttribute('data-schema-index', index.toString());
+        script.textContent = JSON.stringify(schema);
+        document.head.appendChild(script);
+      });
     }
 
     return () => {
       document.title = prevTitle;
+      document.documentElement.lang = prevLang;
       if (canonical && prevCanonical) {
         canonical.href = prevCanonical;
       }
       addedLinks.forEach(link => link.remove());
       document.querySelectorAll('script[data-dynamic-jsonld]').forEach(el => el.remove());
     };
-  }, [config.title, config.description, config.canonical]);
+  }, [config.title, config.description, config.canonical, config.jsonLd, config.lang]);
 }

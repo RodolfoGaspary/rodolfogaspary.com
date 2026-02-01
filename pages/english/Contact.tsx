@@ -15,18 +15,39 @@ const ContactEn: React.FC = () => {
         description: 'Contact Rodolfo Gaspary for a strategic consultation on web development, SEO, or digital strategy. Guaranteed response within 24-48 hours.',
         keywords: 'contact web consultant lima, web consultancy peru, web development quote',
         canonical: '/contact',
+        lang: 'en',
         hreflang: [
             { lang: 'es', href: 'https://www.rodolfogaspary.com/contacto' },
             { lang: 'en', href: 'https://www.rodolfogaspary.com/contact' },
             { lang: 'x-default', href: 'https://www.rodolfogaspary.com/contacto' },
         ],
-        jsonLd: {
-            '@context': 'https://schema.org',
-            '@type': 'ContactPage',
-            name: 'Contact — Rodolfo Gaspary',
-            url: 'https://www.rodolfogaspary.com/contact',
-            description: 'Contact form for web development and digital strategy inquiries.',
-        },
+        jsonLd: [
+            {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                'itemListElement': [
+                    {
+                        '@type': 'ListItem',
+                        'position': 1,
+                        'name': 'Home',
+                        'item': 'https://www.rodolfogaspary.com/en'
+                    },
+                    {
+                        '@type': 'ListItem',
+                        'position': 2,
+                        'name': 'Contact',
+                        'item': 'https://www.rodolfogaspary.com/contact'
+                    }
+                ]
+            },
+            {
+                '@context': 'https://schema.org',
+                '@type': 'ContactPage',
+                name: 'Contact — Rodolfo Gaspary',
+                url: 'https://www.rodolfogaspary.com/contact',
+                description: 'Contact form for web development and digital strategy inquiries.',
+            }
+        ],
     });
 
     useEffect(() => {

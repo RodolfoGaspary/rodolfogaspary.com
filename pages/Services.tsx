@@ -9,13 +9,56 @@ const Services: React.FC = () => {
 
   usePageSEO({
     title: 'Servicios — Desarrollo Web y Estrategia Digital | Rodolfo Gaspary',
-    description: 'Servicios de desarrollo web estrategico, auditoria SEO, optimizacion de conversion y asesoria digital continua para empresas en Lima, Peru y a nivel global.',
-    keywords: 'servicios web lima, desarrollo web peru, auditoria SEO, optimizacion conversion, consultoria digital',
+    description: 'Servicios de desarrollo web estratégico, auditoría SEO, optimización de conversión y asesoría digital continua para empresas en Lima, Perú y a nivel global.',
+    keywords: 'servicios web lima, desarrollo web perú, auditoría SEO, optimización conversión, consultoría digital',
     canonical: '/servicios',
+    lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/servicios' },
     ],
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Inicio',
+            'item': 'https://www.rodolfogaspary.com/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Servicios',
+            'item': 'https://www.rodolfogaspary.com/servicios'
+          }
+        ]
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': '¿Qué incluye tu servicio de Desarrollo Web?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Incluye arquitectura de información, diseño orientado a resultados, desarrollo técnico optimizado e integración estratégica con herramientas de marketing.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Cómo funciona la Asesoría y Optimización Continua?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Es un servicio mensual (retainer) donde revisamos métricas, realizamos ajustes tácticos y garantizamos acceso prioritario para mejoras críticas.'
+            }
+          }
+        ]
+      }
+    ]
   });
 
   useEffect(() => {
@@ -112,7 +155,7 @@ const Services: React.FC = () => {
             </div>
             <div>
               <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Estrategia Digital y SEO</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Posicionamiento, conversion y crecimiento organico.</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Posicionamiento, conversión y crecimiento orgánico.</p>
             </div>
             <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
           </Link>

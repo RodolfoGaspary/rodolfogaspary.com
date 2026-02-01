@@ -13,14 +13,49 @@ const Home: React.FC = () => {
 
   usePageSEO({
     title: 'Rodolfo Gaspary — Desarrollo Web y Estrategia Digital | Lima, Peru',
-    description: 'Desarrollo web en Lima y estrategia digital: sitios web, e-commerce, SEO y consultoria para empresas en Peru y globalmente. Transformo sitios en herramientas de crecimiento.',
-    keywords: 'desarrollo web peru, estrategia digital lima, consultor web lima, rodolfo gaspary, SEO lima',
+    description: 'Desarrollo web en Lima y estrategia digital: sitios web, e-commerce, SEO y consultoría para empresas en Perú y globalmente. Transformo sitios en herramientas de crecimiento.',
+    keywords: 'desarrollo web perú, estrategia digital lima, consultor web lima, rodolfo gaspary, SEO lima',
     canonical: '/',
+    lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/' },
       { lang: 'en', href: 'https://www.rodolfogaspary.com/services/web-development' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/' },
     ],
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [{
+          '@type': 'ListItem',
+          'position': 1,
+          'name': 'Inicio',
+          'item': 'https://www.rodolfogaspary.com/'
+        }]
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': '¿Cuál es el enfoque de Rodolfo Gaspary en el desarrollo web?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Mi enfoque es estratégico y orientado a resultados. No solo construyo sitios web, sino herramientas de crecimiento que convierten visitantes en clientes.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Ofreces servicios de SEO en Lima?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Sí, ofrezco consultoría de SEO y estrategia digital en Lima para ayudar a los negocios a mejorar su visibilidad orgánica y autoridad en línea.'
+            }
+          }
+        ]
+      }
+    ]
   });
 
   useEffect(() => {

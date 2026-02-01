@@ -22,17 +22,38 @@ const Contact: React.FC = () => {
     description: 'Contacta a Rodolfo Gaspary para una consulta estrategica sobre desarrollo web, SEO o estrategia digital. Respuesta garantizada en 24-48 horas.',
     keywords: 'contacto consultor web lima, consultoria web peru, presupuesto desarrollo web',
     canonical: '/contacto',
+    lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/contacto' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/contacto' },
     ],
-    jsonLd: {
-      '@context': 'https://schema.org',
-      '@type': 'ContactPage',
-      name: 'Contacto — Rodolfo Gaspary',
-      url: 'https://www.rodolfogaspary.com/contacto',
-      description: 'Formulario de contacto para consultas de desarrollo web y estrategia digital.',
-    },
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Inicio',
+            'item': 'https://www.rodolfogaspary.com/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Contacto',
+            'item': 'https://www.rodolfogaspary.com/contacto'
+          }
+        ]
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contacto — Rodolfo Gaspary',
+        url: 'https://www.rodolfogaspary.com/contacto',
+        description: 'Formulario de contacto para consultas de desarrollo web y estrategia digital.',
+      }
+    ],
   });
 
   useEffect(() => {

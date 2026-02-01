@@ -11,11 +11,54 @@ const ServicesEn: React.FC = () => {
         description: 'Strategic web development services, SEO audits, conversion optimization, and ongoing digital consulting for businesses in Lima, Peru and globally.',
         keywords: 'web services lima, web development peru, SEO audit, conversion optimization, digital consultancy',
         canonical: '/services',
+        lang: 'en',
         hreflang: [
             { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios' },
             { lang: 'en', href: 'https://www.rodolfogaspary.com/services' },
             { lang: 'x-default', href: 'https://www.rodolfogaspary.com/servicios' },
         ],
+        jsonLd: [
+            {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                'itemListElement': [
+                    {
+                        '@type': 'ListItem',
+                        'position': 1,
+                        'name': 'Home',
+                        'item': 'https://www.rodolfogaspary.com/en'
+                    },
+                    {
+                        '@type': 'ListItem',
+                        'position': 2,
+                        'name': 'Services',
+                        'item': 'https://www.rodolfogaspary.com/services'
+                    }
+                ]
+            },
+            {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                'mainEntity': [
+                    {
+                        '@type': 'Question',
+                        'name': 'What does your Web Development service include?',
+                        'acceptedAnswer': {
+                            '@type': 'Answer',
+                            'text': 'It includes information architecture, result-oriented design, optimized technical development, and strategic integration with marketing tools.'
+                        }
+                    },
+                    {
+                        '@type': 'Question',
+                        'name': 'How does the Ongoing Consulting & Optimization work?',
+                        'acceptedAnswer': {
+                            '@type': 'Answer',
+                            'text': 'It is a monthly retainer service where we review metrics, perform tactical adjustments, and guarantee priority access for critical improvements.'
+                        }
+                    }
+                ]
+            }
+        ]
     });
 
     useEffect(() => {

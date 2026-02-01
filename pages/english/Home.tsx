@@ -13,11 +13,46 @@ const HomeEn: React.FC = () => {
     description: 'Web development and digital strategy in Lima: websites, e-commerce, SEO, and consulting for businesses in Peru and globally. I transform websites into growth tools.',
     keywords: 'web development peru, digital strategy lima, web consultant lima, rodolfo gaspary, SEO lima',
     canonical: '/en',
+    lang: 'en',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/' },
       { lang: 'en', href: 'https://www.rodolfogaspary.com/en' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/' },
     ],
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [{
+          '@type': 'ListItem',
+          'position': 1,
+          'name': 'Home',
+          'item': 'https://www.rodolfogaspary.com/en'
+        }]
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': 'What is Rodolfo Gaspary’s approach to web development?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'My approach is strategic and results-oriented. I don’t just build websites; I create growth tools designed to convert visitors into customers.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'Do you offer SEO services in Lima?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Yes, I offer SEO and digital strategy consulting in Lima to help businesses improve their organic visibility and online authority.'
+            }
+          }
+        ]
+      }
+    ]
   });
 
   useEffect(() => {
@@ -55,9 +90,9 @@ const HomeEn: React.FC = () => {
           </div>
           <div className="relative hidden lg:block group">
             <div className="aspect-square bg-slate-200 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-slate-200 dark:border-slate-700">
-              <img 
-                src={headshotPath} 
-                alt="Rodolfo Gaspary — Web Developer and Digital Strategy Consultant in Lima, Peru" 
+              <img
+                src={headshotPath}
+                alt="Rodolfo Gaspary — Web Developer and Digital Strategy Consultant in Lima, Peru"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.src = fallbackUrl;

@@ -21,6 +21,7 @@ const WebDevelopment: React.FC = () => {
     keywords:
       'web development Lima, web developer Peru, custom website Lima, e-commerce development Peru, responsive web design Lima',
     canonical: '/services/web-development',
+    lang: 'en',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios/desarrollo-web' },
       { lang: 'en', href: 'https://www.rodolfogaspary.com/services/web-development' },
@@ -29,6 +30,29 @@ const WebDevelopment: React.FC = () => {
     jsonLd: {
       '@context': 'https://schema.org',
       '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            {
+              '@type': 'ListItem',
+              'position': 1,
+              'name': 'Home',
+              'item': 'https://www.rodolfogaspary.com/en'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 2,
+              'name': 'Services',
+              'item': 'https://www.rodolfogaspary.com/services'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 3,
+              'name': 'Web Development',
+              'item': 'https://www.rodolfogaspary.com/services/web-development'
+            }
+          ]
+        },
         {
           '@type': 'Service',
           name: 'Web Development',
