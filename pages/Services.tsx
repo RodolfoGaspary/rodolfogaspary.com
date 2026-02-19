@@ -164,7 +164,7 @@ const Services: React.FC = () => {
             className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
           >
             <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-              <span className="material-symbols-outlined">language</span>
+              <span className="material-symbols-outlined">code</span>
             </div>
             <div>
               <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Web Development <span className="text-xs font-normal text-slate-400">(EN)</span></h3>
@@ -177,7 +177,7 @@ const Services: React.FC = () => {
             className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
           >
             <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-              <span className="material-symbols-outlined">language</span>
+              <span className="material-symbols-outlined">trending_up</span>
             </div>
             <div>
               <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Digital Strategy & SEO <span className="text-xs font-normal text-slate-400">(EN)</span></h3>
