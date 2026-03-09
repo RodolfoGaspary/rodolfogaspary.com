@@ -35,4 +35,3 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.rodolfogaspary.com/sitemap.xml
-Host: https://www.rodolfogaspary.com
