@@ -89,20 +89,20 @@ const ServicesEn: React.FC = () => {
             {activeSummary && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setActiveSummary(null)}></div>
-                    <div className="relative bg-white dark:bg-slate-900 w-full max-w-md p-8 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 animate-in fade-in zoom-in duration-300">
+                    <div className="relative bg-white dark:bg-stone-900 w-full max-w-md p-8 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 animate-in fade-in zoom-in duration-200">
                         <button
                             onClick={() => setActiveSummary(null)}
-                            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                            className="absolute top-4 right-4 text-stone-400 hover:text-muted dark:hover:text-stone-200 transition-colors"
                         >
                             <span className="material-symbols-outlined">close</span>
                         </button>
-                        <h3 className="text-2xl font-black mb-4 text-primary">{activeSummary.title}</h3>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        <h3 className="text-2xl font-bold mb-4 text-accent">{activeSummary.title}</h3>
+                        <p className="text-muted dark:text-stone-400 leading-relaxed mb-6">
                             {activeSummary.content}
                         </p>
                         <button
                             onClick={() => setActiveSummary(null)}
-                            className="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold py-3 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                            className="w-full bg-stone-100 dark:bg-stone-800 text-stone-900 dark:text-white font-bold py-3 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors"
                         >
                             Got it
                         </button>
@@ -113,14 +113,9 @@ const ServicesEn: React.FC = () => {
             {/* Hero Section */}
             <section className="mb-20 text-center md:text-left group">
                 <div
-                    className="relative overflow-hidden rounded-xl bg-background-dark p-8 md:p-16 flex flex-col items-center justify-center text-center border border-white/10 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/10"
-                    style={{
-                        backgroundImage: 'linear-gradient(135deg, rgba(19, 91, 236, 0.25) 0%, rgba(16, 22, 34, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5pgMY4pzOSlqLqQ3gblQC5cqwkiQBOwo3YBw2kDGeo3Rx27FC7j1-dKKGjrNwFVvoX83T1ceYMNWg7oIWuy9_3mQJU5xwTCRqD0cCedUAIzM3vj1sJstqYrG7YB4Bbqe5m4MLYkSAMmqLedZ2oR5WfMZwplgaQz2CE26CplF4WImHH00LgvkFjaEuI_Z7MRhx3T7ek6jQ8j9Hd8pVR3Puv17-XXrKikC11JQB5ma4XyXX-ZC0bnb62i7HjmCWnEouRIAVzzuFuFLT")',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}
+                    className="relative overflow-hidden rounded-lg bg-ink p-8 md:p-16 flex flex-col items-center justify-center text-center border border-white/10 transition-colors duration-200"
                 >
-                    <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6 max-w-3xl transition-transform duration-500 group-hover:scale-[1.03]">
+                    <h1 className="font-serif text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6 max-w-3xl transition-colors duration-200">
                         Result-Oriented Web Solutions
                     </h1>
                     <p className="text-white/80 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
@@ -131,47 +126,47 @@ const ServicesEn: React.FC = () => {
 
             {/* Service Landing Pages */}
             <section className="mb-20">
-                <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">Explore in details</h2>
+                <h2 className="font-serif text-2xl font-bold tracking-tight text-stone-900 dark:text-white mb-6">Explore in details</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                     <Link
                         to="/services/web-development"
-                        className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+                        className="flex items-center gap-4 p-5 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-stone-300 transition-colors group"
                     >
-                        <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                        <div className="size-11 shrink-0 rounded-lg border border-stone-200 dark:border-stone-700 text-accent flex items-center justify-center">
                             <span className="material-symbols-outlined">code</span>
                         </div>
                         <div>
-                            <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Web Development</h3>
-                            <p className="text-sm text-slate-500 dark:text-slate-400">Result-focused sites and applications.</p>
+                            <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Web Development</h3>
+                            <p className="text-sm text-muted dark:text-stone-400">Result-focused sites and applications.</p>
                         </div>
-                        <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span className="material-symbols-outlined text-stone-300 dark:text-stone-400 ml-auto transition-colors">arrow_forward</span>
                     </Link>
                     <Link
                         to="/services/digital-strategy"
-                        className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+                        className="flex items-center gap-4 p-5 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-stone-300 transition-colors group"
                     >
-                        <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                        <div className="size-11 shrink-0 rounded-lg border border-stone-200 dark:border-stone-700 text-accent flex items-center justify-center">
                             <span className="material-symbols-outlined">trending_up</span>
                         </div>
                         <div>
-                            <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Digital Strategy & SEO</h3>
-                            <p className="text-sm text-slate-500 dark:text-slate-400">Positioning, conversion, and organic growth.</p>
+                            <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Digital Strategy & SEO</h3>
+                            <p className="text-sm text-muted dark:text-stone-400">Positioning, conversion, and organic growth.</p>
                         </div>
-                        <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <span className="material-symbols-outlined text-stone-300 dark:text-stone-400 ml-auto transition-colors">arrow_forward</span>
                     </Link>
                 </div>
             </section>
 
             {/* Package 1: Initial Phase */}
             <section id="auditoria" className="mb-24 scroll-mt-24">
-                <div className="flex items-center gap-2 mb-6 text-primary animate-pulse">
+                <div className="flex items-center gap-2 mb-6 text-accent">
                     <span className="material-symbols-outlined">analytics</span>
                     <span className="text-sm font-bold tracking-widest uppercase">Initial Phase</span>
                 </div>
                 <div className="grid md:grid-cols-2 gap-12 items-start">
                     <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Web Strategy & Audit</h2>
-                        <p className="text-lg text-[#616f89] dark:text-gray-400">
+                        <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight">Web Strategy & Audit</h2>
+                        <p className="text-lg text-muted dark:text-stone-400">
                             A low-risk approach to aligning your digital presence with your business goals before investing in development.
                         </p>
                         <ul className="space-y-4">
@@ -182,21 +177,21 @@ const ServicesEn: React.FC = () => {
                                 "Roadmap with prioritized recommendations."
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start gap-3 group">
-                                    <span className="material-symbols-outlined text-primary mt-1 transition-transform group-hover:scale-125">check_circle</span>
-                                    <span className="group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{item}</span>
+                                    <span className="material-symbols-outlined text-accent mt-1 transition-colors">check_circle</span>
+                                    <span className="group-hover:text-stone-900 dark:group-hover:text-white transition-colors">{item}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    <div className="bg-white dark:bg-[#1e2533] p-8 rounded-xl shadow-sm border border-[#f0f2f4] dark:border-[#2a303c] flex flex-col justify-between h-full hover-lift group">
+                    <div className="bg-white dark:bg-stone-900 p-8 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 flex flex-col justify-between h-full group">
                         <div>
-                            <p className="text-primary font-bold mb-2">Your strategic starting point</p>
-                            <p className="text-sm text-[#616f89] dark:text-gray-400 leading-relaxed italic border-l-2 border-primary/30 pl-4 mb-8">
+                            <p className="text-accent font-bold mb-2">Your strategic starting point</p>
+                            <p className="text-sm text-muted dark:text-stone-400 leading-relaxed italic border-l-2 border-accent/30 pl-4 mb-8">
                                 "If you're not sure which option fits your situation, this is usually the right place to start."
                             </p>
                         </div>
-                        <Link to="/contact" className="w-full bg-primary text-white font-bold py-4 rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-2">
-                            Book Audit <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        <Link to="/contact" className="w-full bg-accent text-white font-bold py-4 rounded-lg hover:bg-amber-700 transition-colors flex items-center justify-center gap-2">
+                            Book Audit <span className="material-symbols-outlined text-sm transition-colors">arrow_forward</span>
                         </Link>
                     </div>
                 </div>
@@ -204,17 +199,17 @@ const ServicesEn: React.FC = () => {
 
             {/* Package 2: Flagship */}
             <section id="desarrollo" className="mb-24 relative p-8 md:p-12 group scroll-mt-24">
-                <div className="absolute inset-0 bg-primary/5 rounded-3xl -z-10 transition-all duration-700 group-hover:bg-primary/10"></div>
-                <div className="flex items-center gap-2 mb-6 text-primary">
-                    <span className="material-symbols-outlined group-hover:scale-115 transition-all duration-500 ease-out">rocket_launch</span>
+                <div className="absolute inset-0 bg-amber-50/50 dark:bg-amber-900/5 rounded-lg -z-10 transition-colors duration-200"></div>
+                <div className="flex items-center gap-2 mb-6 text-accent">
+                    <span className="material-symbols-outlined transition-colors duration-200 ease-out">rocket_launch</span>
                     <span className="text-sm font-bold tracking-widest uppercase">Featured Service</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 group-hover:text-primary transition-colors">Strategic Web Development</h2>
-                <p className="text-xl font-medium mb-12 max-w-2xl text-slate-700 dark:text-slate-300">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight mb-8 group-hover:text-accent transition-colors">Strategic Web Development</h2>
+                <p className="text-xl font-medium mb-12 max-w-2xl text-stone-700 dark:text-stone-300">
                     We start with the right questions. We don't build websites, we create digital assets designed to convert and scale.
                 </p>
                 <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white dark:bg-[#1e2533] p-8 rounded-xl shadow-md border border-primary/20 transition-transform duration-500 hover:scale-[1.02]">
+                    <div className="bg-white dark:bg-stone-900 p-8 rounded-lg shadow-sm border border-accent/20 transition-colors duration-200">
                         <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                             <span className="material-symbols-outlined text-green-500">task_alt</span> What's included
                         </h3>
@@ -225,11 +220,11 @@ const ServicesEn: React.FC = () => {
                             <li><strong>Strategic Integration:</strong> Connection with your sales and marketing tools.</li>
                         </ul>
                     </div>
-                    <div className="bg-background-light dark:bg-[#101622] p-8 rounded-xl border border-dashed border-[#d1d5db] dark:border-[#2a303c] transition-transform duration-500 hover:scale-[1.02]">
-                        <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-[#616f89]">
+                    <div className="bg-bg-warm dark:bg-stone-900/50 p-8 rounded-lg border border-dashed border-stone-300 dark:border-stone-700 transition-colors duration-200">
+                        <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-muted">
                             <span className="material-symbols-outlined">block</span> What's explicitly not included
                         </h3>
-                        <ul className="space-y-4 text-sm text-[#616f89] dark:text-gray-400">
+                        <ul className="space-y-4 text-sm text-muted dark:text-stone-400">
                             <li>- Unlimited revisions (We work on defined strategic milestones).</li>
                             <li>- Changes based on ephemeral trends without business support.</li>
                             <li>- Daily technical micro-management outside the project objectives.</li>
@@ -237,7 +232,7 @@ const ServicesEn: React.FC = () => {
                     </div>
                 </div>
                 <div className="mt-8 flex justify-center">
-                    <Link to="/contact" className="bg-primary text-white font-bold py-4 px-12 rounded-lg hover:brightness-110 transition-all shadow-lg shadow-primary/20 hover:scale-105 active:scale-95">
+                    <Link to="/contact" className="bg-accent text-white font-bold py-4 px-12 rounded-lg hover:bg-amber-700 transition-colors">
                         Discuss Flagship Project
                     </Link>
                 </div>
@@ -245,34 +240,33 @@ const ServicesEn: React.FC = () => {
 
             {/* Package 3: Optimization */}
             <section id="optimizacion" className="mb-24 scroll-mt-24">
-                <div className="flex items-center gap-2 mb-6 text-primary">
+                <div className="flex items-center gap-2 mb-6 text-accent">
                     <span className="material-symbols-outlined">query_stats</span>
                     <span className="text-sm font-bold tracking-widest uppercase">Continuous Growth</span>
                 </div>
-                <div className="bg-slate-900 text-white p-8 md:p-12 rounded-xl flex flex-col md:flex-row gap-12 items-center relative overflow-hidden group">
-                    <div className="absolute inset-0 opacity-20 pointer-events-none transition-transform duration-[8s] group-hover:scale-125" style={{ backgroundImage: 'radial-gradient(circle at top right, rgba(19, 91, 236, 0.5), transparent)' }}></div>
+                <div className="bg-ink text-white p-8 md:p-12 rounded-lg flex flex-col md:flex-row gap-12 items-center relative overflow-hidden group">
                     <div className="flex-1 relative z-10">
-                        <h2 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Ongoing Consulting & Optimization</h2>
+                        <h2 className="font-serif text-3xl font-bold mb-4 group-hover:text-accent transition-colors">Ongoing Consulting & Optimization</h2>
                         <p className="text-lg text-white/70 mb-8 italic">"For businesses that treat their website as a living system that evolves with the market."</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <button
                                 onClick={() => setActiveSummary(summaries.revision)}
-                                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all group/card"
+                                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-accent/30 transition-colors group/card"
                             >
-                                <h4 className="font-bold text-primary mb-1 group-hover/card:translate-x-1 transition-transform">Monthly Review</h4>
+                                <h4 className="font-bold text-accent mb-1 transition-colors">Monthly Review</h4>
                                 <p className="text-sm text-white/60">Metric analysis and tactical adjustment based on performance.</p>
                             </button>
                             <button
                                 onClick={() => setActiveSummary(summaries.prioritarios)}
-                                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all group/card"
+                                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-accent/30 transition-colors group/card"
                             >
-                                <h4 className="font-bold text-primary mb-1 group-hover/card:translate-x-1 transition-transform">Priority Access</h4>
+                                <h4 className="font-bold text-accent mb-1 transition-colors">Priority Access</h4>
                                 <p className="text-sm text-white/60">Guaranteed availability for critical changes and improvements.</p>
                             </button>
                         </div>
                     </div>
                     <div className="flex-shrink-0 relative z-10">
-                        <Link to="/contact" className="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all inline-block hover:scale-105 active:scale-95 shadow-xl">
+                        <Link to="/contact" className="bg-white text-accent font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors inline-block shadow-sm">
                             Hire Retainer
                         </Link>
                     </div>
@@ -280,10 +274,10 @@ const ServicesEn: React.FC = () => {
             </section>
 
             {/* Internal Links */}
-            <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-slate-200 dark:border-slate-800 pt-8 pb-12">
+            <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-stone-200 dark:border-stone-700 pt-8 pb-12">
                 <Link
                     to="/servicios"
-                    className="text-primary font-bold hover:underline flex items-center gap-1"
+                    className="text-accent font-bold hover:underline flex items-center gap-1"
                 >
                     <span className="material-symbols-outlined text-base">translate</span>
                     Ver en Español

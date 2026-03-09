@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { usePageSEO } from '../hooks/usePageSEO';
 
 const headshotPath = "./headshot.jpg";
-const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=135bec&color=fff&size=512";
+const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=0F172A&color=fff&size=512";
 
 /**
  * SECURITY NOTE: 
@@ -134,14 +134,14 @@ const Contact: React.FC = () => {
           <span className="material-symbols-outlined text-5xl">check_circle</span>
         </div>
         <div className="flex flex-col gap-4">
-          <h1 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white">¡Mensaje recibido!</h1>
-          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-md">
+          <h1 className="text-3xl md:text-4xl font-bold font-serif text-stone-900 dark:text-white">¡Mensaje recibido!</h1>
+          <p className="text-muted dark:text-stone-400 text-lg leading-relaxed max-w-md">
             Gracias, {formData.nombre}. Revisaré tus detalles y te responderé personalmente a tu correo desde <strong>info@rodolfogaspary.com</strong>.
           </p>
         </div>
         <button
           onClick={() => setIsSuccess(false)}
-          className="text-primary font-bold hover:underline"
+          className="text-accent font-bold hover:underline"
         >
           Enviar otro mensaje
         </button>
@@ -152,12 +152,12 @@ const Contact: React.FC = () => {
   return (
     <div className="w-full max-w-2xl mx-auto px-6 py-12 md:py-20 flex flex-col gap-12">
       <section className="flex flex-col gap-4 text-center">
-        <span className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-2">Contacto</span>
-        <h1 className="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-tight">
-          Hablemos de tu proyecto <span className="text-primary underline decoration-primary/20 decoration-8 underline-offset-4">estratégicamente.</span>
+        <span className="text-accent font-bold text-xs uppercase tracking-[0.2em] mb-2">Contacto</span>
+        <h1 className="text-stone-900 dark:text-white text-4xl md:text-5xl font-bold font-serif leading-tight tracking-tight">
+          Hablemos de tu proyecto <span className="text-accent underline decoration-accent/30 decoration-8 underline-offset-4">estratégicamente.</span>
         </h1>
         <div className="max-w-xl mx-auto flex flex-col gap-4">
-          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+          <p className="text-muted dark:text-stone-400 text-lg leading-relaxed">
             Completa este breve formulario para que pueda llegar a nuestra primera charla con una visión clara de tu negocio.
           </p>
         </div>
@@ -165,8 +165,8 @@ const Contact: React.FC = () => {
 
       {/* Bio Card */}
       <section className="flex flex-col gap-6">
-        <div className="flex items-center gap-5 p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:shadow-md">
-          <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-slate-100 dark:bg-slate-800 rounded-2xl shadow-md border-2 border-white dark:border-slate-700 overflow-hidden">
+        <div className="flex items-center gap-5 p-5 bg-white dark:bg-stone-900 rounded-lg border border-stone-200 dark:border-stone-700 shadow-sm transition-all hover:border-stone-300">
+          <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-stone-100 dark:bg-stone-800 rounded-lg border border-stone-200 dark:border-stone-700 overflow-hidden">
             <img
               src={headshotPath}
               alt="Rodolfo Gaspary — Desarrollador Web y Consultor de Estrategia Digital en Lima, Perú"
@@ -177,9 +177,9 @@ const Contact: React.FC = () => {
             />
           </div>
           <div className="flex flex-col">
-            <h3 className="text-slate-900 dark:text-white text-lg font-bold">Rodolfo Gaspary</h3>
-            <p className="text-primary text-xs font-semibold uppercase tracking-wider">Consultor de Estrategia Digital</p>
-            <div className="flex items-center gap-2 mt-1 text-slate-500 text-xs">
+            <h3 className="text-stone-900 dark:text-white text-lg font-bold">Rodolfo Gaspary</h3>
+            <p className="text-accent text-xs font-semibold uppercase tracking-wider">Consultor de Estrategia Digital</p>
+            <div className="flex items-center gap-2 mt-1 text-muted text-xs">
               <span className="material-symbols-outlined text-[14px]">verified</span>
               <span>Respuesta garantizada en 24-48h</span>
             </div>
@@ -188,9 +188,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Main Form */}
-      <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-800 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
-
+      <section className="bg-white dark:bg-stone-900 rounded-xl p-8 md:p-12 shadow-sm border border-stone-200 dark:border-stone-700 relative overflow-hidden">
         <form onSubmit={handleSubmit} className="flex flex-col gap-8 relative z-10">
           {/* Honeypot field (hidden from humans) */}
           <input
@@ -203,23 +201,23 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
-              <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Nombre</label>
+              <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">Nombre</label>
               <input
                 name="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                 placeholder="Tu nombre completo" required type="text"
                 disabled={isSubmitting}
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Correo electrónico</label>
+              <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">Correo electrónico</label>
               <input
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                 placeholder="tu@correo.com" required type="email"
                 disabled={isSubmitting}
               />
@@ -228,23 +226,23 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
-              <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Empresa / Proyecto</label>
+              <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">Empresa / Proyecto</label>
               <input
                 name="empresa"
                 value={formData.empresa}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                 placeholder="Nombre del negocio" required type="text"
                 disabled={isSubmitting}
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Sitio web <span className="text-[10px] opacity-60">(si ya tienes)</span></label>
+              <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">Sitio web <span className="text-[10px] opacity-60">(si ya tienes)</span></label>
               <input
                 name="website"
                 value={formData.website}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                 placeholder="https://..." type="url"
                 disabled={isSubmitting}
               />
@@ -252,13 +250,13 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">¿Cuál es tu situación actual?</label>
+            <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">¿Cuál es tu situación actual?</label>
             <div className="relative">
               <select
                 name="situacion"
                 value={formData.situacion}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none bg-none shadow-none"
+                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base appearance-none bg-none shadow-none"
                 required
                 disabled={isSubmitting}
               >
@@ -267,17 +265,17 @@ const Contact: React.FC = () => {
                 <option value="mejorar">Quiero optimizar un sitio existente</option>
                 <option value="consultoria">Busco asesoría estratégica pura</option>
               </select>
-              <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">expand_more</span>
+              <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-subtle">expand_more</span>
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">¿Qué desafío quieres superar?</label>
+            <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">¿Qué desafío quieres superar?</label>
             <textarea
               name="problema"
               value={formData.problema}
               onChange={handleChange}
-              className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base min-h-[100px]"
+              className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base min-h-[100px]"
               placeholder="Ej: Mi web no genera leads, el mensaje no es claro..." required
               disabled={isSubmitting}
             ></textarea>
@@ -285,12 +283,12 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
-              <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Rango de inversión</label>
+              <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">Rango de inversión</label>
               <select
                 name="inversion"
                 value={formData.inversion}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none"
+                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base appearance-none"
                 required
                 disabled={isSubmitting}
               >
@@ -301,12 +299,12 @@ const Contact: React.FC = () => {
               </select>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Urgencia</label>
+              <label className="text-stone-700 dark:text-stone-300 text-xs font-bold uppercase tracking-widest">Urgencia</label>
               <select
                 name="plazos"
                 value={formData.plazos}
                 onChange={handleChange}
-                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none"
+                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base appearance-none"
                 required
                 disabled={isSubmitting}
               >
@@ -320,7 +318,7 @@ const Contact: React.FC = () => {
 
           <div className="pt-4 flex flex-col gap-6">
             <button
-              className={`w-full flex items-center justify-center rounded-2xl h-16 text-white text-lg font-bold transition-all gap-3 shadow-lg ${isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-primary hover:bg-blue-700 active:scale-[0.98] cursor-pointer shadow-primary/20'}`}
+              className={`w-full flex items-center justify-center rounded-md h-12 text-white text-base font-medium transition-all gap-3 ${isSubmitting ? 'bg-stone-400 cursor-not-allowed' : 'bg-ink hover:bg-stone-800 cursor-pointer'}`}
               type="submit"
               disabled={isSubmitting}
             >
@@ -329,7 +327,7 @@ const Contact: React.FC = () => {
               {isSubmitting && <div className="size-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>}
             </button>
 
-            <div className="flex items-center justify-center gap-2 text-slate-400 dark:text-slate-500 text-xs">
+            <div className="flex items-center justify-center gap-2 text-subtle dark:text-stone-500 text-xs">
               <span className="material-symbols-outlined text-sm">lock</span>
               <span>Formulario encriptado y protegido contra spam</span>
             </div>
@@ -337,10 +335,10 @@ const Contact: React.FC = () => {
         </form>
       </section>
       {/* Internal Links */}
-      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-slate-200 dark:border-slate-800 pt-8 pb-12">
+      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-stone-200 dark:border-stone-700 pt-8 pb-12">
         <Link
           to="/contact"
-          className="text-primary font-bold hover:underline flex items-center gap-1"
+          className="text-accent font-medium hover:underline flex items-center gap-1"
         >
           <span className="material-symbols-outlined text-base">translate</span>
           View in English

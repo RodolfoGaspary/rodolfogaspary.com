@@ -89,20 +89,20 @@ const Services: React.FC = () => {
       {activeSummary && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setActiveSummary(null)}></div>
-          <div className="relative bg-white dark:bg-slate-900 w-full max-w-md p-8 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 animate-in fade-in zoom-in duration-300">
+          <div className="relative bg-white dark:bg-stone-900 w-full max-w-md p-8 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 animate-in fade-in zoom-in duration-300">
             <button
               onClick={() => setActiveSummary(null)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+              className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 transition-colors"
             >
               <span className="material-symbols-outlined">close</span>
             </button>
-            <h3 className="text-2xl font-black mb-4 text-primary">{activeSummary.title}</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            <h3 className="text-2xl font-bold mb-4 text-accent">{activeSummary.title}</h3>
+            <p className="text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
               {activeSummary.content}
             </p>
             <button
               onClick={() => setActiveSummary(null)}
-              className="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold py-3 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              className="w-full bg-stone-100 dark:bg-stone-800 text-stone-900 dark:text-white font-bold py-3 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors"
             >
               Entendido
             </button>
@@ -113,14 +113,9 @@ const Services: React.FC = () => {
       {/* Hero Section */}
       <section className="mb-20 text-center md:text-left group">
         <div
-          className="relative overflow-hidden rounded-xl bg-background-dark p-8 md:p-16 flex flex-col items-center justify-center text-center border border-white/10 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/10"
-          style={{
-            backgroundImage: 'linear-gradient(135deg, rgba(19, 91, 236, 0.25) 0%, rgba(16, 22, 34, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5pgMY4pzOSlqLqQ3gblQC5cqwkiQBOwo3YBw2kDGeo3Rx27FC7j1-dKKGjrNwFVvoX83T1ceYMNWg7oIWuy9_3mQJU5xwTCRqD0cCedUAIzM3vj1sJstqYrG7YB4Bbqe5m4MLYkSAMmqLedZ2oR5WfMZwplgaQz2CE26CplF4WImHH00LgvkFjaEuI_Z7MRhx3T7ek6jQ8j9Hd8pVR3Puv17-XXrKikC11JQB5ma4XyXX-ZC0bnb62i7HjmCWnEouRIAVzzuFuFLT")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
+          className="relative overflow-hidden bg-ink p-8 md:p-16 rounded-lg border border-stone-700 flex flex-col items-center justify-center text-center"
         >
-          <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6 max-w-3xl transition-transform duration-500 group-hover:scale-[1.03]">
+          <h1 className="text-white text-4xl md:text-6xl font-bold font-serif leading-tight tracking-tight mb-6 max-w-3xl">
             Soluciones Web Orientadas a Resultados
           </h1>
           <p className="text-white/80 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
@@ -131,73 +126,73 @@ const Services: React.FC = () => {
 
       {/* Service Landing Pages */}
       <section className="mb-20">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">Explora en detalle</h2>
+        <h2 className="text-2xl font-semibold font-serif tracking-tight text-stone-900 dark:text-white mb-6">Explora en detalle</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           <Link
             to="/servicios/desarrollo-web"
-            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+            className="flex items-center gap-4 p-5 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-stone-300 transition-colors duration-200 group"
           >
-            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+            <div className="size-10 shrink-0 rounded-lg border border-stone-200 dark:border-stone-700 text-accent flex items-center justify-center">
               <span className="material-symbols-outlined">code</span>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Desarrollo Web</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Sitios y aplicaciones enfocados en resultados.</p>
+              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Desarrollo Web</h3>
+              <p className="text-sm text-stone-500 dark:text-stone-400">Sitios y aplicaciones enfocados en resultados.</p>
             </div>
-            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+            <span className="material-symbols-outlined text-stone-400 dark:text-stone-600 ml-auto">arrow_forward</span>
           </Link>
           <Link
             to="/servicios/estrategia-digital"
-            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+            className="flex items-center gap-4 p-5 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-stone-300 transition-colors duration-200 group"
           >
-            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+            <div className="size-10 shrink-0 rounded-lg border border-stone-200 dark:border-stone-700 text-accent flex items-center justify-center">
               <span className="material-symbols-outlined">trending_up</span>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Estrategia Digital y SEO</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Posicionamiento, conversión y crecimiento orgánico.</p>
+              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Estrategia Digital y SEO</h3>
+              <p className="text-sm text-stone-500 dark:text-stone-400">Posicionamiento, conversión y crecimiento orgánico.</p>
             </div>
-            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+            <span className="material-symbols-outlined text-stone-400 dark:text-stone-600 ml-auto">arrow_forward</span>
           </Link>
           <Link
             to="/services/web-development"
-            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+            className="flex items-center gap-4 p-5 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-stone-300 transition-colors duration-200 group"
           >
-            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+            <div className="size-10 shrink-0 rounded-lg border border-stone-200 dark:border-stone-700 text-accent flex items-center justify-center">
               <span className="material-symbols-outlined">code</span>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Web Development <span className="text-xs font-normal text-slate-400">(EN)</span></h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Conversion-focused websites for global clients.</p>
+              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Web Development <span className="text-xs font-normal text-stone-400">(EN)</span></h3>
+              <p className="text-sm text-stone-500 dark:text-stone-400">Conversion-focused websites for global clients.</p>
             </div>
-            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+            <span className="material-symbols-outlined text-stone-400 dark:text-stone-600 ml-auto">arrow_forward</span>
           </Link>
           <Link
             to="/services/digital-strategy"
-            className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/40 hover:shadow-lg transition-all group"
+            className="flex items-center gap-4 p-5 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-stone-300 transition-colors duration-200 group"
           >
-            <div className="size-11 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+            <div className="size-10 shrink-0 rounded-lg border border-stone-200 dark:border-stone-700 text-accent flex items-center justify-center">
               <span className="material-symbols-outlined">trending_up</span>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Digital Strategy & SEO <span className="text-xs font-normal text-slate-400">(EN)</span></h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Data-driven growth and search optimization.</p>
+              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Digital Strategy & SEO <span className="text-xs font-normal text-stone-400">(EN)</span></h3>
+              <p className="text-sm text-stone-500 dark:text-stone-400">Data-driven growth and search optimization.</p>
             </div>
-            <span className="material-symbols-outlined text-slate-300 dark:text-slate-600 ml-auto transition-transform group-hover:translate-x-1">arrow_forward</span>
+            <span className="material-symbols-outlined text-stone-400 dark:text-stone-600 ml-auto">arrow_forward</span>
           </Link>
         </div>
       </section>
 
 
       <section id="auditoria" className="mb-24 scroll-mt-24">
-        <div className="flex items-center gap-2 mb-6 text-primary animate-pulse">
+        <div className="flex items-center gap-2 mb-6 text-accent">
           <span className="material-symbols-outlined">analytics</span>
           <span className="text-sm font-bold tracking-widest uppercase">Fase Inicial</span>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Estrategia y Auditoría Web</h2>
-            <p className="text-lg text-[#616f89] dark:text-gray-400">
+            <h2 className="text-3xl md:text-4xl font-bold font-serif tracking-tight">Estrategia y Auditoría Web</h2>
+            <p className="text-lg text-muted dark:text-stone-400">
               Un enfoque de bajo riesgo para alinear tu presencia digital con tus objetivos comerciales antes de invertir en desarrollo.
             </p>
             <ul className="space-y-4">
@@ -208,21 +203,21 @@ const Services: React.FC = () => {
                 "Hoja de ruta con recomendaciones priorizadas."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 group">
-                  <span className="material-symbols-outlined text-primary mt-1 transition-transform group-hover:scale-125">check_circle</span>
-                  <span className="group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{item}</span>
+                  <span className="material-symbols-outlined text-accent mt-1">check_circle</span>
+                  <span className="group-hover:text-stone-900 dark:group-hover:text-white transition-colors">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-white dark:bg-[#1e2533] p-8 rounded-xl shadow-sm border border-[#f0f2f4] dark:border-[#2a303c] flex flex-col justify-between h-full hover-lift group">
+          <div className="bg-white dark:bg-stone-900 p-8 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 flex flex-col justify-between h-full group">
             <div>
-              <p className="text-primary font-bold mb-2">Tu punto de partida estratégico</p>
-              <p className="text-sm text-[#616f89] dark:text-gray-400 leading-relaxed italic border-l-2 border-primary/30 pl-4 mb-8">
+              <p className="text-accent font-bold mb-2">Tu punto de partida estratégico</p>
+              <p className="text-sm text-muted dark:text-stone-400 leading-relaxed italic border-l-2 border-accent/30 pl-4 mb-8">
                 "Si no estás seguro de qué opción se adapta a tu situación, este suele ser el lugar adecuado para comenzar."
               </p>
             </div>
-            <Link to="/contacto" className="w-full bg-primary text-white font-bold py-4 rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-2">
-              Reservar Auditoría <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+            <Link to="/contacto" className="w-full bg-accent text-white font-medium py-3 rounded-md hover:bg-amber-700 transition-colors duration-200 flex items-center justify-center gap-2">
+              Reservar Auditoría <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
           </div>
         </div>
@@ -230,19 +225,19 @@ const Services: React.FC = () => {
 
       {/* Package 2: Flagship */}
       <section id="desarrollo" className="mb-24 relative p-8 md:p-12 group scroll-mt-24">
-        <div className="absolute inset-0 bg-primary/5 rounded-3xl -z-10 transition-all duration-700 group-hover:bg-primary/10"></div>
-        <div className="flex items-center gap-2 mb-6 text-primary">
-          <span className="material-symbols-outlined group-hover:scale-115 transition-all duration-500 ease-out">rocket_launch</span>
+        <div className="absolute inset-0 bg-amber-50/50 dark:bg-amber-900/5 rounded-lg -z-10"></div>
+        <div className="flex items-center gap-2 mb-6 text-accent">
+          <span className="material-symbols-outlined">rocket_launch</span>
           <span className="text-sm font-bold tracking-widest uppercase">Servicio Destacado</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 group-hover:text-primary transition-colors">Desarrollo Web Estratégico</h2>
-        <p className="text-xl font-medium mb-12 max-w-2xl text-slate-700 dark:text-slate-300">
+        <h2 className="text-3xl md:text-4xl font-bold font-serif tracking-tight mb-8 group-hover:text-accent transition-colors">Desarrollo Web Estratégico</h2>
+        <p className="text-xl font-medium mb-12 max-w-2xl text-stone-700 dark:text-stone-300">
           Empezamos con las preguntas correctas. No construimos sitios web, creamos activos digitales diseñados para convertir y escalar.
         </p>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white dark:bg-[#1e2533] p-8 rounded-xl shadow-md border border-primary/20 transition-transform duration-500 hover:scale-[1.02]">
+          <div className="bg-white dark:bg-stone-900 p-8 rounded-lg shadow-sm border border-accent/20">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <span className="material-symbols-outlined text-green-500">task_alt</span> Lo que incluye
+              <span className="material-symbols-outlined text-green-600">task_alt</span> Lo que incluye
             </h3>
             <ul className="space-y-4 text-sm md:text-base">
               <li><strong>Arquitectura de Información:</strong> Estructura lógica pensada en la conversión.</li>
@@ -251,11 +246,11 @@ const Services: React.FC = () => {
               <li><strong>Integración Estratégica:</strong> Conexión con tus herramientas de ventas y marketing.</li>
             </ul>
           </div>
-          <div className="bg-background-light dark:bg-[#101622] p-8 rounded-xl border border-dashed border-[#d1d5db] dark:border-[#2a303c] transition-transform duration-500 hover:scale-[1.02]">
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-[#616f89]">
+          <div className="bg-stone-50 dark:bg-stone-900/50 p-8 rounded-lg border border-dashed border-stone-300 dark:border-stone-700">
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-stone-500">
               <span className="material-symbols-outlined">block</span> Lo que explícitamente no incluye
             </h3>
-            <ul className="space-y-4 text-sm text-[#616f89] dark:text-gray-400">
+            <ul className="space-y-4 text-sm text-stone-500 dark:text-stone-400">
               <li>- Revisiones ilimitadas (Trabajamos sobre hitos estratégicos definidos).</li>
               <li>- Cambios basados en tendencias efímeras sin sustento de negocio.</li>
               <li>- Micro-gestión técnica diaria fuera de los objetivos del proyecto.</li>
@@ -263,7 +258,7 @@ const Services: React.FC = () => {
           </div>
         </div>
         <div className="mt-8 flex justify-center">
-          <Link to="/contacto" className="bg-primary text-white font-bold py-4 px-12 rounded-lg hover:brightness-110 transition-all shadow-lg shadow-primary/20 hover:scale-105 active:scale-95">
+          <Link to="/contacto" className="bg-accent text-white font-medium py-3 px-10 rounded-md hover:bg-amber-700 transition-colors duration-200">
             Discutir Proyecto Flagship
           </Link>
         </div>
@@ -271,44 +266,43 @@ const Services: React.FC = () => {
 
       {/* Package 3: Optimization */}
       <section id="optimizacion" className="mb-24 scroll-mt-24">
-        <div className="flex items-center gap-2 mb-6 text-primary">
+        <div className="flex items-center gap-2 mb-6 text-accent">
           <span className="material-symbols-outlined">query_stats</span>
           <span className="text-sm font-bold tracking-widest uppercase">Crecimiento Continuo</span>
         </div>
-        <div className="bg-slate-900 text-white p-8 md:p-12 rounded-xl flex flex-col md:flex-row gap-12 items-center relative overflow-hidden group">
-          <div className="absolute inset-0 opacity-20 pointer-events-none transition-transform duration-[8s] group-hover:scale-125" style={{ backgroundImage: 'radial-gradient(circle at top right, rgba(19, 91, 236, 0.5), transparent)' }}></div>
+        <div className="bg-ink text-white p-8 md:p-12 rounded-lg flex flex-col md:flex-row gap-12 items-center relative overflow-hidden group">
           <div className="flex-1 relative z-10">
-            <h2 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Asesoría y Optimización Continua</h2>
+            <h2 className="text-3xl font-bold font-serif mb-4 group-hover:text-accent transition-colors">Asesoría y Optimización Continua</h2>
             <p className="text-lg text-white/70 mb-8 italic">"Para negocios que tratan su web como un sistema vivo que evoluciona con el mercado."</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <button
                 onClick={() => setActiveSummary(summaries.revision)}
-                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all group/card"
+                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-accent/30 transition-colors duration-200 group/card"
               >
-                <h4 className="font-bold text-primary mb-1 group-hover/card:translate-x-1 transition-transform">Revisión Mensual</h4>
+                <h4 className="font-bold text-accent mb-1">Revisión Mensual</h4>
                 <p className="text-sm text-white/60">Análisis de métricas y ajuste de tácticas según rendimiento.</p>
               </button>
               <button
                 onClick={() => setActiveSummary(summaries.prioritario)}
-                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all group/card"
+                className="text-left bg-white/5 p-4 rounded-lg border border-white/10 hover:bg-white/10 hover:border-accent/30 transition-colors duration-200 group/card"
               >
-                <h4 className="font-bold text-primary mb-1 group-hover/card:translate-x-1 transition-transform">Acceso Prioritario</h4>
+                <h4 className="font-bold text-accent mb-1">Acceso Prioritario</h4>
                 <p className="text-sm text-white/60">Disponibilidad garantizada para cambios críticos y mejoras.</p>
               </button>
             </div>
           </div>
           <div className="flex-shrink-0 relative z-10">
-            <Link to="/contacto" className="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all inline-block hover:scale-105 active:scale-95 shadow-xl">
+            <Link to="/contacto" className="bg-accent text-white font-medium py-3 px-8 rounded-md hover:bg-amber-700 transition-colors duration-200 inline-block">
               Contratar Retainer
             </Link>
           </div>
         </div>
       </section>
       {/* Internal Links */}
-      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-slate-200 dark:border-slate-800 pt-8 pb-12">
+      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-stone-200 dark:border-stone-700 pt-8 pb-12">
         <Link
           to="/services"
-          className="text-primary font-bold hover:underline flex items-center gap-1"
+          className="text-accent font-medium hover:underline flex items-center gap-1"
         >
           <span className="material-symbols-outlined text-base">translate</span>
           View in English

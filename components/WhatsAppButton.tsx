@@ -8,7 +8,7 @@ const WhatsAppButton: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
-            className="fixed bottom-6 right-6 z-50 flex items-center justify-center size-14 md:size-16 rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1ebe57] hover:scale-110 hover:shadow-xl transition-all duration-300 group"
+            className="fixed bottom-6 right-6 z-50 flex items-center justify-center size-14 md:size-16 rounded-full bg-[#25D366] text-white shadow-sm hover:bg-[#1ebe57] transition-colors duration-200 cursor-pointer"
             style={{ WebkitTapHighlightColor: 'transparent' }}
         >
             <svg

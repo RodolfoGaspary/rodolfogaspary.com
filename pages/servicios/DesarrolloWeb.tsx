@@ -70,10 +70,10 @@ const DesarrolloWeb: React.FC = () => {
     <main className="max-w-[1000px] mx-auto px-6 py-20">
       {/* Hero */}
       <section className="mb-16">
-        <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tight text-slate-900 dark:text-white mb-6">
+        <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight tracking-tight text-stone-900 dark:text-white mb-6">
           Desarrollo Web Profesional
         </h1>
-        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+        <p className="text-lg md:text-xl text-muted dark:text-stone-400 leading-relaxed max-w-2xl">
           Construyo sitios web y aplicaciones enfocadas en resultados reales. Cada proyecto
           parte de tus objetivos comerciales para crear una presencia digital que convierte
           visitantes en clientes y escala junto con tu negocio. Si buscas un desarrollador web
@@ -83,7 +83,7 @@ const DesarrolloWeb: React.FC = () => {
 
       {/* Mi Proceso */}
       <section className="mb-16">
-        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-8">Mi Proceso</h2>
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900 dark:text-white mb-8">Mi Proceso</h2>
         <div className="grid sm:grid-cols-2 gap-8">
           {[
             {
@@ -113,16 +113,16 @@ const DesarrolloWeb: React.FC = () => {
           ].map((item) => (
             <div
               key={item.step}
-              className="flex flex-col gap-4 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 group hover:shadow-lg transition-all duration-300"
+              className="flex flex-col gap-4 p-6 rounded-lg bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-700 group hover:border-stone-300 transition-colors duration-200"
             >
               <div className="flex items-center gap-4">
-                <div className="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <div className="size-12 rounded-lg border border-stone-200 dark:border-stone-700 text-accent flex items-center justify-center transition-colors duration-200">
                   <span className="material-symbols-outlined">{item.icon}</span>
                 </div>
-                <span className="text-sm font-bold text-primary uppercase tracking-widest">{item.step}</span>
+                <span className="text-sm font-bold text-accent uppercase tracking-widest">{item.step}</span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">{item.title}</h3>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-bold text-stone-900 dark:text-white">{item.title}</h3>
+              <p className="text-muted dark:text-stone-400 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -130,7 +130,7 @@ const DesarrolloWeb: React.FC = () => {
 
       {/* Lo Que Obtienes */}
       <section className="mb-16">
-        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-6">Lo Que Obtienes</h2>
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900 dark:text-white mb-6">Lo Que Obtienes</h2>
         <ul className="space-y-4">
           {[
             'Sitio web responsivo y optimizado para velocidad, accesibilidad y SEO técnico.',
@@ -141,8 +141,8 @@ const DesarrolloWeb: React.FC = () => {
             'Soporte post-lanzamiento con ajustes basados en métricas reales.',
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
-              <span className="text-slate-700 dark:text-slate-300">{item}</span>
+              <span className="material-symbols-outlined text-accent mt-0.5">check_circle</span>
+              <span className="text-stone-700 dark:text-stone-300">{item}</span>
             </li>
           ))}
         </ul>
@@ -150,8 +150,8 @@ const DesarrolloWeb: React.FC = () => {
 
       {/* Para Quien Es */}
       <section className="mb-16">
-        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-6">Para Quien Es</h2>
-        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900 dark:text-white mb-6">Para Quien Es</h2>
+        <p className="text-muted dark:text-stone-400 leading-relaxed">
           Este servicio de desarrollo web está pensado para pequeñas y medianas empresas en Lima y Perú
           que necesitan más que una página bonita: necesitan una herramienta digital que genere
           resultados. También trabajo con startups que buscan construir su primer producto web,
@@ -163,14 +163,14 @@ const DesarrolloWeb: React.FC = () => {
 
       {/* FAQ */}
       <section className="mb-16">
-        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-8">Preguntas Frecuentes</h2>
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900 dark:text-white mb-8">Preguntas Frecuentes</h2>
         <div className="flex flex-col gap-4">
-          <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
-            <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
+          <details className="group rounded-lg border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-900/60 p-6">
+            <summary className="cursor-pointer text-lg font-bold text-stone-900 dark:text-white list-none flex items-center justify-between">
               ¿Qué tecnologías utilizas?
-              <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <span className="material-symbols-outlined text-accent transition-colors duration-200 group-open:rotate-180">expand_more</span>
             </summary>
-            <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="mt-4 text-muted dark:text-stone-400 leading-relaxed">
               Trabajo con React, TypeScript, Next.js, Tailwind CSS y Node.js como tecnologías
               principales. Para e-commerce utilizo soluciones como Shopify o WooCommerce según
               las necesidades del proyecto. Siempre elijo la herramienta que mejor se adapte a
@@ -178,12 +178,12 @@ const DesarrolloWeb: React.FC = () => {
             </p>
           </details>
 
-          <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
-            <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
+          <details className="group rounded-lg border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-900/60 p-6">
+            <summary className="cursor-pointer text-lg font-bold text-stone-900 dark:text-white list-none flex items-center justify-between">
               ¿Cuánto tiempo toma un proyecto típico?
-              <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <span className="material-symbols-outlined text-accent transition-colors duration-200 group-open:rotate-180">expand_more</span>
             </summary>
-            <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="mt-4 text-muted dark:text-stone-400 leading-relaxed">
               Un sitio web corporativo o landing page suele estar listo en 3 a 4 semanas.
               Proyectos más complejos como plataformas e-commerce o aplicaciones web pueden
               tomar entre 6 y 10 semanas dependiendo del alcance. Siempre defino un
@@ -191,24 +191,24 @@ const DesarrolloWeb: React.FC = () => {
             </p>
           </details>
 
-          <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
-            <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
+          <details className="group rounded-lg border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-900/60 p-6">
+            <summary className="cursor-pointer text-lg font-bold text-stone-900 dark:text-white list-none flex items-center justify-between">
               ¿Trabajas con clientes internacionales?
-              <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <span className="material-symbols-outlined text-accent transition-colors duration-200 group-open:rotate-180">expand_more</span>
             </summary>
-            <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="mt-4 text-muted dark:text-stone-400 leading-relaxed">
               Sí. Aunque estoy basado en Lima, Perú, trabajo regularmente con empresas en
               Estados Unidos, Europa y América Latina. Me comunico en español e inglés y
               gestiono proyectos de forma remota con herramientas de colaboración modernas.
             </p>
           </details>
 
-          <details className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6">
-            <summary className="cursor-pointer text-lg font-bold text-slate-900 dark:text-white list-none flex items-center justify-between">
+          <details className="group rounded-lg border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-900/60 p-6">
+            <summary className="cursor-pointer text-lg font-bold text-stone-900 dark:text-white list-none flex items-center justify-between">
               ¿Qué sucede después del lanzamiento?
-              <span className="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+              <span className="material-symbols-outlined text-accent transition-colors duration-200 group-open:rotate-180">expand_more</span>
             </summary>
-            <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="mt-4 text-muted dark:text-stone-400 leading-relaxed">
               Después del lanzamiento ofrezco un periodo de soporte para ajustes y
               correcciones. También puedo acompañar tu proyecto a largo plazo con
               mantenimiento continuo, optimización de rendimiento y nuevas funcionalidades
@@ -219,34 +219,34 @@ const DesarrolloWeb: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="mb-16 text-center py-12 rounded-3xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
-        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4">
+      <section className="mb-16 text-center py-12 rounded-lg bg-amber-50/50 dark:bg-amber-900/5 border border-accent/20">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-stone-900 dark:text-white mb-4">
           Hablemos sobre tu proyecto
         </h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto">
+        <p className="text-muted dark:text-stone-400 mb-8 max-w-lg mx-auto">
           Cuéntame qué necesitas y te responderé con un plan claro, sin compromiso.
         </p>
         <Link
           to="/contacto"
-          className="inline-flex items-center h-14 px-10 bg-primary text-white rounded-xl text-lg font-bold hover:bg-blue-700 hover:shadow-xl transition-all hover:scale-105 active:scale-95"
+          className="inline-flex items-center h-14 px-10 bg-accent text-white rounded-md text-lg font-bold hover:bg-stone-800 hover:border-stone-300 transition-colors"
         >
           Iniciar una conversación
         </Link>
       </section>
 
       {/* Internal Links */}
-      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-slate-200 dark:border-slate-800 pt-8">
+      <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-stone-200 dark:border-stone-700 pt-8">
         <Link
           to="/servicios/estrategia-digital"
-          className="text-primary font-bold hover:underline flex items-center gap-1"
+          className="text-accent font-bold hover:underline flex items-center gap-1"
         >
           <span className="material-symbols-outlined text-base">trending_up</span>
           Estrategia Digital y SEO
         </Link>
-        <span className="hidden sm:inline text-slate-300 dark:text-slate-700">|</span>
+        <span className="hidden sm:inline text-stone-300 dark:text-stone-700">|</span>
         <Link
           to="/services/web-development"
-          className="text-primary font-bold hover:underline flex items-center gap-1"
+          className="text-accent font-bold hover:underline flex items-center gap-1"
         >
           <span className="material-symbols-outlined text-base">translate</span>
           View in English

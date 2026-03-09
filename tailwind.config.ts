@@ -11,20 +11,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#135bec',
-        'background-light': '#f6f6f8',
-        'background-dark': '#0f172a',
+        ink: '#0F172A',
+        accent: '#B45309',
+        surface: '#FFFFFF',
+        muted: '#57534E',
+        subtle: '#A8A29E',
+        'bg-warm': '#FAFAF9',
+        'bg-dark': '#0F172A',
       },
       fontFamily: {
-        display: ['Roboto', 'sans-serif'],
-        sans: ['Roboto', 'sans-serif'],
+        serif: ['Libre Bodoni', 'serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         DEFAULT: '0.25rem',
+        md: '0.375rem',
         lg: '0.5rem',
         xl: '0.75rem',
-        '2xl': '1rem',
-        '3xl': '1.5rem',
         full: '9999px',
       },
     },

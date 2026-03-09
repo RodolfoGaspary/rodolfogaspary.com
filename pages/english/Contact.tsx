@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { usePageSEO } from '../../hooks/usePageSEO';
 
 const headshotPath = "/headshot.jpg";
-const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=135bec&color=fff&size=512";
+const fallbackUrl = "https://ui-avatars.com/api/?name=Rodolfo+Gaspary&background=0F172A&color=fff&size=512";
 
 const ACCESS_KEY = "e59636fb-b225-431e-9591-b767aa7fe3b8";
 
@@ -123,14 +123,14 @@ const ContactEn: React.FC = () => {
                     <span className="material-symbols-outlined text-5xl">check_circle</span>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <h1 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white">Message received!</h1>
-                    <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-md">
+                    <h1 className="text-3xl md:text-4xl font-bold font-serif text-stone-900 dark:text-white">Message received!</h1>
+                    <p className="text-muted dark:text-stone-400 text-lg leading-relaxed max-w-md">
                         Thank you, {formData.name}. I will review your details and respond personally to your email from <strong>info@rodolfogaspary.com</strong>.
                     </p>
                 </div>
                 <button
                     onClick={() => setIsSuccess(false)}
-                    className="text-primary font-bold hover:underline"
+                    className="text-accent font-bold hover:underline"
                 >
                     Send another message
                 </button>
@@ -141,12 +141,12 @@ const ContactEn: React.FC = () => {
     return (
         <div className="w-full max-w-2xl mx-auto px-6 py-12 md:py-20 flex flex-col gap-12">
             <section className="flex flex-col gap-4 text-center">
-                <span className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-2">Contact</span>
-                <h1 className="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-tight">
-                    Let's talk about your project <span className="text-primary underline decoration-primary/20 decoration-8 underline-offset-4">strategically.</span>
+                <span className="text-accent font-bold text-xs uppercase tracking-[0.2em] mb-2">Contact</span>
+                <h1 className="text-stone-900 dark:text-white text-4xl md:text-5xl font-bold font-serif leading-tight tracking-tight">
+                    Let's talk about your project <span className="text-accent underline decoration-accent/30 decoration-8 underline-offset-4">strategically.</span>
                 </h1>
                 <div className="max-w-xl mx-auto flex flex-col gap-4">
-                    <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                    <p className="text-muted dark:text-stone-400 text-lg leading-relaxed">
                         Fill out this brief form so I can come to our first talk with a clear vision of your business.
                     </p>
                 </div>
@@ -154,8 +154,8 @@ const ContactEn: React.FC = () => {
 
             {/* Bio Card */}
             <section className="flex flex-col gap-6">
-                <div className="flex items-center gap-5 p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:shadow-md">
-                    <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-slate-100 dark:bg-slate-800 rounded-2xl shadow-md border-2 border-white dark:border-slate-700 overflow-hidden">
+                <div className="flex items-center gap-5 p-5 bg-white dark:bg-stone-900 rounded-lg border border-stone-200 dark:border-stone-700 shadow-sm transition-all hover:border-stone-300">
+                    <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 bg-stone-100 dark:bg-stone-800 rounded-lg shadow-sm border border-white dark:border-stone-700 overflow-hidden">
                         <img
                             src={headshotPath}
                             alt="Rodolfo Gaspary — Web Developer and Digital Strategy Consultant in Lima, Peru"
@@ -166,9 +166,9 @@ const ContactEn: React.FC = () => {
                         />
                     </div>
                     <div className="flex flex-col">
-                        <h3 className="text-slate-900 dark:text-white text-lg font-bold">Rodolfo Gaspary</h3>
-                        <p className="text-primary text-xs font-semibold uppercase tracking-wider">Digital Strategy Consultant</p>
-                        <div className="flex items-center gap-2 mt-1 text-slate-500 text-xs">
+                        <h3 className="text-stone-900 dark:text-white text-lg font-bold">Rodolfo Gaspary</h3>
+                        <p className="text-accent text-xs font-semibold uppercase tracking-wider">Digital Strategy Consultant</p>
+                        <div className="flex items-center gap-2 mt-1 text-muted text-xs">
                             <span className="material-symbols-outlined text-[14px]">verified</span>
                             <span>Guaranteed response in 24-48h</span>
                         </div>
@@ -177,8 +177,7 @@ const ContactEn: React.FC = () => {
             </section>
 
             {/* Main Form */}
-            <section className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-800 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
+            <section className="bg-white dark:bg-stone-900 rounded-xl p-8 md:p-12 shadow-sm border border-stone-200 dark:border-stone-700 relative overflow-hidden">
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-8 relative z-10">
                     <input
@@ -191,23 +190,23 @@ const ContactEn: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-2">
-                            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Name</label>
+                            <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">Name</label>
                             <input
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                                 placeholder="Your full name" required type="text"
                                 disabled={isSubmitting}
                             />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Email address</label>
+                            <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">Email address</label>
                             <input
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                                 placeholder="you@email.com" required type="email"
                                 disabled={isSubmitting}
                             />
@@ -216,23 +215,23 @@ const ContactEn: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-2">
-                            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Company / Project</label>
+                            <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">Company / Project</label>
                             <input
                                 name="company"
                                 value={formData.company}
                                 onChange={handleChange}
-                                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                                 placeholder="Business name" required type="text"
                                 disabled={isSubmitting}
                             />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Website <span className="text-[10px] opacity-60">(if you have one)</span></label>
+                            <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">Website <span className="text-[10px] opacity-60">(if you have one)</span></label>
                             <input
                                 name="website"
                                 value={formData.website}
                                 onChange={handleChange}
-                                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base"
+                                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base"
                                 placeholder="https://..." type="url"
                                 disabled={isSubmitting}
                             />
@@ -240,13 +239,13 @@ const ContactEn: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">What is your current situation?</label>
+                        <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">What is your current situation?</label>
                         <div className="relative">
                             <select
                                 name="situation"
                                 value={formData.situation}
                                 onChange={handleChange}
-                                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none bg-none shadow-none"
+                                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base appearance-none bg-none shadow-none"
                                 required
                                 disabled={isSubmitting}
                             >
@@ -255,17 +254,17 @@ const ContactEn: React.FC = () => {
                                 <option value="improve">I want to optimize an existing site</option>
                                 <option value="consultancy">I'm looking for pure strategic consulting</option>
                             </select>
-                            <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">expand_more</span>
+                            <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-subtle">expand_more</span>
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">What challenge do you want to overcome?</label>
+                        <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">What challenge do you want to overcome?</label>
                         <textarea
                             name="challenge"
                             value={formData.challenge}
                             onChange={handleChange}
-                            className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base min-h-[100px]"
+                            className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base min-h-[100px]"
                             placeholder="e.g.: My web doesn't generate leads, the message is not clear..." required
                             disabled={isSubmitting}
                         ></textarea>
@@ -273,12 +272,12 @@ const ContactEn: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-2">
-                            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Investment range</label>
+                            <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">Investment range</label>
                             <select
                                 name="investment"
                                 value={formData.investment}
                                 onChange={handleChange}
-                                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none"
+                                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base appearance-none"
                                 required
                                 disabled={isSubmitting}
                             >
@@ -289,12 +288,12 @@ const ContactEn: React.FC = () => {
                             </select>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="text-slate-700 dark:text-slate-300 text-xs font-bold uppercase tracking-widest">Urgency</label>
+                            <label className="text-stone-700 dark:text-stone-300 text-xs font-semibold uppercase tracking-widest">Urgency</label>
                             <select
                                 name="timeframe"
                                 value={formData.timeframe}
                                 onChange={handleChange}
-                                className="w-full rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3.5 text-base appearance-none"
+                                className="w-full rounded-lg border-stone-200 dark:border-stone-700 dark:bg-stone-800 focus:ring-accent focus:border-accent px-4 py-3.5 text-base appearance-none"
                                 required
                                 disabled={isSubmitting}
                             >
@@ -308,7 +307,7 @@ const ContactEn: React.FC = () => {
 
                     <div className="pt-4 flex flex-col gap-6">
                         <button
-                            className={`w-full flex items-center justify-center rounded-2xl h-16 text-white text-lg font-bold transition-all gap-3 shadow-lg ${isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-primary hover:bg-blue-700 active:scale-[0.98] cursor-pointer shadow-primary/20'}`}
+                            className={`w-full flex items-center justify-center rounded-md h-12 text-white text-base font-medium transition-all gap-3 ${isSubmitting ? 'bg-stone-400 cursor-not-allowed' : 'bg-ink hover:bg-stone-800 cursor-pointer'}`}
                             type="submit"
                             disabled={isSubmitting}
                         >
@@ -317,7 +316,7 @@ const ContactEn: React.FC = () => {
                             {isSubmitting && <div className="size-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>}
                         </button>
 
-                        <div className="flex items-center justify-center gap-2 text-slate-400 dark:text-slate-500 text-xs">
+                        <div className="flex items-center justify-center gap-2 text-subtle dark:text-stone-500 text-xs">
                             <span className="material-symbols-outlined text-sm">lock</span>
                             <span>Encrypted form and protected against spam</span>
                         </div>
@@ -326,10 +325,10 @@ const ContactEn: React.FC = () => {
             </section>
 
             {/* Internal Links */}
-            <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-slate-200 dark:border-slate-800 pt-8 pb-12">
+            <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm border-t border-stone-200 dark:border-stone-700 pt-8 pb-12">
                 <Link
                     to="/contacto"
-                    className="text-primary font-bold hover:underline flex items-center gap-1"
+                    className="text-accent font-bold hover:underline flex items-center gap-1"
                 >
                     <span className="material-symbols-outlined text-base">translate</span>
                     Ver en Español
