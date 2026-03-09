@@ -53,6 +53,17 @@ const EstrategiaDigital: React.FC = () => {
       },
       {
         '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': 'Estrategia Digital y SEO en Lima, Perú',
+        'url': 'https://www.rodolfogaspary.com/servicios/estrategia-digital',
+        'inLanguage': 'es',
+        'speakable': {
+          '@type': 'SpeakableSpecification',
+          'cssSelector': ['h1', 'h2', '.text-accent']
+        }
+      },
+      {
+        '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
         'name': 'Estrategia Digital y SEO',
         'image': 'https://www.rodolfogaspary.com/headshot.jpg',

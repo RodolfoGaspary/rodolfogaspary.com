@@ -51,6 +51,17 @@ const DesarrolloWeb: React.FC = () => {
       },
       {
         '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': 'Desarrollo Web en Lima, Perú',
+        'url': 'https://www.rodolfogaspary.com/servicios/desarrollo-web',
+        'inLanguage': 'es',
+        'speakable': {
+          '@type': 'SpeakableSpecification',
+          'cssSelector': ['h1', 'h2', '.text-accent']
+        }
+      },
+      {
+        '@context': 'https://schema.org',
         '@type': 'Service',
         'name': 'Desarrollo Web',
         serviceType: 'Web Development',

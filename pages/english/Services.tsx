@@ -38,22 +38,49 @@ const ServicesEn: React.FC = () => {
             },
             {
                 '@context': 'https://schema.org',
+                '@type': 'WebPage',
+                'name': 'Services — Web Development & Digital Strategy',
+                'url': 'https://www.rodolfogaspary.com/services',
+                'inLanguage': 'en',
+                'speakable': {
+                    '@type': 'SpeakableSpecification',
+                    'cssSelector': ['h1', 'h2', '.text-accent']
+                }
+            },
+            {
+                '@context': 'https://schema.org',
                 '@type': 'FAQPage',
                 'mainEntity': [
                     {
                         '@type': 'Question',
-                        'name': 'What does your Web Development service include?',
+                        'name': 'What does the Web Development service include?',
                         'acceptedAnswer': {
                             '@type': 'Answer',
-                            'text': 'It includes information architecture, result-oriented design, optimized technical development, and strategic integration with marketing tools.'
+                            'text': 'It includes conversion-focused information architecture, clean interface design without unnecessary distractions, technical development with code optimized for speed and maintainability, and strategic integration with your marketing and sales tools.'
                         }
                     },
                     {
                         '@type': 'Question',
-                        'name': 'How does the Ongoing Consulting & Optimization work?',
+                        'name': 'How does Ongoing Advisory & Optimization work?',
                         'acceptedAnswer': {
                             '@type': 'Answer',
-                            'text': 'It is a monthly retainer service where we review metrics, perform tactical adjustments, and guarantee priority access for critical improvements.'
+                            'text': 'It is a monthly retainer service where we review key performance metrics, make tactical adjustments based on real data, and guarantee priority access for critical improvements and growth opportunities.'
+                        }
+                    },
+                    {
+                        '@type': 'Question',
+                        'name': 'What does the Digital Strategy & SEO service include?',
+                        'acceptedAnswer': {
+                            '@type': 'Answer',
+                            'text': 'The service includes a complete technical SEO audit, competitor analysis, content strategy, conversion rate optimization (CRO), and customized digital growth roadmaps tailored to your business.'
+                        }
+                    },
+                    {
+                        '@type': 'Question',
+                        'name': 'How long does it take to see results?',
+                        'acceptedAnswer': {
+                            '@type': 'Answer',
+                            'text': 'Web development projects are delivered in weeks, not months. For SEO, initial results typically appear within 3-6 months, with progressive improvements as domain authority builds and content is continuously optimized.'
                         }
                     }
                 ]

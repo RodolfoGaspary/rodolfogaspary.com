@@ -42,6 +42,17 @@ const ContactEn: React.FC = () => {
             },
             {
                 '@context': 'https://schema.org',
+                '@type': 'WebPage',
+                'name': 'Contact — Rodolfo Gaspary',
+                'url': 'https://www.rodolfogaspary.com/contact',
+                'inLanguage': 'en',
+                'speakable': {
+                    '@type': 'SpeakableSpecification',
+                    'cssSelector': ['h1', 'h2']
+                }
+            },
+            {
+                '@context': 'https://schema.org',
                 '@type': 'ContactPage',
                 name: 'Contact — Rodolfo Gaspary',
                 url: 'https://www.rodolfogaspary.com/contact',

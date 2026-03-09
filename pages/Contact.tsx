@@ -25,6 +25,7 @@ const Contact: React.FC = () => {
     lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/contacto' },
+      { lang: 'en', href: 'https://www.rodolfogaspary.com/contact' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/contacto' },
     ],
     jsonLd: [
@@ -45,6 +46,17 @@ const Contact: React.FC = () => {
             'item': 'https://www.rodolfogaspary.com/contacto'
           }
         ]
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': 'Contacto — Rodolfo Gaspary',
+        'url': 'https://www.rodolfogaspary.com/contacto',
+        'inLanguage': 'es',
+        'speakable': {
+          '@type': 'SpeakableSpecification',
+          'cssSelector': ['h1', 'h2']
+        }
       },
       {
         '@context': 'https://schema.org',

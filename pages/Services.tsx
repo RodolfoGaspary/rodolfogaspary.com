@@ -15,6 +15,7 @@ const Services: React.FC = () => {
     lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios' },
+      { lang: 'en', href: 'https://www.rodolfogaspary.com/services' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/servicios' },
     ],
     jsonLd: [
@@ -38,6 +39,17 @@ const Services: React.FC = () => {
       },
       {
         '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': 'Servicios — Desarrollo Web y Estrategia Digital',
+        'url': 'https://www.rodolfogaspary.com/servicios',
+        'inLanguage': 'es',
+        'speakable': {
+          '@type': 'SpeakableSpecification',
+          'cssSelector': ['h1', 'h2', '.text-accent']
+        }
+      },
+      {
+        '@context': 'https://schema.org',
         '@type': 'FAQPage',
         'mainEntity': [
           {
@@ -45,7 +57,7 @@ const Services: React.FC = () => {
             'name': '¿Qué incluye tu servicio de Desarrollo Web?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Incluye arquitectura de información, diseño orientado a resultados, desarrollo técnico optimizado e integración estratégica con herramientas de marketing.'
+              'text': 'Incluye arquitectura de información orientada a conversión, diseño de interfaz sin distracciones innecesarias, desarrollo técnico con código optimizado para velocidad y mantenibilidad, e integración estratégica con herramientas de marketing y ventas.'
             }
           },
           {
@@ -53,7 +65,23 @@ const Services: React.FC = () => {
             'name': '¿Cómo funciona la Asesoría y Optimización Continua?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Es un servicio mensual (retainer) donde revisamos métricas, realizamos ajustes tácticos y garantizamos acceso prioritario para mejoras críticas.'
+              'text': 'Es un servicio mensual (retainer) donde revisamos métricas clave de rendimiento, realizamos ajustes tácticos basados en datos reales, y garantizamos acceso prioritario para mejoras críticas y oportunidades de crecimiento.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Qué incluye el servicio de Estrategia Digital y SEO?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'El servicio incluye auditoría SEO técnica completa, análisis de competidores, estrategia de contenidos, optimización de conversión (CRO), y hojas de ruta de crecimiento digital personalizadas para tu negocio.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Cuánto tiempo toma ver resultados?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Los proyectos de desarrollo web se entregan en semanas, no meses. Para SEO, los resultados iniciales suelen verse entre 3-6 meses, con mejoras progresivas a medida que se consolida la autoridad del dominio y se optimiza el contenido continuamente.'
             }
           }
         ]

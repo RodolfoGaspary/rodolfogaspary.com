@@ -32,14 +32,26 @@ const HomeEn: React.FC = () => {
       },
       {
         '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': 'Rodolfo Gaspary — Web Development & Digital Strategy | Lima, Peru',
+        'description': 'Web development and digital strategy in Lima: websites, e-commerce, SEO, and consulting for businesses in Peru and globally.',
+        'url': 'https://www.rodolfogaspary.com/en',
+        'inLanguage': 'en',
+        'speakable': {
+          '@type': 'SpeakableSpecification',
+          'cssSelector': ['h1', '.text-accent', 'h2']
+        }
+      },
+      {
+        '@context': 'https://schema.org',
         '@type': 'FAQPage',
         'mainEntity': [
           {
             '@type': 'Question',
-            'name': 'What is Rodolfo Gaspary’s approach to web development?',
+            'name': 'What is Rodolfo Gaspary\u0027s approach to web development?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'My approach is strategic and results-oriented. I don’t just build websites; I create growth tools designed to convert visitors into customers.'
+              'text': 'My approach is strategic and results-oriented. Every project is built on three pillars: business needs, user actions, and defined success metrics. With over 7 years of technical experience, I don\u0027t just build websites\u2014I create growth tools designed to convert visitors into customers.'
             }
           },
           {
@@ -47,7 +59,23 @@ const HomeEn: React.FC = () => {
             'name': 'Do you offer SEO services in Lima?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Yes, I offer SEO and digital strategy consulting in Lima to help businesses improve their organic visibility and online authority.'
+              'text': 'Yes, I offer SEO and digital strategy consulting in Lima. This includes technical SEO audits, content optimization, keyword strategy, and organic visibility monitoring to help businesses improve their search engine rankings.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'What makes your web consultancy different from a traditional agency?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Unlike agencies, I work directly with business owners without intermediaries. This ensures direct communication, technical sovereignty (you own the code), and a clear focus on ROI. Every technical decision is aligned with the business\u0027s KPIs and revenue goals.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': 'Do you work with businesses outside Peru?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Yes, I work with clients both in Peru and internationally. My site is bilingual (Spanish and English) and my consulting process adapts to businesses from any location that need results-oriented digital strategy and web development.'
             }
           }
         ]

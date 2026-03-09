@@ -54,6 +54,16 @@ const WebDevelopment: React.FC = () => {
  ]
  },
  {
+ '@type': 'WebPage',
+ 'name': 'Web Development Services in Lima, Peru',
+ 'url': 'https://www.rodolfogaspary.com/services/web-development',
+ 'inLanguage': 'en',
+ 'speakable': {
+ '@type': 'SpeakableSpecification',
+ 'cssSelector': ['h1', 'h2', '.text-accent']
+ }
+ },
+ {
  '@type': 'Service',
  name: 'Web Development',
  serviceType: 'Web Development',

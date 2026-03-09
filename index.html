@@ -48,54 +48,98 @@
     <link rel="apple-touch-icon" href="/favicon.png">
     <link rel="stylesheet" href="/index.css">
 
-    <!-- Core structured data (ProfessionalService) -->
+    <!-- Core structured data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Rodolfo Gaspary",
-        "url": "https://www.rodolfogaspary.com/",
-        "logo": "https://www.rodolfogaspary.com/favicon.png",
-        "image": "https://www.rodolfogaspary.com/headshot.jpg",
-        "email": "info@rodolfogaspary.com",
-        "priceRange": "$$",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lima",
-            "addressRegion": "Lima",
-            "addressCountry": "PE"
-        },
-        "areaServed": ["PE", "Global"],
-        "sameAs": [
-            "https://www.linkedin.com/in/rodolfo-gaspary"
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Web Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Web Development",
-                        "description": "High-performance websites and e-commerce solutions."
-                    }
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://www.rodolfogaspary.com/#website",
+                "name": "Rodolfo Gaspary",
+                "alternateName": "Rodolfo Gaspary — Web Development & Digital Strategy",
+                "url": "https://www.rodolfogaspary.com/",
+                "inLanguage": ["es", "en"],
+                "publisher": { "@id": "https://www.rodolfogaspary.com/#person" }
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.rodolfogaspary.com/#person",
+                "name": "Rodolfo Gaspary",
+                "url": "https://www.rodolfogaspary.com/",
+                "image": "https://www.rodolfogaspary.com/headshot.jpg",
+                "email": "info@rodolfogaspary.com",
+                "jobTitle": "Web Consultant & Developer",
+                "knowsAbout": ["Web Development", "Digital Strategy", "SEO", "E-commerce", "Conversion Optimization"],
+                "knowsLanguage": ["es", "en"],
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Lima",
+                    "addressRegion": "Lima",
+                    "addressCountry": "PE"
                 },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Digital Strategy & SEO",
-                        "description": "Growth roadmaps, SEO audits and conversion optimization."
-                    }
+                "sameAs": [
+                    "https://www.linkedin.com/in/rodolfo-gaspary"
+                ]
+            },
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://www.rodolfogaspary.com/#business",
+                "name": "Rodolfo Gaspary",
+                "url": "https://www.rodolfogaspary.com/",
+                "logo": "https://www.rodolfogaspary.com/favicon.png",
+                "image": "https://www.rodolfogaspary.com/headshot.jpg",
+                "email": "info@rodolfogaspary.com",
+                "telephone": "+51913727533",
+                "priceRange": "$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Lima",
+                    "addressRegion": "Lima",
+                    "addressCountry": "PE"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -12.046374,
+                    "longitude": -77.042793
+                },
+                "areaServed": [
+                    { "@type": "Country", "name": "Peru" },
+                    { "@type": "Place", "name": "Global" }
+                ],
+                "founder": { "@id": "https://www.rodolfogaspary.com/#person" },
+                "sameAs": [
+                    "https://www.linkedin.com/in/rodolfo-gaspary"
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Web Services",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Web Development",
+                                "description": "High-performance websites and e-commerce solutions optimized for conversion and growth."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Digital Strategy & SEO",
+                                "description": "Growth roadmaps, SEO audits, and conversion optimization for businesses in Peru and globally."
+                            }
+                        }
+                    ]
                 }
-            ]
-        }
+            }
+        ]
     }
     </script>
     <!-- Hreflang: Spanish (primary), English, and default -->
     <link rel="alternate" href="https://www.rodolfogaspary.com/" hreflang="es" />
-    <link rel="alternate" href="https://www.rodolfogaspary.com/services/web-development" hreflang="en" />
+    <link rel="alternate" href="https://www.rodolfogaspary.com/en" hreflang="en" />
     <link rel="alternate" href="https://www.rodolfogaspary.com/" hreflang="x-default" />
 </head>
 

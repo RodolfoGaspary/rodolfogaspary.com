@@ -52,6 +52,16 @@ const DigitalStrategy: React.FC = () => {
  ]
  },
  {
+ '@type': 'WebPage',
+ 'name': 'Digital Strategy & SEO Services in Lima, Peru',
+ 'url': 'https://www.rodolfogaspary.com/services/digital-strategy',
+ 'inLanguage': 'en',
+ 'speakable': {
+ '@type': 'SpeakableSpecification',
+ 'cssSelector': ['h1', 'h2', '.text-accent']
+ }
+ },
+ {
  '@type': 'ProfessionalService',
  'name': 'Digital Strategy & SEO',
  'image': 'https://www.rodolfogaspary.com/headshot.jpg',

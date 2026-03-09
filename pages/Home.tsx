@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/' },
-      { lang: 'en', href: 'https://www.rodolfogaspary.com/services/web-development' },
+      { lang: 'en', href: 'https://www.rodolfogaspary.com/en' },
       { lang: 'x-default', href: 'https://www.rodolfogaspary.com/' },
     ],
     jsonLd: [
@@ -35,6 +35,18 @@ const Home: React.FC = () => {
       },
       {
         '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': 'Rodolfo Gaspary — Desarrollo Web y Estrategia Digital | Lima, Peru',
+        'description': 'Desarrollo web en Lima y estrategia digital: sitios web, e-commerce, SEO y consultoría para empresas en Perú y globalmente.',
+        'url': 'https://www.rodolfogaspary.com/',
+        'inLanguage': 'es',
+        'speakable': {
+          '@type': 'SpeakableSpecification',
+          'cssSelector': ['h1', '.text-accent', 'h2']
+        }
+      },
+      {
+        '@context': 'https://schema.org',
         '@type': 'FAQPage',
         'mainEntity': [
           {
@@ -42,7 +54,7 @@ const Home: React.FC = () => {
             'name': '¿Cuál es el enfoque de Rodolfo Gaspary en el desarrollo web?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Mi enfoque es estratégico y orientado a resultados. No solo construyo sitios web, sino herramientas de crecimiento que convierten visitantes en clientes.'
+              'text': 'Mi enfoque es estratégico y orientado a resultados. Cada proyecto se basa en tres pilares: necesidades del negocio, acciones del usuario y métricas de éxito definidas. Con más de 7 años de experiencia técnica, no solo construyo sitios web, sino herramientas de crecimiento que convierten visitantes en clientes.'
             }
           },
           {
@@ -50,7 +62,23 @@ const Home: React.FC = () => {
             'name': '¿Ofreces servicios de SEO en Lima?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Sí, ofrezco consultoría de SEO y estrategia digital en Lima para ayudar a los negocios a mejorar su visibilidad orgánica y autoridad en línea.'
+              'text': 'Sí, ofrezco consultoría de SEO y estrategia digital en Lima. Esto incluye auditorías SEO técnicas, optimización de contenido, estrategia de palabras clave y monitoreo de métricas de visibilidad orgánica para ayudar a los negocios a mejorar su posicionamiento en buscadores.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Qué diferencia tu consultoría web de una agencia tradicional?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'A diferencia de las agencias, trabajo directamente con los dueños de negocio sin intermediarios. Esto garantiza comunicación directa, soberanía técnica (el código es tuyo) y un enfoque claro en ROI. Cada decisión técnica está alineada con los KPIs y metas de facturación del negocio.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Trabajas con empresas fuera de Perú?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Sí, trabajo con clientes tanto en Perú como a nivel internacional. Mi sitio es bilingüe (español e inglés) y mi proceso de consultoría se adapta a empresas de cualquier ubicación que necesiten estrategia digital y desarrollo web orientado a resultados.'
             }
           }
         ]

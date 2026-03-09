@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface HreflangEntry {
   lang: string;
@@ -37,7 +37,15 @@ function setMetaTag(property: string, content: string, isProperty = false) {
 }
 
 export function usePageSEO(config: PageSEOConfig) {
+  // Serialize objects for stable dependency comparison — prevents the effect
+  // from re-running on every render (which closes native <select> dropdowns).
+  const jsonLdStr = JSON.stringify(config.jsonLd ?? null);
+  const hreflangStr = JSON.stringify(config.hreflang ?? null);
+  const configRef = useRef(config);
+  configRef.current = config;
+
   useEffect(() => {
+    const config = configRef.current;
     const prevTitle = document.title;
     const prevLang = document.documentElement.lang;
 
@@ -119,5 +127,5 @@ export function usePageSEO(config: PageSEOConfig) {
       addedLinks.forEach(link => link.remove());
       document.querySelectorAll('script[data-dynamic-jsonld]').forEach(el => el.remove());
     };
-  }, [config.title, config.description, config.canonical, config.jsonLd, config.lang]);
+  }, [config.title, config.description, config.canonical, jsonLdStr, hreflangStr, config.lang]);
 }
