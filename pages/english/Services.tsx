@@ -7,7 +7,7 @@ const ServicesEn: React.FC = () => {
     const [activeSummary, setActiveSummary] = useState<{ title: string; content: string } | null>(null);
 
     usePageSEO({
-        title: 'Services — Web Development & Digital Strategy | Rodolfo Gaspary',
+        title: 'Services — Web Development & Digital Strategy SEO/GEO | Rodolfo Gaspary',
         description: 'Strategic web development services, SEO audits, conversion optimization, and ongoing digital consulting for businesses in Lima, Peru and globally.',
         keywords: 'web services lima, web development peru, SEO audit, conversion optimization, digital consultancy',
         canonical: '/services',
@@ -39,7 +39,7 @@ const ServicesEn: React.FC = () => {
             {
                 '@context': 'https://schema.org',
                 '@type': 'WebPage',
-                'name': 'Services — Web Development & Digital Strategy',
+                'name': 'Services — Web Development & Digital Strategy SEO/GEO',
                 'url': 'https://www.rodolfogaspary.com/services',
                 'inLanguage': 'en',
                 'speakable': {
@@ -69,7 +69,7 @@ const ServicesEn: React.FC = () => {
                     },
                     {
                         '@type': 'Question',
-                        'name': 'What does the Digital Strategy & SEO service include?',
+                        'name': 'What does the Digital Strategy & SEO/GEO service include?',
                         'acceptedAnswer': {
                             '@type': 'Answer',
                             'text': 'The service includes a complete technical SEO audit, competitor analysis, content strategy, conversion rate optimization (CRO), and customized digital growth roadmaps tailored to your business.'
@@ -176,7 +176,7 @@ const ServicesEn: React.FC = () => {
                             <span className="material-symbols-outlined">trending_up</span>
                         </div>
                         <div>
-                            <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Digital Strategy & SEO</h3>
+                            <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Digital Strategy & SEO/GEO</h3>
                             <p className="text-sm text-muted dark:text-stone-400">Positioning, conversion, and organic growth.</p>
                         </div>
                         <span className="material-symbols-outlined text-stone-300 dark:text-stone-400 ml-auto transition-colors">arrow_forward</span>

@@ -15,9 +15,9 @@ const DigitalStrategy: React.FC = () => {
  }, [location]);
 
  usePageSEO({
- title: 'Digital Strategy & SEO Services in Lima, Peru | Rodolfo Gaspary',
- description: 'Data-driven digital strategy and SEO consulting in Lima, Peru. SEO audits, conversion optimization, content strategy, and growth roadmaps for businesses locally and internationally.',
- keywords: 'digital strategy Lima, SEO consultant Peru, SEO audit Lima, conversion optimization, digital marketing consultant Lima',
+ title: 'Digital Strategy, SEO & GEO Services in Lima, Peru | Rodolfo Gaspary',
+ description: 'Data-driven digital strategy, SEO, and GEO consulting in Lima, Peru. Optimize for Google, Bing, ChatGPT, Perplexity, and AI search engines. Audits, content strategy, and growth roadmaps.',
+ keywords: 'digital strategy Lima, SEO consultant Peru, SEO audit Lima, conversion optimization, GEO, generative engine optimization, AI search optimization, ChatGPT ranking, Perplexity optimization',
  canonical: '/services/digital-strategy',
  lang: 'en',
  hreflang: [
@@ -46,14 +46,14 @@ const DigitalStrategy: React.FC = () => {
  {
  '@type': 'ListItem',
  'position': 3,
- 'name': 'Digital Strategy',
+ 'name': 'Digital Strategy & SEO/GEO',
  'item': 'https://www.rodolfogaspary.com/services/digital-strategy'
  }
  ]
  },
  {
  '@type': 'WebPage',
- 'name': 'Digital Strategy & SEO Services in Lima, Peru',
+ 'name': 'Digital Strategy, SEO & GEO Services in Lima, Peru',
  'url': 'https://www.rodolfogaspary.com/services/digital-strategy',
  'inLanguage': 'en',
  'speakable': {
@@ -63,7 +63,7 @@ const DigitalStrategy: React.FC = () => {
  },
  {
  '@type': 'ProfessionalService',
- 'name': 'Digital Strategy & SEO',
+ 'name': 'Digital Strategy, SEO & GEO',
  'image': 'https://www.rodolfogaspary.com/headshot.jpg',
  'url': 'https://www.rodolfogaspary.com/services/digital-strategy',
  'address': {
@@ -71,7 +71,7 @@ const DigitalStrategy: React.FC = () => {
  'addressLocality': 'Lima',
  'addressCountry': 'PE'
  },
- 'description': 'Data-driven digital strategy and SEO consulting in Lima, Peru. SEO audits, conversion optimization, and growth roadmaps.'
+ 'description': 'Data-driven digital strategy, SEO, and GEO consulting in Lima, Peru. Optimize for search engines and AI platforms like ChatGPT, Perplexity, and Google AI Overview.'
  },
  {
  '@type': 'FAQPage',
@@ -91,6 +91,22 @@ const DigitalStrategy: React.FC = () => {
  '@type': 'Answer',
  'text': 'I use KPIs like organic traffic growth, keyword ranking improvements, and conversion rate changes.'
  }
+ },
+ {
+ '@type': 'Question',
+ 'name': 'What is GEO and how is it different from SEO?',
+ 'acceptedAnswer': {
+ '@type': 'Answer',
+ 'text': 'GEO (Generative Engine Optimization) focuses on getting your content cited by AI search engines like ChatGPT, Perplexity, and Google AI Overview. While SEO ranks your pages in traditional search results, GEO ensures AI platforms choose your site as a trusted source. Both work together for maximum visibility.'
+ }
+ },
+ {
+ '@type': 'Question',
+ 'name': 'Which AI search engines do you optimize for?',
+ 'acceptedAnswer': {
+ '@type': 'Answer',
+ 'text': 'I optimize for ChatGPT, Perplexity, Google AI Overview, Microsoft Copilot, and Claude. Each platform has different ranking factors — I optimize your content, structured data, and technical setup for all of them.'
+ }
  }
  ]
  }
@@ -103,14 +119,14 @@ const DigitalStrategy: React.FC = () => {
  {/* Hero */}
  <section className="mb-16 text-center">
  <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-accent text-xs font-bold uppercase tracking-widest mb-6">
- Digital Strategy & SEO
+ Digital Strategy, SEO & GEO
  </div>
  <h1 className="text-4xl md:text-5xl font-bold font-serif leading-tight tracking-tight text-stone-900 dark:text-white mb-6">
- Digital Strategy & SEO Services
+ Digital Strategy, SEO & GEO Services
  </h1>
  <p className="text-lg md:text-xl text-muted dark:text-stone-400 font-medium leading-relaxed max-w-2xl mx-auto">
- Data-driven digital strategy and search engine optimization designed to generate measurable growth.
- I help businesses in Lima, Peru and around the world turn their online presence into a reliable engine for leads and revenue.
+ Data-driven digital strategy, SEO, and generative engine optimization designed to generate measurable growth.
+ I help businesses in Lima, Peru and around the world get found — in search results and AI-generated answers.
  </p>
  </section>
 
@@ -141,6 +157,11 @@ const DigitalStrategy: React.FC = () => {
  title: 'Monthly Reporting & Growth Roadmaps',
  desc: 'Transparent monthly reports with actionable insights. You get a clear picture of what is working, what needs attention, and the strategic next steps.',
  },
+ {
+ icon: 'smart_toy',
+ title: 'GEO: AI Search Visibility',
+ desc: 'Optimize your content to be cited by AI search engines — ChatGPT, Perplexity, Google AI Overview, Copilot, and Claude. I implement structured data, FAQ schemas, authoritative citations, and content structuring so AI platforms choose your site as a trusted source.',
+ },
  ].map((item, i) => (
  <div
  key={i}
@@ -170,22 +191,22 @@ const DigitalStrategy: React.FC = () => {
  {
  step: '01',
  title: 'Audit',
- desc: 'I start with a thorough review of your current digital presence, analytics data, competitive landscape, and technical health.',
+ desc: 'I start with a thorough review of your current digital presence, analytics data, competitive landscape, technical health, and AI search engine readiness.',
  },
  {
  step: '02',
  title: 'Strategy',
- desc: 'Based on the audit findings, I build a prioritized roadmap with clear milestones, target keywords, and conversion goals.',
+ desc: 'Based on the audit findings, I build a prioritized roadmap with clear milestones, target keywords, conversion goals, and GEO tactics for AI citation.',
  },
  {
  step: '03',
  title: 'Execution',
- desc: 'Technical fixes, content creation, on-page optimization, and link-building tactics are implemented according to the roadmap.',
+ desc: 'Technical fixes, content creation, on-page optimization, structured data, and link-building tactics are implemented according to the roadmap.',
  },
  {
  step: '04',
  title: 'Measure & Iterate',
- desc: 'I track performance against KPIs, report results monthly, and continuously refine the strategy based on real data.',
+ desc: 'I track performance across search and AI platforms, report results monthly, and continuously refine the strategy based on real data.',
  },
  ].map((item, i) => (
  <div key={i} className="relative group">
@@ -220,6 +241,7 @@ const DigitalStrategy: React.FC = () => {
  'E-commerce brands that want to improve organic traffic and conversion rates.',
  'Companies expanding internationally that need a multilingual SEO strategy.',
  'Teams with an existing marketing department looking for specialized SEO consulting support.',
+ 'Businesses that want to appear in AI-generated answers on ChatGPT, Perplexity, and Google AI Overview — not just traditional search results.',
  ].map((item, i) => (
  <li key={i} className="flex items-start gap-3 group">
  <span className="material-symbols-outlined text-accent mt-0.5 transition-transform">
@@ -255,6 +277,14 @@ const DigitalStrategy: React.FC = () => {
  {
  q: 'Can you work with my existing marketing team?',
  a: 'Absolutely. I frequently collaborate with in-house marketing teams and external agencies. I can serve as a specialized SEO consultant who complements your existing efforts, providing audits, strategic direction, and technical guidance your team can execute on.',
+ },
+ {
+ q: 'What is GEO and how is it different from SEO?',
+ a: 'GEO (Generative Engine Optimization) focuses on getting your content cited by AI search engines like ChatGPT, Perplexity, and Google AI Overview. While SEO ranks your pages in traditional search results, GEO ensures AI platforms choose your site as a trusted source when generating answers. Both strategies work together for maximum visibility.',
+ },
+ {
+ q: 'Which AI search engines do you optimize for?',
+ a: 'I optimize for ChatGPT, Perplexity, Google AI Overview, Microsoft Copilot, and Claude. Each platform has different ranking factors — from structured data and FAQ schemas to authoritative citations and content structure. I tailor your technical setup and content strategy for all of them.',
  },
  ].map((item, i) => (
  <details

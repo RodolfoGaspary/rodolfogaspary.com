@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
     servicesTitle: isEnglish ? 'Services' : 'Servicios',
     webDevLabel: isEnglish ? 'Web Development' : 'Desarrollo Web',
     webDevLink: isEnglish ? '/services/web-development' : '/servicios/desarrollo-web',
-    digitalStrategyLabel: isEnglish ? 'Digital Strategy & SEO' : 'Estrategia Digital y SEO',
+    digitalStrategyLabel: isEnglish ? 'Digital Strategy & SEO/GEO' : 'Estrategia Digital y SEO/GEO',
     digitalStrategyLink: isEnglish ? '/services/digital-strategy' : '/servicios/estrategia-digital',
     allServicesLabel: isEnglish ? 'All Services' : 'Todos los Servicios',
     allServicesLink: isEnglish ? '/services' : '/servicios',

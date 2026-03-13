@@ -15,11 +15,11 @@ const EstrategiaDigital: React.FC = () => {
   }, [location]);
 
   usePageSEO({
-    title: 'Estrategia Digital y SEO en Lima, Perú | Rodolfo Gaspary',
+    title: 'Estrategia Digital, SEO y GEO en Lima, Perú | Rodolfo Gaspary',
     description:
-      'Consultoría estratégica digital y SEO en Lima, Perú. Auditorías SEO, optimización de conversión, estrategia de contenidos y hojas de ruta de crecimiento para negocios locales e internacionales.',
+      'Consultoría de estrategia digital, SEO y GEO en Lima, Perú. Optimiza para Google, Bing, ChatGPT, Perplexity y motores de búsqueda IA. Auditorías, estrategia de contenidos y hojas de ruta.',
     keywords:
-      'estrategia digital Lima, consultor SEO Perú, auditoría SEO Lima, optimización de conversión, marketing digital Lima',
+      'estrategia digital Lima, consultor SEO Perú, auditoría SEO Lima, optimización de conversión, GEO, optimización para motores generativos, optimización búsqueda IA, ChatGPT ranking',
     lang: 'es',
     hreflang: [
       { lang: 'es', href: 'https://www.rodolfogaspary.com/servicios/estrategia-digital' },
@@ -46,7 +46,7 @@ const EstrategiaDigital: React.FC = () => {
           {
             '@type': 'ListItem',
             'position': 3,
-            'name': 'Estrategia Digital',
+            'name': 'Estrategia Digital y SEO/GEO',
             'item': 'https://www.rodolfogaspary.com/servicios/estrategia-digital'
           }
         ]
@@ -54,7 +54,7 @@ const EstrategiaDigital: React.FC = () => {
       {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        'name': 'Estrategia Digital y SEO en Lima, Perú',
+        'name': 'Estrategia Digital, SEO y GEO en Lima, Perú',
         'url': 'https://www.rodolfogaspary.com/servicios/estrategia-digital',
         'inLanguage': 'es',
         'speakable': {
@@ -65,7 +65,7 @@ const EstrategiaDigital: React.FC = () => {
       {
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
-        'name': 'Estrategia Digital y SEO',
+        'name': 'Estrategia Digital, SEO y GEO',
         'image': 'https://www.rodolfogaspary.com/headshot.jpg',
         'url': 'https://www.rodolfogaspary.com/servicios/estrategia-digital',
         'address': {
@@ -73,7 +73,7 @@ const EstrategiaDigital: React.FC = () => {
           'addressLocality': 'Lima',
           'addressCountry': 'PE'
         },
-        'description': 'Consultoría estratégica digital y SEO en Lima, Perú. Auditorías SEO, optimización de conversión y estrategia de contenidos.'
+        'description': 'Consultoría de estrategia digital, SEO y GEO en Lima, Perú. Optimización para buscadores tradicionales y plataformas de IA como ChatGPT, Perplexity y Google AI Overview.'
       },
       {
         '@context': 'https://schema.org',
@@ -94,6 +94,22 @@ const EstrategiaDigital: React.FC = () => {
               '@type': 'Answer',
               'text': 'Utilizo indicadores concretos como posiciones en palabras clave objetivo, crecimiento de tráfico orgánico y tasa de conversión.'
             }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Qué es GEO y en qué se diferencia del SEO?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'GEO (Generative Engine Optimization) se enfoca en que tu contenido sea citado por motores de búsqueda IA como ChatGPT, Perplexity y Google AI Overview. Mientras el SEO posiciona tus páginas en resultados tradicionales, GEO asegura que las plataformas de IA elijan tu sitio como fuente confiable. Ambas estrategias trabajan juntas para máxima visibilidad.'
+            }
+          },
+          {
+            '@type': 'Question',
+            'name': '¿Para qué motores de búsqueda IA optimizas?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Optimizo para ChatGPT, Perplexity, Google AI Overview, Microsoft Copilot y Claude. Cada plataforma tiene factores de posicionamiento diferentes — optimizo tu contenido, datos estructurados y configuración técnica para todas.'
+            }
           }
         ]
       }
@@ -106,13 +122,12 @@ const EstrategiaDigital: React.FC = () => {
       {/* ── Hero ── */}
       <section className="mb-16 text-center">
         <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-stone-900 dark:text-white">
-          Estrategia Digital y SEO
+          Estrategia Digital, SEO y GEO
         </h1>
         <p className="text-lg md:text-xl text-muted dark:text-stone-300 max-w-2xl mx-auto">
           Crecimiento basado en datos para tu negocio. Combino auditorías técnicas,
-          investigación de palabras clave y optimización continua para posicionar tu
-          marca en los primeros resultados de búsqueda y convertir visitantes en
-          clientes reales.
+          investigación de palabras clave y optimización generativa para posicionar tu
+          marca en los resultados de búsqueda y en las respuestas de IA.
         </p>
       </section>
 
@@ -182,6 +197,21 @@ const EstrategiaDigital: React.FC = () => {
               predecible.
             </p>
           </div>
+          {/* Card 5 */}
+          <div className="rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 p-6">
+            <span className="material-symbols-outlined text-accent text-3xl mb-3 block">
+              smart_toy
+            </span>
+            <h3 className="text-lg font-bold mb-2 text-stone-900 dark:text-white">
+              GEO: Visibilidad en Búsqueda IA
+            </h3>
+            <p className="text-muted dark:text-stone-300 text-sm">
+              Optimizo tu contenido para ser citado por motores de búsqueda IA —
+              ChatGPT, Perplexity, Google AI Overview, Copilot y Claude. Implemento
+              datos estructurados, esquemas FAQ, citas autoritativas y estructura de
+              contenido para que las plataformas de IA elijan tu sitio como fuente confiable.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -195,22 +225,22 @@ const EstrategiaDigital: React.FC = () => {
             {
               step: '01',
               title: 'Auditoría',
-              desc: 'Evalúo el estado actual de tu sitio, tu presencia digital y la competencia para detectar problemas y oportunidades.',
+              desc: 'Evalúo el estado actual de tu sitio, tu presencia digital, la competencia y la preparación para motores de búsqueda IA (acceso de bots, esquemas, estructura de contenido).',
             },
             {
               step: '02',
               title: 'Estrategia',
-              desc: 'Defino objetivos medibles, selecciono las palabras clave prioritarias y trazo un plan de acción personalizado.',
+              desc: 'Defino objetivos medibles, selecciono palabras clave prioritarias y trazo un plan de acción que incluye tácticas GEO para la citación en plataformas de IA.',
             },
             {
               step: '03',
               title: 'Ejecución',
-              desc: 'Implemento las correcciones técnicas, creo contenidos optimizados y configuro herramientas de seguimiento.',
+              desc: 'Implemento correcciones técnicas, creo contenidos optimizados, configuro datos estructurados y aplico las tácticas de posicionamiento tradicional e IA.',
             },
             {
               step: '04',
               title: 'Medición e Iteración',
-              desc: 'Analizo resultados cada mes, ajusto la estrategia según los datos y escalo lo que funciona para maximizar el impacto.',
+              desc: 'Monitoreo el rendimiento en buscadores y plataformas IA, presento resultados cada mes y ajusto la estrategia según los datos reales.',
             },
           ].map((item) => (
             <div key={item.step} className="text-center">
@@ -241,6 +271,7 @@ const EstrategiaDigital: React.FC = () => {
           <li>Startups que necesitan una hoja de ruta de crecimiento digital clara y ejecutable.</li>
           <li>E-commerces que buscan mejorar sus tasas de conversión y reducir costos de adquisición.</li>
           <li>Equipos de marketing que requieren un consultor SEO externo con experiencia local e internacional.</li>
+          <li>Negocios que quieren aparecer en las respuestas generadas por IA en ChatGPT, Perplexity y Google AI Overview — no solo en los resultados de búsqueda tradicionales.</li>
         </ul>
       </section>
 
@@ -291,6 +322,30 @@ const EstrategiaDigital: React.FC = () => {
               Puedo actuar como consultor estrategico, ejecutar tareas tecnicas
               directamente o capacitar a tu equipo para que implemente las
               recomendaciones de forma autonoma.
+            </p>
+          </details>
+          <details className="group rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 p-4">
+            <summary className="cursor-pointer font-semibold text-stone-900 dark:text-white">
+              ¿Qué es GEO y en qué se diferencia del SEO?
+            </summary>
+            <p className="mt-3 text-sm text-muted dark:text-stone-300">
+              GEO (Generative Engine Optimization) se enfoca en que tu contenido
+              sea citado por motores de búsqueda IA como ChatGPT, Perplexity y
+              Google AI Overview. Mientras el SEO posiciona tus páginas en
+              resultados tradicionales, GEO asegura que las plataformas de IA
+              elijan tu sitio como fuente confiable. Ambas estrategias trabajan
+              juntas para máxima visibilidad.
+            </p>
+          </details>
+          <details className="group rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 p-4">
+            <summary className="cursor-pointer font-semibold text-stone-900 dark:text-white">
+              ¿Para qué motores de búsqueda IA optimizas?
+            </summary>
+            <p className="mt-3 text-sm text-muted dark:text-stone-300">
+              Optimizo para ChatGPT, Perplexity, Google AI Overview, Microsoft
+              Copilot y Claude. Cada plataforma tiene factores de posicionamiento
+              diferentes — optimizo tu contenido, datos estructurados y
+              configuración técnica para todas.
             </p>
           </details>
         </div>

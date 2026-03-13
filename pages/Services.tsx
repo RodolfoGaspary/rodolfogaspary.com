@@ -8,7 +8,7 @@ const Services: React.FC = () => {
   const [activeSummary, setActiveSummary] = useState<{ title: string; content: string } | null>(null);
 
   usePageSEO({
-    title: 'Servicios — Desarrollo Web y Estrategia Digital | Rodolfo Gaspary',
+    title: 'Servicios — Desarrollo Web y Estrategia Digital SEO/GEO | Rodolfo Gaspary',
     description: 'Servicios de desarrollo web estratégico, auditoría SEO, optimización de conversión y asesoría digital continua para empresas en Lima, Perú y a nivel global.',
     keywords: 'servicios web lima, desarrollo web perú, auditoría SEO, optimización conversión, consultoría digital',
     canonical: '/servicios',
@@ -40,7 +40,7 @@ const Services: React.FC = () => {
       {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        'name': 'Servicios — Desarrollo Web y Estrategia Digital',
+        'name': 'Servicios — Desarrollo Web y Estrategia Digital SEO/GEO',
         'url': 'https://www.rodolfogaspary.com/servicios',
         'inLanguage': 'es',
         'speakable': {
@@ -70,7 +70,7 @@ const Services: React.FC = () => {
           },
           {
             '@type': 'Question',
-            'name': '¿Qué incluye el servicio de Estrategia Digital y SEO?',
+            'name': '¿Qué incluye el servicio de Estrategia Digital y SEO/GEO?',
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': 'El servicio incluye auditoría SEO técnica completa, análisis de competidores, estrategia de contenidos, optimización de conversión (CRO), y hojas de ruta de crecimiento digital personalizadas para tu negocio.'
@@ -177,7 +177,7 @@ const Services: React.FC = () => {
               <span className="material-symbols-outlined">trending_up</span>
             </div>
             <div>
-              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Estrategia Digital y SEO</h3>
+              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Estrategia Digital y SEO/GEO</h3>
               <p className="text-sm text-stone-500 dark:text-stone-400">Posicionamiento, conversión y crecimiento orgánico.</p>
             </div>
             <span className="material-symbols-outlined text-stone-400 dark:text-stone-600 ml-auto">arrow_forward</span>
@@ -203,7 +203,7 @@ const Services: React.FC = () => {
               <span className="material-symbols-outlined">trending_up</span>
             </div>
             <div>
-              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Digital Strategy & SEO <span className="text-xs font-normal text-stone-400">(EN)</span></h3>
+              <h3 className="font-bold text-stone-900 dark:text-white group-hover:text-accent transition-colors">Digital Strategy & SEO/GEO <span className="text-xs font-normal text-stone-400">(EN)</span></h3>
               <p className="text-sm text-stone-500 dark:text-stone-400">Data-driven growth and search optimization.</p>
             </div>
             <span className="material-symbols-outlined text-stone-400 dark:text-stone-600 ml-auto">arrow_forward</span>
