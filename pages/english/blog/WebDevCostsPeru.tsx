@@ -6,7 +6,7 @@ const WebDevCostsPeru: React.FC = () => {
   return (
     <ArticleLayout
       title="Web Development Costs: Peru vs. US vs. Europe (2026 Comparison)"
-      description="A detailed comparison of web development costs across regions in 2026. Learn why Peru and Latin America offer competitive pricing with strong technical quality for international clients."
+      description="Compare web development costs in 2026: Peru vs. US vs. Europe. Discover why Latin America offers competitive pricing with strong technical quality."
       keywords="web development cost comparison, hire web developer peru, offshore web development pricing 2026, nearshore development costs, web development rates latin america"
       canonical="/en/blog/web-development-costs-peru-vs-us"
       lang="en"

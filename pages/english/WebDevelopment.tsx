@@ -17,7 +17,7 @@ const WebDevelopment: React.FC = () => {
  usePageSEO({
  title: 'Web Development Services in Lima, Peru | Rodolfo Gaspary',
  description:
- 'Custom web development in Lima, Peru. Responsive websites, e-commerce platforms, and modern web applications built for conversion and growth. Results-oriented consulting.',
+ 'Custom web development in Lima, Peru. Responsive websites, e-commerce platforms, and modern web apps built for conversion and growth.',
  keywords:
  'web development Lima, web developer Peru, custom website Lima, e-commerce development Peru, responsive web design Lima',
  canonical: '/services/web-development',

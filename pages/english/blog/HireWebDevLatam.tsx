@@ -6,7 +6,7 @@ const HireWebDevLatam: React.FC = () => {
   return (
     <ArticleLayout
       title="Why Hire a Web Developer in Latin America? (Cost, Quality & Timezone)"
-      description="Discover why Latin America has become a top destination for nearshore web development. Learn about cost savings, timezone alignment, talent quality, and how to find the right developer in the region."
+      description="Discover why Latin America is a top destination for nearshore web development. Cost savings, timezone alignment, and strong technical talent explained."
       keywords="hire web developer latin america, nearshore web developer peru, LATAM web development, nearshore software development, latin america tech talent"
       canonical="/en/blog/why-hire-web-developer-latin-america"
       lang="en"

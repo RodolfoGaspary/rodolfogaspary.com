@@ -16,7 +16,7 @@ const DesarrolloWeb: React.FC = () => {
 
   usePageSEO({
     title: 'Desarrollo Web en Lima, Perú | Rodolfo Gaspary',
-    description: 'Desarrollo web profesional en Lima, Perú. Sitios responsivos, plataformas e-commerce y aplicaciones web modernas construidas para convertir y escalar tu negocio.',
+    description: 'Desarrollo web profesional en Lima, Perú. Sitios responsivos, e-commerce y aplicaciones web modernas construidas para convertir tu negocio.',
     keywords: 'desarrollo web Lima, desarrollador web Perú, páginas web Lima, e-commerce Perú, diseño web responsivo Lima',
     lang: 'es',
     hreflang: [
