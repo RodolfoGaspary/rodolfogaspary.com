@@ -314,7 +314,7 @@ const DigitalStrategy: React.FC = () => {
  Let's discuss your goals and build a digital strategy that delivers real, measurable results for your business.
  </p>
  <Link
- to="/contacto"
+ to="/contact"
  className="inline-flex items-center justify-center h-14 px-10 bg-white text-accent rounded-md text-lg font-bold hover:bg-stone-100 transition-colors shadow-sm"
  >
  Get in touch

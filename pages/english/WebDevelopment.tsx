@@ -289,7 +289,7 @@ const WebDevelopment: React.FC = () => {
  pressure, just an honest conversation about what your business needs.
  </p>
  <Link
- to="/contacto"
+ to="/contact"
  className="inline-flex items-center justify-center h-14 px-10 bg-accent text-white rounded-md text-lg font-bold hover:bg-amber-700 transition-colors"
  >
  Get in touch

@@ -9,9 +9,9 @@ const Header: React.FC = () => {
 
   const isEnglish = ['/en', '/services', '/contact'].some(path =>
     location.pathname === path || location.pathname.startsWith(`${path}/`)
-  );
+  ) || location.pathname.startsWith('/en/');
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path || (path.includes('/blog') && location.pathname.startsWith(path));
 
   // Path mapping for language switching
   const getOppositeLanguagePath = () => {
@@ -23,6 +23,8 @@ const Header: React.FC = () => {
     if (path === '/contacto') return '/contact';
     if (path === '/servicios/desarrollo-web') return '/services/web-development';
     if (path === '/servicios/estrategia-digital') return '/services/digital-strategy';
+    if (path === '/blog') return '/en/blog';
+    if (path.startsWith('/blog/')) return '/en/blog';
 
     // English to Spanish
     if (path === '/en') return '/';
@@ -30,6 +32,8 @@ const Header: React.FC = () => {
     if (path === '/contact') return '/contacto';
     if (path === '/services/web-development') return '/servicios/desarrollo-web';
     if (path === '/services/digital-strategy') return '/servicios/estrategia-digital';
+    if (path === '/en/blog') return '/blog';
+    if (path.startsWith('/en/blog/')) return '/blog';
 
     // Default fallback
     return isEnglish ? '/' : '/en';
@@ -38,10 +42,12 @@ const Header: React.FC = () => {
   const navLinks = isEnglish ? [
     { to: '/en', label: 'Home' },
     { to: '/services', label: 'Services' },
+    { to: '/en/blog', label: 'Blog' },
     { to: '/contact', label: 'Contact' },
   ] : [
     { to: '/', label: 'Inicio' },
     { to: '/servicios', label: 'Servicios' },
+    { to: '/blog', label: 'Blog' },
     { to: '/contacto', label: 'Contacto' },
   ];
 

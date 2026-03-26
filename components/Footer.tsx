@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   const location = useLocation();
   const isEnglish = ['/en', '/services', '/contact'].some(path =>
     location.pathname === path || location.pathname.startsWith(`${path}/`)
-  );
+  ) || location.pathname.startsWith('/en/');
 
   const content = {
     tagline: isEnglish ? 'Strategic Consultancy & Web Development in Lima, Peru.' : 'Consultoria Estrategica & Desarrollo Web en Lima, Peru.',
@@ -52,6 +52,10 @@ const Footer: React.FC = () => {
             <Link to={content.allServicesLink} className="inline-flex items-center gap-2 text-sm text-muted dark:text-stone-400 hover:text-accent transition-colors duration-200">
               <span className="material-symbols-outlined text-base">apps</span>
               {content.allServicesLabel}
+            </Link>
+            <Link to={isEnglish ? '/en/blog' : '/blog'} className="inline-flex items-center gap-2 text-sm text-muted dark:text-stone-400 hover:text-accent transition-colors duration-200">
+              <span className="material-symbols-outlined text-base">article</span>
+              Blog
             </Link>
           </div>
 

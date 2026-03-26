@@ -227,6 +227,34 @@ const HomeEn: React.FC = () => {
         </div>
       </section>
 
+      {/* Latest Articles */}
+      <section className="py-16 md:py-20 border-t border-stone-200 dark:border-stone-700">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-stone-900 dark:text-white">Latest articles</h2>
+            <Link to="/en/blog" className="text-accent text-sm font-medium hover:underline flex items-center gap-1">
+              View all <span className="material-symbols-outlined text-base">arrow_forward</span>
+            </Link>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { to: '/en/blog/what-is-geo-generative-engine-optimization', title: 'What is GEO? A Practical Guide for 2026', tag: 'SEO/GEO' },
+              { to: '/en/blog/web-development-costs-peru-vs-us', title: 'Web Development Costs: Peru vs. US vs. Europe', tag: 'Web Development' },
+              { to: '/en/blog/seo-dead-seo-geo-strategy-2026', title: 'SEO is Dead? Why SEO + GEO is the Real Strategy', tag: 'SEO/GEO' },
+            ].map((article) => (
+              <Link
+                key={article.to}
+                to={article.to}
+                className="p-5 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-stone-300 dark:hover:border-stone-600 transition-colors group"
+              >
+                <span className="text-[10px] font-bold uppercase tracking-widest text-accent">{article.tag}</span>
+                <h3 className="font-semibold text-stone-900 dark:text-white mt-2 group-hover:text-accent transition-colors">{article.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-ink text-white">
         <div className="max-w-[1200px] mx-auto px-6 text-center flex flex-col items-center gap-6">

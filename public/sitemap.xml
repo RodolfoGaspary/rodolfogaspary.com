@@ -100,4 +100,104 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/services/digital-strategy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/servicios/estrategia-digital" />
   </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://www.rodolfogaspary.com/blog</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog" />
+  </url>
+  <url>
+    <loc>https://www.rodolfogaspary.com/en/blog</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog" />
+  </url>
+
+  <!-- Blog: Cuánto cuesta / Web Dev Costs -->
+  <url>
+    <loc>https://www.rodolfogaspary.com/blog/cuanto-cuesta-pagina-web-peru</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/cuanto-cuesta-pagina-web-peru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/web-development-costs-peru-vs-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/cuanto-cuesta-pagina-web-peru" />
+  </url>
+  <url>
+    <loc>https://www.rodolfogaspary.com/en/blog/web-development-costs-peru-vs-us</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/cuanto-cuesta-pagina-web-peru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/web-development-costs-peru-vs-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/cuanto-cuesta-pagina-web-peru" />
+  </url>
+
+  <!-- Blog: Errores sitio web / Hire Dev LATAM -->
+  <url>
+    <loc>https://www.rodolfogaspary.com/blog/errores-sitio-web-pierde-clientes</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/errores-sitio-web-pierde-clientes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/why-hire-web-developer-latin-america" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/errores-sitio-web-pierde-clientes" />
+  </url>
+  <url>
+    <loc>https://www.rodolfogaspary.com/en/blog/why-hire-web-developer-latin-america</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/errores-sitio-web-pierde-clientes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/why-hire-web-developer-latin-america" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/errores-sitio-web-pierde-clientes" />
+  </url>
+
+  <!-- Blog: SEO vs GEO / What is GEO -->
+  <url>
+    <loc>https://www.rodolfogaspary.com/blog/seo-vs-geo-que-necesita-tu-empresa</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/seo-vs-geo-que-necesita-tu-empresa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/what-is-geo-generative-engine-optimization" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/seo-vs-geo-que-necesita-tu-empresa" />
+  </url>
+  <url>
+    <loc>https://www.rodolfogaspary.com/en/blog/what-is-geo-generative-engine-optimization</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/seo-vs-geo-que-necesita-tu-empresa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/what-is-geo-generative-engine-optimization" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/seo-vs-geo-que-necesita-tu-empresa" />
+  </url>
+
+  <!-- Blog: Estrategia Digital PYMEs / SEO Dead -->
+  <url>
+    <loc>https://www.rodolfogaspary.com/blog/estrategia-digital-pymes-lima</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/estrategia-digital-pymes-lima" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/seo-dead-seo-geo-strategy-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/estrategia-digital-pymes-lima" />
+  </url>
+  <url>
+    <loc>https://www.rodolfogaspary.com/en/blog/seo-dead-seo-geo-strategy-2026</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.rodolfogaspary.com/blog/estrategia-digital-pymes-lima" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rodolfogaspary.com/en/blog/seo-dead-seo-geo-strategy-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rodolfogaspary.com/blog/estrategia-digital-pymes-lima" />
+  </url>
 </urlset>
