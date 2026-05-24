@@ -1,0 +1,295 @@
+/* ============================================================
+   Gaspary Digital — Colors & Type Foundations
+   Clean, minimalist, AI-optimized. Mobile-first.
+   3 core colors + 1 accent. One typeface family + mono.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* ---------- Core palette (the "three colors") ---------- */
+  /* Tinta — deep ink. Almost black, faint cool undertone.
+     Use for primary text, dark backgrounds, logo positive. */
+  --gd-tinta:        #0E1416;
+  --gd-tinta-90:     #1B2225;
+  --gd-tinta-70:     #41494C;
+  --gd-tinta-50:     #6B7376;
+  --gd-tinta-30:     #A6ACAE;
+  --gd-tinta-15:     #D2D5D6;
+
+  /* Hueso — bone / warm paper. The default page background. */
+  --gd-hueso:        #F2EDE5;
+  --gd-hueso-soft:   #EAE3D7;   /* card or section divider */
+  --gd-hueso-tint:   #FAF7F1;   /* lifted surface in dark UI */
+
+  /* Voltio — electric volt. The single signal color.
+     Use sparingly: highlights, underlines, key buttons, charts.
+     NOT a gradient. NOT a background wash. */
+  --gd-voltio:       #C8FF3C;
+  --gd-voltio-deep:  #9EDB12;   /* hover / pressed on light bg */
+  --gd-voltio-glow:  #E8FF9C;   /* tinted bg, badges only */
+
+  /* ---------- Accent (sparing, ≤10% surface) ---------- */
+  /* Cobre — warm copper. Used in editorial moments, photo treatments,
+     and to mark "human / community" content. Never decorative. */
+  --gd-cobre:        #D55C2D;
+  --gd-cobre-deep:   #A8431F;
+  --gd-cobre-soft:   #F4D8C8;
+
+  /* ---------- Semantic ---------- */
+  --gd-bg:           var(--gd-hueso);
+  --gd-bg-elevated:  var(--gd-hueso-tint);
+  --gd-bg-inverse:   var(--gd-tinta);
+
+  --gd-fg:           var(--gd-tinta);
+  --gd-fg-muted:     var(--gd-tinta-70);
+  --gd-fg-subtle:    var(--gd-tinta-50);
+  --gd-fg-disabled:  var(--gd-tinta-30);
+  --gd-fg-inverse:   var(--gd-hueso);
+
+  --gd-border:       rgba(14, 20, 22, 0.12);
+  --gd-border-strong:rgba(14, 20, 22, 0.22);
+  --gd-border-inverse:rgba(242, 237, 229, 0.14);
+
+  --gd-accent:       var(--gd-voltio);
+  --gd-accent-deep:  var(--gd-voltio-deep);
+
+  --gd-success:      #2E8B5E;
+  --gd-warning:      #C77A14;
+  --gd-error:        #B83A2D;
+  --gd-info:         #2B5BA8;
+
+  /* ---------- Typography ---------- */
+  --gd-font-sans:    "Hanken Grotesk", ui-sans-serif, -apple-system, "Segoe UI",
+                     Helvetica, Arial, sans-serif;
+  --gd-font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+                     Consolas, monospace;
+  --gd-font-display: "Hanken Grotesk", ui-sans-serif, sans-serif; /* same family, tighter tracking */
+
+  /* Type scale — modular, mobile-first.
+     Base 16, ratio ~1.250 (Major Third). Display jumps faster. */
+  --gd-text-2xs:   11px;   /* eyebrow / micro caps */
+  --gd-text-xs:    13px;
+  --gd-text-sm:    14px;
+  --gd-text-base:  16px;
+  --gd-text-md:    18px;
+  --gd-text-lg:    20px;
+  --gd-text-xl:    24px;
+  --gd-text-2xl:   30px;
+  --gd-text-3xl:   38px;
+  --gd-text-4xl:   48px;
+  --gd-text-5xl:   64px;
+  --gd-text-6xl:   84px;   /* editorial hero only */
+
+  /* Line heights — tight in display, generous in body */
+  --gd-leading-display: 1.02;
+  --gd-leading-tight:   1.15;
+  --gd-leading-snug:    1.3;
+  --gd-leading-normal:  1.5;
+  --gd-leading-loose:   1.7;
+
+  /* Tracking — negative for display, neutral body, positive caps */
+  --gd-tracking-display: -0.025em;
+  --gd-tracking-tight:   -0.01em;
+  --gd-tracking-normal:  0;
+  --gd-tracking-caps:    0.08em;
+
+  /* Weights — we use 400 / 500 / 700 / 800 mostly */
+  --gd-weight-light:  300;
+  --gd-weight-reg:    400;
+  --gd-weight-med:    500;
+  --gd-weight-semi:   600;
+  --gd-weight-bold:   700;
+  --gd-weight-black:  800;
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --gd-space-0:   0;
+  --gd-space-1:   4px;
+  --gd-space-2:   8px;
+  --gd-space-3:   12px;
+  --gd-space-4:   16px;
+  --gd-space-5:   20px;
+  --gd-space-6:   24px;
+  --gd-space-8:   32px;
+  --gd-space-10:  40px;
+  --gd-space-12:  48px;
+  --gd-space-16:  64px;
+  --gd-space-20:  80px;
+  --gd-space-24:  96px;
+  --gd-space-32:  128px;
+
+  /* ---------- Radii ---------- */
+  --gd-radius-xs:  4px;    /* tags, chips */
+  --gd-radius-sm:  8px;    /* inputs, small buttons */
+  --gd-radius-md:  12px;   /* default cards, buttons */
+  --gd-radius-lg:  20px;   /* feature cards */
+  --gd-radius-xl:  28px;   /* hero blocks */
+  --gd-radius-pill: 999px;
+
+  /* ---------- Borders ---------- */
+  --gd-stroke-1: 1px;
+  --gd-stroke-2: 1.5px;
+  --gd-stroke-3: 2px;
+
+  /* ---------- Shadows (used very sparingly) ---------- */
+  --gd-shadow-xs:  0 1px 2px rgba(14, 20, 22, 0.05);
+  --gd-shadow-sm:  0 2px 6px rgba(14, 20, 22, 0.06), 0 1px 2px rgba(14, 20, 22, 0.04);
+  --gd-shadow-md:  0 6px 18px rgba(14, 20, 22, 0.08), 0 2px 4px rgba(14, 20, 22, 0.04);
+  --gd-shadow-lg:  0 20px 40px rgba(14, 20, 22, 0.10), 0 4px 12px rgba(14, 20, 22, 0.06);
+  /* Focus ring — a real ring, not a green blur. Tinta hairline + soft halo. */
+  --gd-focus-ring: 0 0 0 2px var(--gd-hueso), 0 0 0 4px var(--gd-tinta);
+  --gd-shadow-volt: var(--gd-focus-ring);  /* legacy alias */
+
+  /* ---------- Motion ---------- */
+  --gd-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --gd-ease-inout:  cubic-bezier(0.65, 0, 0.35, 1);
+  --gd-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --gd-dur-fast:    120ms;
+  --gd-dur-base:    220ms;
+  --gd-dur-slow:    420ms;
+
+  /* ---------- Layout ---------- */
+  --gd-container:   1240px;
+  --gd-gutter:      24px;
+  --gd-gutter-lg:   48px;
+}
+
+/* ============================================================
+   Semantic element styles — apply directly to tags, or use as @apply targets
+   ============================================================ */
+
+html { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: var(--gd-font-sans);
+  font-size: var(--gd-text-base);
+  line-height: var(--gd-leading-normal);
+  font-weight: var(--gd-weight-reg);
+  color: var(--gd-fg);
+  background: var(--gd-bg);
+  text-wrap: pretty;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Display / hero */
+.gd-display, h1.gd-display {
+  font-family: var(--gd-font-display);
+  font-size: clamp(var(--gd-text-5xl), 8.5vw, var(--gd-text-6xl));
+  line-height: var(--gd-leading-display);
+  letter-spacing: var(--gd-tracking-display);
+  font-weight: var(--gd-weight-black);
+  text-wrap: balance;
+}
+
+h1, .gd-h1 {
+  font-size: clamp(var(--gd-text-3xl), 5vw, var(--gd-text-5xl));
+  line-height: var(--gd-leading-tight);
+  letter-spacing: var(--gd-tracking-display);
+  font-weight: var(--gd-weight-bold);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h2, .gd-h2 {
+  font-size: clamp(var(--gd-text-2xl), 3.5vw, var(--gd-text-4xl));
+  line-height: var(--gd-leading-tight);
+  letter-spacing: var(--gd-tracking-tight);
+  font-weight: var(--gd-weight-bold);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h3, .gd-h3 {
+  font-size: var(--gd-text-2xl);
+  line-height: var(--gd-leading-snug);
+  letter-spacing: var(--gd-tracking-tight);
+  font-weight: var(--gd-weight-semi);
+  margin: 0;
+}
+
+h4, .gd-h4 {
+  font-size: var(--gd-text-xl);
+  line-height: var(--gd-leading-snug);
+  font-weight: var(--gd-weight-semi);
+  margin: 0;
+}
+
+h5, .gd-h5 {
+  font-size: var(--gd-text-md);
+  line-height: var(--gd-leading-snug);
+  font-weight: var(--gd-weight-semi);
+  margin: 0;
+}
+
+p, .gd-p {
+  font-size: var(--gd-text-base);
+  line-height: var(--gd-leading-normal);
+  color: var(--gd-fg);
+  margin: 0;
+}
+
+.gd-lead {
+  font-size: var(--gd-text-lg);
+  line-height: var(--gd-leading-snug);
+  color: var(--gd-fg-muted);
+  font-weight: var(--gd-weight-reg);
+}
+
+.gd-small, small {
+  font-size: var(--gd-text-sm);
+  line-height: var(--gd-leading-normal);
+  color: var(--gd-fg-muted);
+}
+
+/* Eyebrow / mini caps — used for section labels */
+.gd-eyebrow {
+  font-family: var(--gd-font-mono);
+  font-size: var(--gd-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--gd-tracking-caps);
+  font-weight: var(--gd-weight-med);
+  color: var(--gd-fg-muted);
+}
+
+.gd-eyebrow-volt::before {
+  content: "";
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--gd-voltio);
+  border-radius: 2px;
+  margin-right: 8px;
+  vertical-align: 0.05em;
+}
+
+/* Code / mono */
+code, kbd, pre, .gd-mono {
+  font-family: var(--gd-font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  background: rgba(14, 20, 22, 0.06);
+  padding: 2px 6px;
+  border-radius: var(--gd-radius-xs);
+}
+
+/* Links */
+a, .gd-link {
+  color: var(--gd-fg);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--gd-voltio);
+  text-underline-offset: 4px;
+  transition: text-decoration-thickness var(--gd-dur-fast) var(--gd-ease-out);
+}
+a:hover, .gd-link:hover { text-decoration-thickness: 3px; }
+
+/* Selection */
+::selection { background: var(--gd-voltio); color: var(--gd-tinta); }
+
+/* Focus ring — used everywhere */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--gd-shadow-volt);
+  border-radius: var(--gd-radius-sm);
+}

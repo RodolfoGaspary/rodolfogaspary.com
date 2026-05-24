@@ -1,25 +1,26 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# ----------------------------------------------------------
+# Real config — DO NOT COMMIT if it contains private endpoints,
+# Cloudflare Function secrets, or any non-public credentials.
+#
+# The Web3Forms access key is PUBLIC by design (domain-whitelisted),
+# so committing js/config.js with that key alone is fine. If you ever
+# add a true secret here, ignore it instead.
+# ----------------------------------------------------------
 
-node_modules
-dist
-dist-ssr
-*.local
+# Uncomment if you ever store private values in config.js:
+# js/config.js
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# OS junk
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-/.claude
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Cloudflare Pages local dev
+.wrangler/
+.dev.vars
+
+# Other
+files/*

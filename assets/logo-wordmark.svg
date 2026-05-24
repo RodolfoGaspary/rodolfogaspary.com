@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none">
+  
+  <g>
+    <path d="M32 12 C19.85 12 10 21.85 10 34 C10 46.15 19.85 56 32 56 C44.15 56 54 46.15 54 34 L54 32 L34 32 L34 38 L46.5 38 C44.7 45.4 38.95 50.5 32 50.5 C22.89 50.5 15.5 43.11 15.5 34 C15.5 24.89 22.89 17.5 32 17.5 C36.94 17.5 41.36 19.71 44.4 23.18 L48.5 19.18 C44.42 14.78 38.55 12 32 12 Z" fill="#0E1416"></path>
+    <rect x="46" y="46" width="9" height="9" rx="1.5" fill="#C8FF3C"></rect>
+  </g>
+  
+  <text x="72" y="44" font-family="Hanken Grotesk, ui-sans-serif, sans-serif" font-weight="800" font-size="30" letter-spacing="-0.02em" fill="#0E1416">Gaspary</text>
+  <text x="206" y="44" font-family="Hanken Grotesk, ui-sans-serif, sans-serif" font-weight="400" font-size="30" letter-spacing="-0.01em" fill="#0E1416">Digital</text>
+</svg>

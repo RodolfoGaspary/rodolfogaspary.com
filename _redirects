@@ -1,0 +1,12 @@
+# Cloudflare Pages redirects — clean URLs without .html
+/servicios              /servicios.html              200
+/trabajo                /trabajo.html                200
+/sobre-mi               /sobre-mi.html               200
+/preguntas-frecuentes   /preguntas-frecuentes.html   200
+/contacto               /contacto.html               200
+/blog                   /blog.html                   200
+/blog/                  /blog.html                   200
+/blog/:slug             /blog/:slug.html             200
+
+# 404
+/*  /404.html  404
