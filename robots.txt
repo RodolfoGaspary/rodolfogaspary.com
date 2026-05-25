@@ -1,6 +1,7 @@
 # Robots — Rodolfo Gaspary
 User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
 
 # Allow major AI crawlers explicitly so GEO works out of the box
 User-agent: GPTBot
