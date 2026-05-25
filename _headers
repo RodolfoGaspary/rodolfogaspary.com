@@ -13,11 +13,11 @@
   Cache-Control: public, max-age=31536000, immutable
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-/favicon-32x32.png
+/favicon-32x32.webp
   Cache-Control: public, max-age=31536000, immutable
-/favicon-192x192.png
+/favicon-192x192.webp
   Cache-Control: public, max-age=31536000, immutable
-/apple-touch-icon.png
+/apple-touch-icon.webp
   Cache-Control: public, max-age=31536000, immutable
 
 # HTML — revalidate every request so deploys go live immediately
