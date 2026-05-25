@@ -158,7 +158,7 @@
                 <input name="empresa" type="text" placeholder="Nombre del negocio" required />
               </label>
               <label>Sitio actual <span class="gd-form__hint">(opcional)</span>
-                <input name="website" type="url" placeholder="https://..." />
+                <input name="website" type="text" placeholder="www.tunegocio.com" pattern="^$|^(https?://)?[\w.-]+\.[a-z]{2,}(/.*)?$" title="Ej: www.tunegocio.com o https://tunegocio.com" />
               </label>
             </div>
 
@@ -303,6 +303,14 @@
       function showError(msg) { errorEl.textContent = msg; errorEl.hidden = false; }
       function clearError() { errorEl.hidden = true; errorEl.textContent = ''; }
 
+      function showToast(msg) {
+        var toast = document.getElementById('gd-toast');
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.add('is-visible');
+        setTimeout(function () { toast.classList.remove('is-visible'); }, 4500);
+      }
+
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
         clearError();
@@ -331,9 +339,8 @@
           });
           var json = await res.json();
           if (json && json.success) {
-            form.hidden = true;
-            okPanel.hidden = false;
-            window.scrollTo({ top: okPanel.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+            form.reset();
+            showToast('¡Mensaje enviado! Te responderé en menos de 24 horas.');
           } else {
             throw new Error(json && json.message ? json.message : 'Error desconocido');
           }
@@ -355,5 +362,34 @@
       }
     });
   </script>
+
+  <!-- Toast notification -->
+  <style>
+    .gd-toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #C8FF3C;
+      color: #0E1416;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s ease, transform .35s ease;
+      box-shadow: 0 6px 24px rgba(0,0,0,.25);
+      max-width: 90vw;
+      text-align: center;
+    }
+    .gd-toast.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+  <div class="gd-toast" id="gd-toast" role="status" aria-live="polite"></div>
 </body>
 </html>
