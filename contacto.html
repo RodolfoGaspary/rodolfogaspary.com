@@ -349,6 +349,8 @@
           var json = await res.json();
           if (json && json.success) {
             form.reset();
+            form.hidden = true;
+            okPanel.hidden = false;
             showToast('¡Mensaje enviado! Te responderé en menos de 24 horas.');
           } else {
             throw new Error(json && json.message ? json.message : 'Error desconocido');
