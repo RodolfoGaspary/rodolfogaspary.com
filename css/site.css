@@ -357,3 +357,4 @@ a { color: inherit; }
 .gd-pricing th, .gd-pricing td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--gd-border); vertical-align: top; }
 .gd-pricing thead th { font-family: var(--gd-font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gd-fg-muted); font-weight: 500; }
 .gd-pricing td:first-child { font-weight: 600; color: var(--gd-fg); }
+.price-usd { opacity: .7; font-size: .95em; }
