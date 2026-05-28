@@ -194,10 +194,10 @@ a { color: inherit; }
 .gd-link--inverse { color: var(--gd-hueso); text-decoration-color: var(--gd-voltio); }
 
 .gd-contact__methods { display: flex; flex-direction: column; gap: 1px; background: var(--gd-border-inverse); border: 1px solid var(--gd-border-inverse); border-radius: 14px; overflow: hidden; margin-top: 28px; }
-.gd-contact__row { display: grid; grid-template-columns: 100px 1fr auto; gap: 18px; align-items: center; padding: 16px 20px; background: var(--gd-tinta-90); color: var(--gd-hueso); text-decoration: none; transition: background 160ms; }
+.gd-contact__row { display: grid; grid-template-columns: 100px minmax(0,1fr) auto; gap: 18px; align-items: center; padding: 16px 20px; background: var(--gd-tinta-90); color: var(--gd-hueso); text-decoration: none; transition: background 160ms; }
 .gd-contact__row:hover { background: rgba(242,237,229,0.06); }
 .gd-contact__lbl { font-family: var(--gd-font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(242,237,229,0.55); font-weight: 500; }
-.gd-contact__val { font-size: 16px; font-weight: 500; color: var(--gd-hueso); letter-spacing: -0.005em; }
+.gd-contact__val { font-size: 16px; font-weight: 500; color: var(--gd-hueso); letter-spacing: -0.005em; overflow-wrap: break-word; word-break: break-all; min-width: 0; }
 .gd-contact__row .gd-link-arrow { color: var(--gd-voltio); font-weight: 600; opacity: 0.85; }
 .gd-contact__row:hover .gd-link-arrow { opacity: 1; }
 
@@ -207,13 +207,20 @@ a { color: inherit; }
 .gd-contact__pillars span { color: rgba(242,237,229,0.7); font-size: 14px; line-height: 1.5; }
 @media (max-width: 540px) { .gd-contact__pillars { grid-template-columns: 1fr; } }
 
+@media (max-width: 600px) {
+  .gd-contact > * { min-width: 0; }
+  .gd-contact__row { grid-template-columns: auto minmax(0,1fr); gap: 8px 12px; }
+  .gd-contact__row .gd-link-arrow { display: none; }
+  .gd-form { padding: 20px 16px; }
+}
+
 .gd-form { display: flex; flex-direction: column; gap: 14px; padding: 32px; background: var(--gd-tinta-90); border-radius: 20px; border: 1px solid var(--gd-border-inverse); }
 .gd-form[hidden] { display: none; }
 .gd-form__row { display: grid; grid-template-columns: 1fr; gap: 14px; }
 @media (min-width: 540px) { .gd-form__row { grid-template-columns: 1fr 1fr; } }
 .gd-form__hint { color: rgba(242,237,229,0.4); text-transform: none; letter-spacing: 0; font-weight: 400; font-size: 10px; margin-left: 4px; }
-.gd-form label { display: flex; flex-direction: column; gap: 6px; font-family: var(--gd-font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(242,237,229,0.65); }
-.gd-form input, .gd-form select, .gd-form textarea { font-family: inherit; font-size: 15px; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--gd-border-inverse); background: rgba(242,237,229,0.04); color: var(--gd-hueso); outline: none; text-transform: none; letter-spacing: 0; }
+.gd-form label { display: flex; flex-direction: column; gap: 6px; font-family: var(--gd-font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(242,237,229,0.65); min-width: 0; }
+.gd-form input, .gd-form select, .gd-form textarea { font-family: inherit; font-size: 15px; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--gd-border-inverse); background: rgba(242,237,229,0.04); color: var(--gd-hueso); outline: none; text-transform: none; letter-spacing: 0; width: 100%; min-width: 0; }
 .gd-form input:focus, .gd-form select:focus, .gd-form textarea:focus { border-color: var(--gd-voltio); box-shadow: 0 0 0 3px rgba(200,255,60,0.18); }
 .gd-form input:disabled, .gd-form select:disabled, .gd-form textarea:disabled { opacity: 0.5; cursor: not-allowed; }
 .gd-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, rgba(242,237,229,0.55) 50%), linear-gradient(135deg, rgba(242,237,229,0.55) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 36px; }
@@ -358,3 +365,22 @@ a { color: inherit; }
 .gd-pricing thead th { font-family: var(--gd-font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gd-fg-muted); font-weight: 500; }
 .gd-pricing td:first-child { font-weight: 600; color: var(--gd-fg); }
 .price-usd { opacity: .7; font-size: .95em; }
+
+/* ===== Legal page body ===== */
+.gd-legal-body h2 { font-size: 20px; font-weight: 700; margin: 40px 0 12px; letter-spacing: -0.01em; }
+.gd-legal-body h3 { font-size: 16px; font-weight: 600; margin: 24px 0 8px; color: var(--gd-fg-muted); }
+.gd-legal-body p { font-size: 16px; line-height: 1.7; color: var(--gd-fg-muted); margin: 0 0 16px; }
+.gd-legal-body ul { padding-left: 20px; margin: 0 0 16px; }
+.gd-legal-body li { font-size: 16px; line-height: 1.7; color: var(--gd-fg-muted); margin-bottom: 6px; }
+.gd-legal-body a { color: var(--gd-fg); }
+
+/* ===== Footer legal link ===== */
+.gd-footer__legal { color: rgba(242,237,229,0.5); text-decoration: none; font-family: var(--gd-font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+.gd-footer__legal:hover { color: var(--gd-voltio); text-decoration: none; }
+
+/* ===== Cookie bar ===== */
+.gd-cookie { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--gd-tinta); border-top: 1px solid var(--gd-border-inverse); padding: 14px var(--gd-gutter); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: rgba(242,237,229,0.75); }
+.gd-cookie a { color: var(--gd-voltio); text-decoration-color: var(--gd-voltio); }
+.gd-cookie__btn { background: var(--gd-voltio); color: var(--gd-tinta); border: none; border-radius: 6px; padding: 7px 16px; font-family: var(--gd-font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+.gd-cookie__btn:hover { background: var(--gd-voltio-deep); }
+.gd-cookie[hidden] { display: none; }

@@ -24,4 +24,39 @@
       if (li.getAttribute("data-target") === page) li.classList.add("is-active");
     });
   }
+
+  // Cookie consent bar
+  var COOKIE_KEY = "gd_cookie_ok";
+  if (!localStorage.getItem(COOKIE_KEY)) {
+    // Resolve privacy policy URL — check if we're inside blog/ subfolder
+    var inBlog = window.location.pathname.indexOf("/blog/") > -1;
+    var policyUrl = inBlog ? "../politica-de-privacidad.html" : "politica-de-privacidad.html";
+
+    var bar = document.createElement("div");
+    bar.className = "gd-cookie";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Aviso de cookies");
+
+    var text = document.createElement("span");
+    text.textContent = "Este sitio usa cookies de Google Analytics para medir el tráfico de forma anónima. ";
+    var link = document.createElement("a");
+    link.href = policyUrl;
+    link.textContent = "Ver política de privacidad";
+    text.appendChild(link);
+    text.appendChild(document.createTextNode("."));
+
+    var btn = document.createElement("button");
+    btn.className = "gd-cookie__btn";
+    btn.type = "button";
+    btn.textContent = "Entendido";
+
+    bar.appendChild(text);
+    bar.appendChild(btn);
+    document.body.appendChild(bar);
+
+    btn.addEventListener("click", function () {
+      localStorage.setItem(COOKIE_KEY, "1");
+      bar.setAttribute("hidden", "");
+    });
+  }
 })();
