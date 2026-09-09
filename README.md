@@ -1,63 +1,60 @@
 # rodolfogaspary.com
 
-Portfolio site. Static HTML, CSS and JavaScript — no build step, no dependencies.
+Bilingual portfolio site. Static HTML, CSS and JavaScript — no framework, no build
+step, no dependencies.
 
-## Deploying on Cloudflare Pages
+**Live:** [rodolfogaspary.com](https://rodolfogaspary.com)
 
-Connect the repository and use these settings:
+## Why static
 
-| Setting | Value |
-|---|---|
-| Framework preset | None |
-| Build command | *(leave empty)* |
-| Build output directory | `/` |
-| Root directory | `/` |
-
-Cloudflare serves the repository root as-is. Pushing to the default branch redeploys.
+The site is eight project case studies, a credentials page and a contact page. That
+does not need a build pipeline. Removing it removes the maintenance, the dependency
+updates and the load time that come with one — and it makes the whole thing
+deployable by pushing to a branch.
 
 ## Structure
 
 ```
-index.html              Spanish home — hero, work index, track record, capabilities
-credenciales.html       Spanish credentials
-contacto.html           Spanish contact
-proyectos/              Spanish case studies
-en/                     English mirror (index, credentials, contact, projects/)
-assets/css/             Stylesheet, shared by both languages
+index.html              Home (ES) — hero, work index, track record, capabilities
+credenciales.html       Credentials (ES)
+contacto.html           Contact (ES)
+proyectos/              Case studies (ES)
+en/                     English mirror — index, credentials, contact, projects/
+assets/css/             One stylesheet, shared by both languages
 assets/js/              Filter script — proyectos.js (ES), projects-en.js (EN)
-assets/img/             Screenshots
+assets/img/             Screenshots and social cards
 certificados/           Certificate PDFs
 404.html                Not-found page
 _headers                Cloudflare cache and security headers
 sitemap.xml             Both language trees with hreflang
-robots.txt
 ```
 
 ## Languages
 
-Spanish lives at the root, English under `/en/`. Every page carries reciprocal
-`hreflang` tags and a language switch in the header. When adding a page, add its
-counterpart and update `sitemap.xml`.
+Spanish at the root, English under `/en/`. Every page carries reciprocal `hreflang`
+tags and a language switch in the header. Adding a page means adding its counterpart
+and updating `sitemap.xml`.
 
-## Adding a project
+All internal links are **relative**, not root-absolute, so the site works opened
+straight from the filesystem as well as served. Match the depth when adding pages:
+root uses `index.html`, `proyectos/` and `en/` use `../`, `en/projects/` uses `../../`.
 
-1. Add the card to `index.html` and `en/index.html` — set `data-category`
-   to one of `webapp`, `android`, `datos`/`data`, `sitio`/`site`.
-2. Create the case study in `proyectos/` and `en/projects/`, copying an existing
-   file as the template.
-3. Drop screenshots in `assets/img/`. Card images are cropped to 16:10.
-4. Add both URLs to `sitemap.xml`.
+## Deploying
 
-## Links
+Cloudflare Pages, connected to this repository:
 
-All internal links are **relative**, not root-absolute. This keeps the site working when
-opened straight from the filesystem as well as when served. If you add a page, match the
-depth: root pages use `proyectos.html`, pages in `proyectos/` or `en/` use `../`, and pages
-in `en/projects/` use `../../`.
+| Setting | Value |
+|---|---|
+| Framework preset | None |
+| Build command | *(empty)* |
+| Build output directory | `/` |
+
+Pushing to the default branch redeploys.
 
 ## Notes
 
-- Filter categories differ per language (`todos` vs `all`) — the two JS files are
-  not interchangeable.
-- `_headers` marks `/certificados/*` and the APK `noindex` so certificates and the
-  demo build stay out of search results.
+- Filter categories differ per language (`todos` vs `all`) — the two JS files are not
+  interchangeable.
+- `_headers` marks `/certificados/*` `noindex` so certificates stay out of search results.
+- Structured data: `Person` JSON-LD on both home pages, including `hasOccupation`,
+  `knowsAbout` and `seeks`.
