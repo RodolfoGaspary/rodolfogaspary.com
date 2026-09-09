@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Base de datos GESTKOR — Modelamiento y arquitectura | Rodolfo Gaspary</title>
+<meta name="description" content="Rediseño de la base de datos corporativa del sistema de gestión de mantenimiento GESTKOR: DFD, modelo entidad-relación, normalización y stored procedures.">
+<link rel="canonical" href="https://rodolfogaspary.com/proyectos/gestkor.html">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://rodolfogaspary.com/proyectos/gestkor.html">
+<meta property="og:title" content="Base de datos GESTKOR — Modelamiento y arquitectura | Rodolfo Gaspary">
+<meta property="og:description" content="Rediseño de la base de datos corporativa de un sistema de gestión de mantenimiento retail, de los diagramas de flujo al despliegue en producción.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Base de datos GESTKOR — Modelamiento y arquitectura | Rodolfo Gaspary">
+<meta name="twitter:description" content="Rediseño de la base de datos corporativa de un sistema de gestión de mantenimiento retail, de los diagramas de flujo al despliegue en producción.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta name="theme-color" content="#E9EBE8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../index.html">Rodolfo Gaspary</a>
+  <nav class="masthead-nav" aria-label="Principal">
+    <a href="../index.html">Inicio</a>
+    <a href="../index.html#trabajo" aria-current="page">Proyectos</a>
+    <a href="../credenciales.html">Credenciales</a>
+    <a href="../CV_Rodolfo_Gaspary_Data_Analyst.pdf">CV</a>
+    <a href="../contacto.html">Contacto</a>
+    <a class="lang-switch" href="../en/projects/gestkor.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#trabajo">Volver al índice</a>
+
+  <h1>Base de datos GESTKOR</h1>
+
+  <p class="study-standfirst">
+    Un sistema de mantenimiento retail que había crecido sin arquitectura: datos duplicados
+    entre módulos, cifras que no cuadraban entre lo operativo y lo facturado. El encargo fue
+    rehacer la base de datos completa, desde el análisis de procesos hasta producción.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Rol</dt><dd>Consultor de datos y procesos</dd></div>
+    <div><dt>Cliente</dt><dd>Grupo Korus · sistema GESTKOR</dd></div>
+    <div><dt>Duración</dt><dd>5 meses, 4 hitos</dd></div>
+    <div><dt>Sector</dt><dd>Mantenimiento para retail</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>El problema</h2>
+    <p>
+      GESTKOR administra el ciclo completo del servicio de mantenimiento en locales retail:
+      ubicaciones, inventario de materiales, programación de técnicos, permisos de acceso,
+      inspecciones, órdenes de trabajo, valorización y facturación. Cada uno de esos procesos
+      había sumado tablas a la base de datos con el tiempo, sin un modelo que los relacionara.
+      El síntoma visible era que la data operativa y la valorización final del servicio no
+      coincidían. La causa estaba más abajo: la misma entidad existía varias veces, en
+      formatos distintos, sin una fuente única de verdad.
+    </p>
+
+    <h2>Cómo lo abordé</h2>
+    <p>
+      Antes de tocar una tabla, mapeé los procesos. Un sistema de mantenimiento no se modela
+      desde el esquema existente — se modela desde lo que la operación realmente hace, y
+      recién ahí se ve qué entidades son reales y cuáles eran parches. Trabajé los diagramas
+      de flujo de datos con los usuarios que ejecutan cada proceso, y los validé con ellos
+      antes de pasar al modelo lógico.
+    </p>
+    <ul>
+      <li>Diagramas de flujo de datos y mapeo conceptual, validados con usuarios clave</li>
+      <li>Modelo entidad-relación con diccionario de datos</li>
+      <li>Normalización para eliminar redundancia y garantizar integridad referencial</li>
+      <li>Lógica programada: stored procedures, triggers, funciones analíticas e índices</li>
+      <li>Pruebas integrales y afinamiento de rendimiento antes del despliegue</li>
+    </ul>
+
+    <h2>La decisión que definió el proyecto</h2>
+    <p>
+      El cliente esperaba empezar por construir. Insistí en que el primer entregable fueran
+      los diagramas de flujo aprobados, sin una sola tabla escrita. Eso retrasó el código
+      visible un mes entero y fue lo que hizo viable el resto: las sesiones de validación
+      revelaron reglas de negocio que nadie había documentado — cómo se decide que una
+      incidencia está realmente cerrada, cuándo un material es reembolsable — y esas reglas
+      terminaron siendo restricciones en el modelo en vez de correcciones manuales después.
+    </p>
+
+    <h2>Estructura del encargo</h2>
+    <p>
+      El trabajo se estructuró en cuatro entregables con conformidad de gerencia en cada uno:
+      diagramas de flujo aprobados, modelo lógico y diccionario de datos, base construida en
+      ambiente de pruebas, y despliegue en producción con documentación técnica. Incluí un
+      periodo de garantía de treinta días posterior al despliegue para cubrir cualquier desvío
+      atribuible al diseño.
+    </p>
+
+    <p class="study-note">
+      El detalle del esquema, las tablas maestras y los datos del cliente están cubiertos por
+      un acuerdo de confidencialidad. Esta página describe el enfoque y la metodología, no la
+      implementación específica.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Perú</p>
+  <p><a href="../index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

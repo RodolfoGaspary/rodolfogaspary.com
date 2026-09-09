@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mallas Trujillo — Sistema de cotización | Rodolfo Gaspary</title>
+<meta name="description" content="Sistema de cotización para una empresa de mallas de seguridad: precios configurables, cálculo en el servidor y proforma imprimible.">
+<link rel="canonical" href="https://rodolfogaspary.com/proyectos/mallas-trujillo.html">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://rodolfogaspary.com/proyectos/mallas-trujillo.html">
+<meta property="og:title" content="Mallas Trujillo — Sistema de cotización | Rodolfo Gaspary">
+<meta property="og:description" content="Sistema de cotización para una empresa de mallas de seguridad: precios configurables, cálculo en el servidor y proforma imprimible.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mallas Trujillo — Sistema de cotización | Rodolfo Gaspary">
+<meta name="twitter:description" content="Sistema de cotización para una empresa de mallas de seguridad: precios configurables, cálculo en el servidor y proforma imprimible.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta name="theme-color" content="#E9EBE8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../index.html">Rodolfo Gaspary</a>
+  <nav class="masthead-nav" aria-label="Principal">
+    <a href="../index.html">Inicio</a>
+    <a href="../index.html#trabajo" aria-current="page">Proyectos</a>
+    <a href="../credenciales.html">Credenciales</a>
+    <a href="../CV_Rodolfo_Gaspary_Data_Analyst.pdf">CV</a>
+    <a href="../contacto.html">Contacto</a>
+    <a class="lang-switch" href="../en/projects/mallas-trujillo.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#trabajo">Volver al índice</a>
+
+  <h1>Mallas Trujillo</h1>
+
+  <p class="study-standfirst">
+    Una empresa de mallas de seguridad cotizaba a mano: medir en obra, calcular el área,
+    aplicar el descuento que correspondía y armar el documento. El sistema convierte eso en
+    un formulario y una proforma imprimible, y deja los precios en manos del dueño.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Rol</dt><dd>Diseño y desarrollo completo</dd></div>
+    <div><dt>Cliente</dt><dd>Mallas Trujillo</dd></div>
+    <div><dt>Stack</dt><dd>PHP, MySQL, PDO, Bootstrap</dd></div>
+    <div><dt>Alcance</dt><dd>Cotización, historial y precios</dd></div>
+    <div><dt>Código</dt><dd><a href="https://github.com/RodolfoGaspary/Mallas-Trujillo-CRM">Ver repositorio</a></dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>El problema</h2>
+    <p>
+      El costo de una instalación depende del área total, y el área depende de cuántos paños
+      se midieron en obra. A eso se suman descuentos por volumen, costos adicionales que
+      varían según el acceso, y un mínimo de instalación por debajo del cual el trabajo no es
+      rentable. Hecho a mano, cada cotización es una hoja de cálculo distinta, y cada error
+      aritmético es dinero perdido o un cliente molesto.
+    </p>
+
+    <h2>Los precios viven en la base de datos</h2>
+    <p>
+      La decisión que define el sistema es que el precio por metro cuadrado y los tres tramos
+      de descuento por área no están en el código: están en una tabla, editable desde una
+      pantalla del sistema. Cuando sube el costo del material, el dueño cambia un número y
+      todas las cotizaciones siguientes usan el valor nuevo. Nadie necesita llamar al
+      desarrollador, y no hay una versión del precio en la app y otra en la cabeza del
+      vendedor.
+    </p>
+
+    <h2>El servidor recalcula el total</h2>
+    <p>
+      El formulario calcula mientras el usuario escribe, para que vea el monto antes de
+      guardar. Pero al guardar, el servidor vuelve a calcular todo desde los ítems
+      almacenados — área, subtotal, descuento, adicionales y el mínimo de instalación — y
+      escribe ese resultado. El navegador propone; la base de datos decide. Toda la operación
+      va dentro de una transacción, así que una proforma nunca queda a medio guardar.
+    </p>
+
+    <h2>El PDF sin librería de PDF</h2>
+    <p>
+      La proforma se entrega como PDF, pero el sistema no genera PDFs. Renderiza una página
+      con una hoja de estilos de impresión — tamaño A4, márgenes, colores forzados — y deja
+      que el navegador la exporte. Cero dependencias que mantener, y funciona en el celular
+      que el instalador lleva a la obra. La versión móvil muestra instrucciones en vez de
+      lanzar el diálogo de impresión, porque el flujo de "guardar como PDF" en un teléfono no
+      es evidente para quien no lo ha hecho antes.
+    </p>
+
+    <h2>El resto del sistema</h2>
+    <ul>
+      <li>Historial con búsqueda por nombre y teléfono, con resultados en vivo</li>
+      <li>Ordenamiento por fecha o cliente, validado contra una lista blanca en el servidor</li>
+      <li>Cualquier proforma anterior sirve de plantilla para una nueva</li>
+      <li>Cliente reutilizado automáticamente si ya existe, en vez de duplicarse</li>
+    </ul>
+
+    <p class="study-note">
+      El repositorio contiene la versión de desarrollo local. Esta página describe el enfoque
+      y la arquitectura; el código está publicado tal cual quedó.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Perú</p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

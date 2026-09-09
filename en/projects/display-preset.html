@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Display Preset — Monitor presets for Windows | Rodolfo Gaspary</title>
+<meta name="description" content="A C# tray app that saves complete monitor configurations and switches between them with one click.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/display-preset.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/display-preset.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/display-preset.html">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/display-preset.html">
+<meta property="og:title" content="Display Preset — Monitor presets for Windows | Rodolfo Gaspary">
+<meta property="og:description" content="A C# tray app that saves complete monitor configurations and switches between them with one click.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Display Preset — Monitor presets for Windows | Rodolfo Gaspary">
+<meta name="twitter:description" content="A C# tray app that saves complete monitor configurations and switches between them with one click.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/index.html#work" aria-current="page">Projects</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/display-preset.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>Display Preset</h1>
+
+  <p class="study-standfirst">
+    Switching between monitor layouts on Windows takes six clicks spread across Settings and
+    the graphics card panel. This tool reduces it to one, from the system tray.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Design and full development</dd></div>
+    <div><dt>Status</dt><dd>Open source, MIT licence</dd></div>
+    <div><dt>Stack</dt><dd>C# and .NET on Windows</dd></div>
+    <div><dt>Source</dt><dd><a href="https://github.com/RodolfoGaspary/Display-Preset">View repository</a></dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      The same desk gets used in several ways: two extended displays for work, mirroring to a
+      television, or the main monitor alone. Each switch means adjusting resolution, refresh
+      rate, display order and position — four settings split between Windows Settings and the
+      GPU vendor's own application. It is an adjustment made several times a day that Windows
+      treats as though it were exceptional.
+    </p>
+
+    <h2>How I solved it</h2>
+    <p>
+      The full configuration is saved as a named preset. From then on, changing layout means
+      picking it from the tray icon. The app lives there rather than in a window, because the
+      gesture has to be faster than opening Settings: if it costs the same, it replaces
+      nothing.
+    </p>
+    <ul>
+      <li>Save the current configuration as a named preset</li>
+      <li>Switch between presets from the tray menu</li>
+      <li>Mark one as the default</li>
+      <li>Covers resolution, refresh rate, order and position for each display</li>
+    </ul>
+
+    <h2>Why it is published</h2>
+    <p>
+      It is a tool I wrote for my own desk, and the problem is not specific to me: anyone who
+      alternates between a monitor and a television has it. It is MIT-licensed with a public
+      repository, so it serves both as a utility and as a sample of C# desktop code — different
+      ground from the rest of my projects.
+    </p>
+
+    <p class="study-note">
+      Recent project, still in development. The repository holds the Visual Studio solution;
+      there is no compiled binary to download yet.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

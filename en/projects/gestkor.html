@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GESTKOR database — Data modelling and architecture | Rodolfo Gaspary</title>
+<meta name="description" content="Redesign of the corporate database behind the GESTKOR retail maintenance management system: data flow diagrams, ER modelling, normalisation and stored procedures.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/gestkor.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/gestkor.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/gestkor.html">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/gestkor.html">
+<meta property="og:title" content="GESTKOR database — Data modelling and architecture | Rodolfo Gaspary">
+<meta property="og:description" content="A full redesign of the corporate database behind a retail maintenance management system, from data flow diagrams through to production deployment.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GESTKOR database — Data modelling and architecture | Rodolfo Gaspary">
+<meta name="twitter:description" content="A full redesign of the corporate database behind a retail maintenance management system, from data flow diagrams through to production deployment.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/index.html#work" aria-current="page">Projects</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/gestkor.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>GESTKOR database</h1>
+
+  <p class="study-standfirst">
+    A retail maintenance system that had grown without an architecture: data duplicated across
+    modules, and figures that did not reconcile between operations and invoicing. The brief was
+    to rebuild the database entirely, from process analysis through to production.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Data and process consultant</dd></div>
+    <div><dt>Client</dt><dd>Grupo Korus · GESTKOR system</dd></div>
+    <div><dt>Duration</dt><dd>5 months, 4 milestones</dd></div>
+    <div><dt>Sector</dt><dd>Retail maintenance</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      GESTKOR runs the full maintenance service cycle across retail sites: locations, materials
+      inventory, technician scheduling, site access permits, inspections, work orders, valuation
+      and invoicing. Each of those processes had added tables to the database over the years,
+      with no model tying them together. The visible symptom was that operational data and the
+      final service valuation did not match. The cause sat further down: the same entity existed
+      several times, in different formats, with no single source of truth.
+    </p>
+
+    <h2>How I approached it</h2>
+    <p>
+      Before touching a table, I mapped the processes. A maintenance system cannot be modelled
+      from its existing schema — it has to be modelled from what the operation actually does, and
+      only then does it become clear which entities are real and which were patches. I built the
+      data flow diagrams with the people who run each process, and validated them before moving
+      to the logical model.
+    </p>
+    <ul>
+      <li>Data flow diagrams and conceptual mapping, validated with key users</li>
+      <li>Entity-relationship model with a data dictionary</li>
+      <li>Normalisation to remove redundancy and enforce referential integrity</li>
+      <li>Programmed logic: stored procedures, triggers, analytical functions and indexes</li>
+      <li>Full integration testing and performance tuning before deployment</li>
+    </ul>
+
+    <h2>The decision that defined the project</h2>
+    <p>
+      The client expected to start by building. I insisted the first deliverable be the approved
+      data flow diagrams, with not a single table written. That pushed visible code back by a
+      full month, and it is what made the rest viable: the validation sessions surfaced business
+      rules nobody had documented — how it is decided that an incident is genuinely closed, when
+      a material is reimbursable — and those rules ended up as constraints in the model rather
+      than manual corrections afterwards.
+    </p>
+
+    <h2>How the engagement was structured</h2>
+    <p>
+      The work ran across four deliverables, each signed off by management: approved data flow
+      diagrams, the logical model and data dictionary, the database built in a test environment,
+      and production deployment with technical documentation. I included a thirty-day warranty
+      period after deployment covering any deviation attributable to the design.
+    </p>
+
+    <p class="study-note">
+      The schema detail, master tables and client data are covered by a confidentiality
+      agreement. This page describes the approach and methodology, not the specific
+      implementation.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p><a href="../index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

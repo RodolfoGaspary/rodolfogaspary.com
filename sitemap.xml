@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://rodolfogaspary.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rodolfogaspary.com/credenciales.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/credenciales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/credentials.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://rodolfogaspary.com/proyectos/gerohub.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/proyectos/gestkor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/proyectos/ishikawa-creator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/proyectos/plenty-tap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/proyectos/gaspary-digital.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/proyectos/mallas-trujillo.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/proyectos/mi-malla.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/proyectos/display-preset.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/contacto.html</loc><priority>0.7</priority></url>
+
+  <url>
+    <loc>https://rodolfogaspary.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/"/>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://rodolfogaspary.com/en/credentials.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/gerohub.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/gestkor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/ishikawa-creator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/plenty-tap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/gaspary-digital.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/mallas-trujillo.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/mi-malla.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/projects/display-preset.html</loc><priority>0.8</priority></url>
+  <url><loc>https://rodolfogaspary.com/en/contact.html</loc><priority>0.7</priority></url>
+
+</urlset>

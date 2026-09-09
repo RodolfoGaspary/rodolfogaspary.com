@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi Malla — Quoting tool with client records | Rodolfo Gaspary</title>
+<meta name="description" content="A quoting tool for a safety-netting installer, built around a reusable client record.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/mi-malla.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/mi-malla.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/mi-malla.html">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/mi-malla.html">
+<meta property="og:title" content="Mi Malla — Quoting tool with client records | Rodolfo Gaspary">
+<meta property="og:description" content="A quoting tool for a safety-netting installer, built around a reusable client record.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mi Malla — Quoting tool with client records | Rodolfo Gaspary">
+<meta name="twitter:description" content="A quoting tool for a safety-netting installer, built around a reusable client record.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/index.html#work" aria-current="page">Projects</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/mi-malla.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>Mi Malla</h1>
+
+  <p class="study-standfirst">
+    A quoting tool for a safety-netting installer. The salesperson looks up the client, the
+    record autofills, and the areas to be installed are captured on top of it one by one.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Design and full development</dd></div>
+    <div><dt>Client</dt><dd>Client project</dd></div>
+    <div><dt>Stack</dt><dd>PHP, MySQL, PDO, jQuery</dd></div>
+    <div><dt>Access</dt><dd>Session-based with roles</dd></div>
+    <div><dt>Source</dt><dd><a href="https://github.com/RodolfoGaspary/mi_malla">View repository</a></dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      Most clients who ask for a quote come back: a house that started with the balcony ends
+      up enclosing the stairwell and the roof terrace too, and every visit meant asking again
+      for name, phone, email and address. The data existed, scattered across notebooks and
+      chat threads, but nowhere it could be retrieved from.
+    </p>
+
+    <h2>The client record is the centre</h2>
+    <p>
+      The system was built around the client, not the quote. Starting a quote begins with a
+      search by first or last name, with results appearing as you type; picking one fills the
+      form. If they are new, they are saved from the same screen without leaving the flow.
+      Clients are identified by full name or phone number, so a second visit updates the
+      existing record instead of creating a duplicate.
+    </p>
+
+    <h2>Variable areas</h2>
+    <p>
+      An installation has no fixed number of panels. The form starts with one row — type,
+      location, width and height — and rows are added as needed. Square metres are computed per
+      row and totalled on the server at save time, inside a transaction that writes client,
+      header and detail or writes nothing at all.
+    </p>
+
+    <h2>Access</h2>
+    <ul>
+      <li>Session required on every page and endpoint</li>
+      <li>Roles: the admin menu exists only for those who have it</li>
+      <li>Passwords hashed with bcrypt, verified through PHP's native functions</li>
+      <li>Session ID regenerated on login and on password change</li>
+    </ul>
+
+    <p class="study-note">
+      Client project, with the source published. This page describes the approach and
+      architecture.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plenty Tap — App Android y Wear OS | Rodolfo Gaspary</title>
+<meta name="description" content="Plenty Tap: app Android que controla gastos por número de usos en lugar de por monto, con sincronización a Wear OS. Kotlin, Jetpack Compose y Room.">
+<link rel="canonical" href="https://rodolfogaspary.com/proyectos/plenty-tap.html">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://rodolfogaspary.com/proyectos/plenty-tap.html">
+<meta property="og:title" content="Plenty Tap — App Android y Wear OS | Rodolfo Gaspary">
+<meta property="og:description" content="Plenty Tap: app Android que controla gastos por número de usos en lugar de por monto, con sincronización a Wear OS. Kotlin, Jetpack Compose y Room.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plenty Tap — App Android y Wear OS | Rodolfo Gaspary">
+<meta name="twitter:description" content="Plenty Tap: app Android que controla gastos por número de usos en lugar de por monto, con sincronización a Wear OS. Kotlin, Jetpack Compose y Room.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Principal">
+    <a href="../index.html">Inicio</a>
+    <a href="../index.html#trabajo" aria-current="page">Proyectos</a>
+    <a href="../credenciales.html">Credenciales</a>
+    <a href="../CV_Rodolfo_Gaspary_Data_Analyst.pdf">CV</a>
+    <a href="../contacto.html">Contacto</a>
+    <a class="lang-switch" href="../en/projects/plenty-tap.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#trabajo">Volver al índice</a>
+
+  <h1>Plenty Tap</h1>
+
+  <p class="study-standfirst">
+    Un presupuesto en soles es fácil de ignorar. Un contador que dice “te quedan tres”
+    no lo es. Plenty Tap controla gastos recurrentes por número de usos, y se marca
+    igual de rápido desde el celular que desde el reloj.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Rol</dt><dd>Diseño y desarrollo completo</dd></div>
+    <div><dt>Plataforma</dt><dd>Android y Wear OS</dd></div>
+    <div><dt>Estado</dt><dd>Build de demo, versión 0.1.0</dd></div>
+    <div><dt>Lenguaje</dt><dd>Kotlin</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>El problema</h2>
+    <p>
+      Los gastos que se acumulan sin darte cuenta rara vez son grandes: el café diario,
+      el taxi cuando llueve, el delivery del viernes. Una app de presupuesto los suma en
+      soles a fin de mes, cuando ya no puedes hacer nada. El límite útil no es “gastar
+      menos de S/200 en café”, es “tomar diez cafés este mes” — porque esa cuenta la
+      puedes llevar en la cabeza y decidir en el momento.
+    </p>
+
+    <h2>Cómo lo resolví</h2>
+    <p>
+      El usuario crea un ítem, le pone un límite de usos y un periodo, y a partir de ahí
+      la interacción se reduce a un toque cada vez que lo usa. La pantalla principal
+      responde una sola pregunta: cuántos usos quedan. Todo lo demás está subordinado a
+      eso.
+    </p>
+    <ul>
+      <li>Ítems con límite de usos por periodo, definidos por el usuario</li>
+      <li>Marcado de un toque desde la lista principal</li>
+      <li>Persistencia local con Room, sin cuenta ni servidor</li>
+      <li>App complementaria en Wear OS con el mismo gesto</li>
+    </ul>
+
+    <h2>La decisión que define el producto</h2>
+    <p>
+      La app vive o muere por la fricción del momento de marcar. Si tienes que sacar el
+      celular, desbloquearlo y buscar la app, no lo vas a hacer — y un contador incompleto
+      es peor que ninguno. Por eso el reloj no es un extra: es donde la interacción tiene
+      sentido. Ambas superficies escriben sobre el mismo estado a través del Data Layer de
+      Wear, y la resolución de conflictos está del lado del teléfono para que el reloj
+      pueda quedarse sin conexión sin perder marcas.
+    </p>
+
+    <h2>Cómo está construido</h2>
+    <ul>
+      <li>Kotlin con Jetpack Compose en ambas superficies</li>
+      <li>Room como única fuente de verdad en el teléfono</li>
+      <li>Wearable Data Layer API para la sincronización</li>
+      <li>minSdk 26, sin dependencias de backend</li>
+    </ul>
+
+    <p class="download">
+      <a class="button button--quiet" href="../plenty-tap-v0.1.0.apk" download>Descargar APK · v0.1.0 · 13 MB</a>
+      <span class="download-note">Android pedirá permiso para instalar desde una fuente desconocida.</span>
+    </p>
+
+    <p class="study-note">
+      Build de demo, no publicada en Play Store. Aquí muestro el recorrido en video —
+      crear un ítem, marcar un uso y ver el reloj actualizarse — en lugar de ofrecer el
+      APK de depuración para descarga.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Perú</p>
+  <p><a href="../index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ishikawa Creator — Cause-and-effect analysis tool | Rodolfo Gaspary</title>
+<meta name="description" content="Ishikawa Creator: a single-file web app that organises a cause-and-effect analysis as a nested structure, with JSON import and export.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/ishikawa-creator.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/ishikawa-creator.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/ishikawa-creator.html">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/ishikawa-creator.html">
+<meta property="og:title" content="Ishikawa Creator — Cause-and-effect analysis tool | Rodolfo Gaspary">
+<meta property="og:description" content="A cause-and-effect diagram without drawing one: the same information in a nested structure, saveable as JSON.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ishikawa Creator — Cause-and-effect analysis tool | Rodolfo Gaspary">
+<meta name="twitter:description" content="A cause-and-effect diagram without drawing one: the same information in a nested structure, saveable as JSON.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/index.html#work" aria-current="page">Projects</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/ishikawa-creator.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>Ishikawa Creator</h1>
+
+  <p class="study-standfirst">
+    The Ishikawa diagram is one of the most useful tools for finding the root cause of a
+    problem, and one of the most awkward to build. This app keeps the method and drops the
+    drawing.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Design and full development</dd></div>
+    <div><dt>Status</dt><dd>Live, open source</dd></div>
+    <div><dt>Stack</dt><dd>HTML and JavaScript, single file</dd></div>
+    <div><dt>Links</dt><dd>
+      <a href="https://rodolfogaspary.github.io/Ishikawa-Creator/">Try it</a> ·
+      <a href="https://github.com/RodolfoGaspary/Ishikawa-Creator">Source</a>
+    </dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      I coordinate software quality, and the fishbone diagram comes up every time we need to
+      understand why something failed. The method works: it forces you to separate categories
+      of cause and to move from the apparent cause down to the real one. What does not work is
+      the format. Drawing the spine on a whiteboard or in a diagramming tool eats most of the
+      session, and reordering a branch when somebody contributes a new cause means redrawing
+      it. The tool ends up competing with the analysis.
+    </p>
+
+    <h2>How I solved it</h2>
+    <p>
+      The starting observation is that an Ishikawa diagram is not really a drawing: it is a
+      tree. Categories, causes within each category, and sub-causes beneath those. Represented
+      as a nested structure it fills in as fast as you think, reorders without redrawing
+      anything, and loses none of the information the graphical version would hold.
+    </p>
+    <ul>
+      <li>Nested structure mirroring categories, causes and sub-causes</li>
+      <li>JSON export to save the analysis</li>
+      <li>JSON import to pick it back up or revise it later</li>
+      <li>A single HTML file — no install, no account</li>
+    </ul>
+
+    <h2>The decision that defines the project</h2>
+    <p>
+      The obvious temptation was to render the fishbone at the end, to deliver the "real"
+      diagram. I decided against it. The value of the method sits in the discipline of
+      classifying causes, not in the figure; adding the render would have doubled the
+      maintenance work and reintroduced exactly the rigidity the app exists to avoid. If
+      somebody needs the figure for a report, the JSON holds everything required to generate
+      it elsewhere.
+    </p>
+
+    <h2>How it is built</h2>
+    <ul>
+      <li>One <code>index.html</code>, no dependencies and no build step</li>
+      <li>State held in memory, serialised to JSON on export</li>
+      <li>Published on GitHub Pages straight from the repository</li>
+      <li>Public repository, with the full source on view</li>
+    </ul>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p><a href="../index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

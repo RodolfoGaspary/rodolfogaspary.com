@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeroHub — Suite de automatización | Rodolfo Gaspary</title>
+<meta name="description" content="Cómo construí GeroHub, una suite de apps de automatización con arquitectura de IA y datos propios del usuario. Primera app: Portal de Leads.">
+<link rel="canonical" href="https://rodolfogaspary.com/proyectos/gerohub.html">
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://rodolfogaspary.com/proyectos/gerohub.html">
+<meta property="og:title" content="GeroHub — Suite de automatización | Rodolfo Gaspary">
+<meta property="og:description" content="Cómo construí GeroHub, una suite de apps de automatización con arquitectura de IA y datos propios del usuario. Primera app: Portal de Leads.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GeroHub — Suite de automatización | Rodolfo Gaspary">
+<meta name="twitter:description" content="Cómo construí GeroHub, una suite de apps de automatización con arquitectura de IA y datos propios del usuario. Primera app: Portal de Leads.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta name="theme-color" content="#E9EBE8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../index.html">Rodolfo Gaspary</a>
+  <nav class="masthead-nav" aria-label="Principal">
+    <a href="../index.html">Inicio</a>
+    <a href="../index.html#trabajo" aria-current="page">Proyectos</a>
+    <a href="../credenciales.html">Credenciales</a>
+    <a href="../CV_Rodolfo_Gaspary_Data_Analyst.pdf">CV</a>
+    <a href="../contacto.html">Contacto</a>
+    <a class="lang-switch" href="../en/projects/gerohub.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#trabajo">Volver al índice</a>
+
+  <h1>GeroHub</h1>
+
+  <p class="study-standfirst">
+    Una suite de apps de automatización donde cada app resuelve un trabajo completo.
+    La primera, Portal de Leads, junta seis canales de mensajería en una bandeja
+    y usa IA para decir a quién responder primero.
+  </p>
+
+  <dl class="study-facts">
+    <div>
+      <dt>Rol</dt>
+      <dd>Diseño y desarrollo completo</dd>
+    </div>
+    <div>
+      <dt>Estado</dt>
+      <dd>En vivo</dd>
+    </div>
+    <div>
+      <dt>Infraestructura</dt>
+      <dd>Cloudflare edge</dd>
+    </div>
+    <div>
+      <dt>Sitio</dt>
+      <dd><a href="https://gerohub.com">gerohub.com</a></dd>
+    </div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>El problema</h2>
+    <p>
+      Un negocio pequeño en Lima recibe consultas por WhatsApp, Facebook, Instagram,
+      Telegram, correo y SMS. Nadie tiene tiempo de revisar seis apps, así que los
+      mensajes se acumulan y el que estaba listo para comprar se pierde entre el que
+      solo estaba mirando.
+    </p>
+
+    <h2>Cómo lo resolví</h2>
+    <p>
+      Portal de Leads recibe todo en una sola bandeja y le pone un puntaje del 1 al 100
+      a cada conversación. Las notas de voz se transcriben solas y entran al puntaje —
+      dejas de escuchar audios de dos minutos para saber si vale la pena responder.
+      El usuario le cuenta a la IA una vez qué vende, sus horarios y sus límites, y a
+      partir de ahí redacta borradores que suenan a alguien de su equipo.
+    </p>
+    <ul>
+      <li>Seis canales de mensajería en una bandeja unificada</li>
+      <li>Varias cuentas por canal, cada una etiquetada por origen</li>
+      <li>Difusión con pausas, respetando las reglas de cada plataforma</li>
+      <li>Bandeja compartida para equipos, sin respuestas duplicadas</li>
+    </ul>
+
+    <h2>La decisión que define el producto</h2>
+    <p>
+      El usuario trae su propia clave de IA — Claude, Gemini, GPT, DeepSeek, Mistral —
+      y le paga directo al proveedor. Las conversaciones se guardan cifradas con una
+      llave que no viaja junto a ellas. Esto complica el onboarding, pero significa que
+      un negocio no queda atado a mi margen sobre tokens ni entrega sus conversaciones
+      de clientes a un tercero. Para el mercado al que apunto, esa garantía vale más que
+      la fricción de pegar una clave.
+    </p>
+
+    <h2>La arquitectura de suite</h2>
+    <p>
+      Una cuenta abre todas las apps. Portal de Leads es la primera, pero la base de
+      cuentas, autenticación y facturación está construida para que la siguiente app
+      entre sin reconstruir nada. El inicio de sesión es con Google — sin contraseñas
+      que recordar ni que se puedan filtrar.
+    </p>
+
+    <p class="study-note">
+      El panel de la app está detrás de inicio de sesión. Aquí muestro el recorrido en
+      video para que se vea el flujo real sin exponer conversaciones de usuarios.
+    </p>
+
+
+    <h2>Cómo se ve</h2>
+
+    <figure class="shot">
+      <img src="../assets/img/gerohub-apps.jpg" alt="Pantalla Tus apps de GeroHub mostrando Portal de Leads" loading="lazy">
+      <figcaption>Una cuenta abre toda la suite. Portal de Leads en vivo; la siguiente app entra sin reconfigurar canales.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../assets/img/gerohub-consola-leads.jpg" alt="Consola de Leads con filtros por prioridad, canal y fecha" loading="lazy">
+      <figcaption>La bandeja unificada. Los filtros de prioridad — calientes, tibios, fríos — vienen del puntaje que asigna la IA.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../assets/img/gerohub-ajustes.jpg" alt="Ajustes de GeroHub con el formulario de datos del negocio" loading="lazy">
+      <figcaption>Aquí el usuario le enseña a la IA su negocio una sola vez: precios, horarios, tono y qué no prometer.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../assets/img/gerohub-precios.jpg" alt="Página de precios de GeroHub" loading="lazy">
+      <figcaption>Precio por app y sin renovación automática — decisión deliberada para un mercado escéptico de suscripciones.</figcaption>
+    </figure>
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Perú</p>
+  <p><a href="../index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

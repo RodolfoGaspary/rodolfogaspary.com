@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plenty Tap — Android and Wear OS | Rodolfo Gaspary</title>
+<meta name="description" content="Plenty Tap: an Android app that budgets by number of uses rather than by amount, with Wear OS sync. Kotlin, Jetpack Compose and Room.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/plenty-tap.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/plenty-tap.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/plenty-tap.html">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/plenty-tap.html">
+<meta property="og:title" content="Plenty Tap — Android and Wear OS | Rodolfo Gaspary">
+<meta property="og:description" content="Plenty Tap: an Android app that budgets by number of uses rather than by amount, with Wear OS sync. Kotlin, Jetpack Compose and Room.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plenty Tap — Android and Wear OS | Rodolfo Gaspary">
+<meta name="twitter:description" content="Plenty Tap: an Android app that budgets by number of uses rather than by amount, with Wear OS sync. Kotlin, Jetpack Compose and Room.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/index.html#work" aria-current="page">Projects</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/plenty-tap.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>Plenty Tap</h1>
+
+  <p class="study-standfirst">
+    A budget in currency is easy to ignore. A counter that says "three left" is not. Plenty
+    Tap tracks recurring spending by number of uses, and marking one off is as fast on the
+    watch as on the phone.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Design and full development</dd></div>
+    <div><dt>Platform</dt><dd>Android and Wear OS</dd></div>
+    <div><dt>Status</dt><dd>Demo build, version 0.1.0</dd></div>
+    <div><dt>Language</dt><dd>Kotlin</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      The spending that quietly adds up is rarely large: the daily coffee, the taxi when it
+      rains, Friday's delivery. A budgeting app totals it in currency at the end of the
+      month, when nothing can be done about it. The useful limit is not "spend under 200 on
+      coffee", it is "ten coffees this month" — because that is a count you can hold in your
+      head and act on in the moment.
+    </p>
+
+    <h2>How I solved it</h2>
+    <p>
+      The user creates an item, sets a use limit and a period, and from then on the
+      interaction is one tap per use. The main screen answers a single question: how many
+      uses are left. Everything else is subordinate to that.
+    </p>
+    <ul>
+      <li>Items with a use limit per period, defined by the user</li>
+      <li>One-tap marking straight from the main list</li>
+      <li>Local persistence with Room — no account, no server</li>
+      <li>Companion Wear OS app with the same gesture</li>
+    </ul>
+
+    <h2>The decision that defines the product</h2>
+    <p>
+      The app lives or dies on the friction of the moment you mark a use. If you have to pull
+      out the phone, unlock it and find the app, you will not do it — and an incomplete
+      counter is worse than none. That is why the watch is not an extra: it is where the
+      interaction actually makes sense. Both surfaces write to the same state through the
+      Wear Data Layer.
+    </p>
+
+    <h2>How it is built</h2>
+    <ul>
+      <li>Kotlin with Jetpack Compose on both surfaces</li>
+      <li>Room as the single source of truth on the phone</li>
+      <li>Wearable Data Layer API for synchronisation</li>
+      <li>minSdk 26, no backend dependencies</li>
+    </ul>
+
+    <p class="download">
+      <a class="button button--quiet" href="../../plenty-tap-v0.1.0.apk" download>Download APK · v0.1.0 · 13 MB</a>
+      <span class="download-note">Android will ask for permission to install from an unknown source.</span>
+    </p>
+
+    <p class="study-note">
+      Demo build, not published on the Play Store. I show the walkthrough on video —
+      creating an item, marking a use, and the watch updating — rather than offering a debug
+      APK for download.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p><a href="../../en/index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

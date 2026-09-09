@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mallas Trujillo — Quoting system | Rodolfo Gaspary</title>
+<meta name="description" content="A quoting system for a safety-netting company: configurable pricing, server-side calculation and a printable quote.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/mallas-trujillo.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/mallas-trujillo.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/mallas-trujillo.html">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/mallas-trujillo.html">
+<meta property="og:title" content="Mallas Trujillo — Quoting system | Rodolfo Gaspary">
+<meta property="og:description" content="A quoting system for a safety-netting company: configurable pricing, server-side calculation and a printable quote.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mallas Trujillo — Quoting system | Rodolfo Gaspary">
+<meta name="twitter:description" content="A quoting system for a safety-netting company: configurable pricing, server-side calculation and a printable quote.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/index.html#work" aria-current="page">Projects</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/mallas-trujillo.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>Mallas Trujillo</h1>
+
+  <p class="study-standfirst">
+    A safety-netting company was quoting by hand: measure on site, work out the area, apply
+    whichever discount applied, and assemble the document. The system turns that into a form
+    and a printable quote, and puts pricing in the owner's hands.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Design and full development</dd></div>
+    <div><dt>Client</dt><dd>Mallas Trujillo</dd></div>
+    <div><dt>Stack</dt><dd>PHP, MySQL, PDO, Bootstrap</dd></div>
+    <div><dt>Scope</dt><dd>Quoting, history and pricing</dd></div>
+    <div><dt>Source</dt><dd><a href="https://github.com/RodolfoGaspary/Mallas-Trujillo-CRM">View repository</a></dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      The cost of an installation depends on total area, and the area depends on how many
+      panels were measured on site. On top of that sit volume discounts, additional costs that
+      vary with access difficulty, and an installation minimum below which the job stops being
+      worth doing. Done by hand, every quote is a different spreadsheet, and every arithmetic
+      slip is either lost money or an unhappy client.
+    </p>
+
+    <h2>Pricing lives in the database</h2>
+    <p>
+      The decision that defines the system is that the price per square metre and the three
+      area-based discount tiers are not in the code: they are in a table, editable from a
+      screen inside the system. When material costs rise, the owner changes a number and every
+      subsequent quote uses the new value. Nobody has to call the developer, and there is never
+      one version of the price in the app and another in the salesperson's head.
+    </p>
+
+    <h2>The server recalculates the total</h2>
+    <p>
+      The form calculates as the user types, so they see the figure before saving. But on save,
+      the server recomputes everything from the stored line items — area, subtotal, discount,
+      extras and the installation minimum — and writes that result. The browser proposes; the
+      database decides. The whole operation runs inside a transaction, so a quote is never left
+      half-saved.
+    </p>
+
+    <h2>PDF without a PDF library</h2>
+    <p>
+      The quote is delivered as a PDF, but the system does not generate PDFs. It renders a page
+      with a print stylesheet — A4 size, margins, forced colours — and lets the browser export
+      it. No dependency to maintain, and it works on the phone the installer carries to site.
+      The mobile version shows instructions instead of firing the print dialog, because the
+      save-as-PDF flow on a phone is not obvious to anyone who hasn't done it before.
+    </p>
+
+    <h2>The rest of the system</h2>
+    <ul>
+      <li>History searchable by client name and phone, with live results</li>
+      <li>Sorting by date or client, validated server-side against an allow-list</li>
+      <li>Any previous quote can be used as the template for a new one</li>
+      <li>Existing clients are reused automatically rather than duplicated</li>
+    </ul>
+
+    <p class="study-note">
+      The repository holds the local development version. This page describes the approach and
+      architecture; the code is published as it stands.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

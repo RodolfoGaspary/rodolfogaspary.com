@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeroHub — Automation suite | Rodolfo Gaspary</title>
+<meta name="description" content="How I built GeroHub, an automation suite with bring-your-own AI and bring-your-own data architecture. First app: Lead Portal.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/gerohub.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/gerohub.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/gerohub.html">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/gerohub.html">
+<meta property="og:title" content="GeroHub — Automation suite | Rodolfo Gaspary">
+<meta property="og:description" content="How I built GeroHub, an automation suite with bring-your-own AI and bring-your-own data architecture. First app: Lead Portal.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GeroHub — Automation suite | Rodolfo Gaspary">
+<meta name="twitter:description" content="How I built GeroHub, an automation suite with bring-your-own AI and bring-your-own data architecture. First app: Lead Portal.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/index.html#work" aria-current="page">Projects</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/gerohub.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>GeroHub</h1>
+
+  <p class="study-standfirst">
+    An automation suite where each app solves one job completely. The first, Lead Portal,
+    gathers six messaging channels into a single inbox and uses AI to say who to answer
+    first.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Design and full development</dd></div>
+    <div><dt>Status</dt><dd>Live</dd></div>
+    <div><dt>Infrastructure</dt><dd>Cloudflare edge</dd></div>
+    <div><dt>Site</dt><dd><a href="https://gerohub.com">gerohub.com</a></dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      A small business in Lima receives enquiries through WhatsApp, Facebook, Instagram,
+      Telegram, email and SMS. Nobody has time to check six apps, so messages pile up and
+      the person who was ready to buy gets lost among the people who were only browsing.
+    </p>
+
+    <h2>How I solved it</h2>
+    <p>
+      Lead Portal receives everything in one inbox and scores each conversation from 1 to
+      100. Voice notes are transcribed automatically and count toward the score, so you stop
+      listening to two-minute audio messages just to find out whether a reply is worth
+      writing. The user tells the AI once what they sell, their hours and their limits, and
+      from then on it drafts replies that sound like someone from the team.
+    </p>
+    <ul>
+      <li>Six messaging channels in a single unified inbox</li>
+      <li>Multiple accounts per channel, each tagged by origin</li>
+      <li>Broadcast with pauses, respecting each platform's rules</li>
+      <li>Shared inbox for teams, without duplicated replies</li>
+    </ul>
+
+    <h2>The decision that defines the product</h2>
+    <p>
+      The user brings their own AI key — Claude, Gemini, GPT, DeepSeek, Mistral — and pays
+      the provider directly. Conversations are stored encrypted with a key that does not
+      travel alongside them. This complicates onboarding, but it means a business is not tied
+      to my margin on tokens and does not hand its customer conversations to a third party.
+      For the market I am aiming at, that guarantee is worth more than the friction of
+      pasting a key.
+    </p>
+
+    <h2>The suite architecture</h2>
+    <p>
+      One account opens every app. Lead Portal is the first, but the account, authentication
+      and billing layer is built so the next app can arrive without rebuilding any of it.
+      Sign-in is through Google — no passwords to remember or to leak.
+    </p>
+
+    <h2>How it looks</h2>
+
+    <figure class="shot">
+      <img src="../../assets/img/gerohub-apps.jpg" alt="GeroHub apps screen showing Lead Portal" loading="lazy">
+      <figcaption>One account opens the whole suite. Lead Portal is live; the next app arrives without reconfiguring channels.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../../assets/img/gerohub-consola-leads.jpg" alt="Lead console with priority, channel and date filters" loading="lazy">
+      <figcaption>The unified inbox. The priority filters — hot, warm, cold — come from the score the AI assigns.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../../assets/img/gerohub-ajustes.jpg" alt="GeroHub settings with the business profile form" loading="lazy">
+      <figcaption>This is where the user teaches the AI their business once: prices, hours, tone, and what never to promise.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../../assets/img/gerohub-precios.jpg" alt="GeroHub pricing page" loading="lazy">
+      <figcaption>Priced per app and with no auto-renewal — a deliberate choice for a market that distrusts subscriptions.</figcaption>
+    </figure>
+
+    <p class="study-note">
+      The app itself sits behind sign-in. I show the walkthrough on video so the real flow is
+      visible without exposing user conversations.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p><a href="../../en/index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>
