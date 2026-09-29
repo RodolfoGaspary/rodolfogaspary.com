@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taxi Fare Model — Multiple Linear Regression | Rodolfo Gaspary</title>
+<meta name="description" content="A multiple linear regression model that estimates a New York taxi fare before the trip. Test R² of 0.87 and a mean absolute error of $2.16. Python, pandas, statsmodels.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/automatidata.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/automatidata.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/automatidata.html">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/automatidata.html">
+<meta property="og:title" content="Taxi Fare Model — Multiple Linear Regression | Rodolfo Gaspary">
+<meta property="og:description" content="A multiple linear regression model that estimates a New York taxi fare before the trip. Test R² of 0.87 and a mean absolute error of $2.16. Python, pandas, statsmodels.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Taxi Fare Model — Multiple Linear Regression | Rodolfo Gaspary">
+<meta name="twitter:description" content="A multiple linear regression model that estimates a New York taxi fare before the trip. Test R² of 0.87 and a mean absolute error of $2.16. Python, pandas, statsmodels.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/automatidata.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>Taxi fare model</h1>
+
+  <p class="study-standfirst">
+    Estimating what a New York taxi will cost before you get in, knowing only where it
+    starts, where it ends and what time it is. A multiple linear regression model that
+    explains 87% of the variation in fares with a mean error of $2.16.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Analysis and modelling, individual work</dd></div>
+    <div><dt>Context</dt><dd>Capstone · Google Advanced Data Analytics</dd></div>
+    <div><dt>Data</dt><dd>22,699 trips · NYC TLC, 2017</dd></div>
+    <div><dt>Tools</dt><dd>Python, pandas, statsmodels, scikit-learn</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      New York's Taxi and Limousine Commission wanted to show riders an estimated fare
+      before the trip. The catch is in the data: the two variables that best explain a
+      fare — distance and duration — only exist once the trip is over. A model trained on
+      them looks excellent in a notebook and is useless in production.
+    </p>
+
+    <h2>How I approached it</h2>
+    <p>
+      I followed the programme's PACE framework — plan, analyse, construct, execute — and
+      recorded each decision in a separate strategy document.
+    </p>
+    <ul>
+      <li>Exploration of 18 columns: duplicates, nulls, types and impossible values</li>
+      <li>Negative durations and fares set to zero; extreme values capped at Q3&nbsp;+&nbsp;6·IQR</li>
+      <li>New features that are knowable before the trip: mean distance and duration for each pickup–dropoff pair (4,172 pairs) and a rush-hour flag</li>
+      <li>Categorical encoding, standardisation and a 70/30 train/test split</li>
+      <li>Ordinary least squares regression with statsmodels, evaluated with R², MAE and RMSE on both sets</li>
+    </ul>
+
+    <h2>The decision that defines the model</h2>
+    <p>
+      Instead of the trip's actual distance, the model uses the historical mean distance
+      and duration of that same route. The system already has that information when the
+      rider requests a cab, so the model can actually be used. It gives up some accuracy
+      compared with the real trip data, and in return produces an estimate that can be
+      shown before the trip begins.
+    </p>
+
+    <figure class="shot">
+      <img src="../../assets/img/automatidata-outliers.jpg" alt="Box plot of fare_amount before and after capping extreme values" loading="lazy" width="1520" height="590">
+      <figcaption>Fares before and after treating extreme values. There were negative charges and a trip of almost $1,000.</figcaption>
+    </figure>
+
+    <h2>Results</h2>
+
+    <dl class="study-facts">
+      <div><dt>Test R²</dt><dd>0.874</dd></div>
+      <div><dt>Mean absolute error</dt><dd>$2.16</dd></div>
+      <div><dt>RMSE</dt><dd>$3.67</dd></div>
+      <div><dt>Training R²</dt><dd>0.870</dd></div>
+    </dl>
+
+    <p>
+      Test performance matches training performance, so the model is not overfitting.
+      Among the continuous variables, the route's mean distance carries the most weight:
+      one additional standard deviation adds about $5.90 to the fare, against $3.40 for
+      mean duration. Rush hour barely moves the estimate.
+    </p>
+
+    <figure class="shot">
+      <img src="../../assets/img/automatidata-resultados.jpg" alt="Actual versus predicted fare, and a residual distribution centred on zero" loading="lazy" width="1654" height="588">
+      <figcaption>Left: actual versus predicted fare. Right: residuals cluster around zero (mean 0.02).</figcaption>
+    </figure>
+
+    <h2>What I found in the data</h2>
+    <p>
+      Plotting duration against fare revealed a perfectly horizontal line at $52: many
+      trips of very different lengths at exactly the same price. It is the flat fare
+      between JFK airport and Manhattan. The model absorbs it through the rate code, which
+      turned out to be the variable with the largest effect on price.
+    </p>
+
+    <figure class="shot">
+      <img src="../../assets/img/automatidata-dispersion.jpg" alt="Scatter of mean duration against fare, with horizontal lines at $52 and $62.50" loading="lazy" width="830" height="590">
+      <figcaption>The line at $62.50 is the cap I applied to extreme values; the one at $52 is the airport flat fare.</figcaption>
+    </figure>
+
+    <h2>What I would change</h2>
+    <p>
+      Mean distance and mean duration are highly correlated with each other, which makes
+      their coefficients unstable even though it does not hurt prediction. I would check
+      the variance inflation factor and keep only one of them if the goal were
+      interpretation. And I would compute the route averages on the training set only:
+      computing them over all the data lets information from the test set leak into the
+      model.
+    </p>
+
+    <h2>Deliverables</h2>
+    <p class="download">
+      <a class="button" href="../../descargas/automatidata/automatidata-notebook.html">View the notebook</a>
+      <a class="button button--quiet" href="../../descargas/automatidata/automatidata-regresion.ipynb" download>Notebook · .ipynb</a>
+      <a class="button button--quiet" href="../../descargas/automatidata/automatidata-resumen-ejecutivo.pptx" download>Executive summary · .pptx</a>
+      <a class="button button--quiet" href="../../descargas/automatidata/automatidata-estrategia-pace.docx" download>PACE strategy · .docx</a>
+      <a class="button button--quiet" href="../../certificados/coursera-google-regression-analysis.pdf">Certificate</a>
+      <a class="button button--quiet" href="https://github.com/RodolfoGaspary/NYC-Taxi-Fare-Regression">GitHub repository</a>
+    </p>
+
+    <p class="study-note">
+      Capstone project for <em>Regression Analysis: Simplify Complex Data
+      Relationships</em>, part of the Google Advanced Data Analytics programme on Coursera.
+      Automatidata is the case study's fictional consultancy; the data is a public sample of
+      2017 New York yellow-cab trips.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p><a href="../../en/index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

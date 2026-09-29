@@ -7,7 +7,7 @@ step, no dependencies.
 
 ## Why static
 
-The site is eight project case studies, a credentials page and a contact page. That
+The site is nine project case studies, a credentials page and a contact page. That
 does not need a build pipeline. Removing it removes the maintenance, the dependency
 updates and the load time that come with one — and it makes the whole thing
 deployable by pushing to a branch.
@@ -24,6 +24,8 @@ assets/css/             One stylesheet, shared by both languages
 assets/js/              Filter script — proyectos.js (ES), projects-en.js (EN)
 assets/img/             Screenshots and social cards
 certificados/           Certificate PDFs
+descargas/              Project deliverables (notebooks, decks, docs) — noindex
+assets/video/           Demo videos
 404.html                Not-found page
 _headers                Cloudflare cache and security headers
 sitemap.xml             Both language trees with hreflang

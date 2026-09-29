@@ -5,6 +5,10 @@
   Cache-Control: public, max-age=86400
   X-Robots-Tag: noindex
 
+/descargas/*
+  Cache-Control: public, max-age=86400
+  X-Robots-Tag: noindex
+
 /*.apk
   Cache-Control: public, max-age=86400
   X-Robots-Tag: noindex

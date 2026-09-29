@@ -489,6 +489,18 @@ a { color: inherit; }
 
 .study-body .shot { max-width: none; }
 
+.shot--video video {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  background: var(--ink);
+  border: 5px solid var(--ink);
+  border-radius: 22px;
+}
+
+.cred-meta a { color: inherit; }
+
 
 .download {
   margin-top: 2rem;

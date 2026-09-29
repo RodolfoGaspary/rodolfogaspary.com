@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelo de tarifas de taxi — Regresión lineal múltiple | Rodolfo Gaspary</title>
+<meta name="description" content="Modelo de regresión lineal múltiple que estima la tarifa de un taxi de Nueva York antes del viaje. R² de 0.87 en prueba y error medio de $2.16. Python, pandas, statsmodels.">
+<link rel="canonical" href="https://rodolfogaspary.com/proyectos/automatidata.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/automatidata.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/automatidata.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://rodolfogaspary.com/proyectos/automatidata.html">
+<meta property="og:title" content="Modelo de tarifas de taxi — Regresión lineal múltiple | Rodolfo Gaspary">
+<meta property="og:description" content="Modelo de regresión lineal múltiple que estima la tarifa de un taxi de Nueva York antes del viaje. R² de 0.87 en prueba y error medio de $2.16. Python, pandas, statsmodels.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Modelo de tarifas de taxi — Regresión lineal múltiple | Rodolfo Gaspary">
+<meta name="twitter:description" content="Modelo de regresión lineal múltiple que estima la tarifa de un taxi de Nueva York antes del viaje. R² de 0.87 en prueba y error medio de $2.16. Python, pandas, statsmodels.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Principal">
+    <a href="../index.html">Inicio</a>
+    <a href="../credenciales.html">Credenciales</a>
+    <a href="../CV_Rodolfo_Gaspary_Data_Analyst.pdf">CV</a>
+    <a href="../contacto.html">Contacto</a>
+    <a class="lang-switch" href="../en/projects/automatidata.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#trabajo">Volver al índice</a>
+
+  <h1>Modelo de tarifas de taxi</h1>
+
+  <p class="study-standfirst">
+    Estimar cuánto costará un taxi en Nueva York antes de subir, sabiendo solo de dónde
+    sale, a dónde va y a qué hora. Un modelo de regresión lineal múltiple que explica el
+    87&nbsp;% de la variación de la tarifa con un error medio de $2.16.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Rol</dt><dd>Análisis y modelado, trabajo individual</dd></div>
+    <div><dt>Contexto</dt><dd>Proyecto final · Google Advanced Data Analytics</dd></div>
+    <div><dt>Datos</dt><dd>22,699 viajes · NYC TLC, 2017</dd></div>
+    <div><dt>Herramientas</dt><dd>Python, pandas, statsmodels, scikit-learn</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>El problema</h2>
+    <p>
+      La Comisión de Taxis y Limusinas de Nueva York quería mostrar al pasajero una tarifa
+      estimada antes del viaje. La trampa está en los datos: las dos variables que mejor
+      explican la tarifa — distancia y duración — solo existen cuando el viaje ya terminó.
+      Un modelo entrenado con ellas se ve excelente en el notebook y es inútil en producción.
+    </p>
+
+    <h2>Cómo lo abordé</h2>
+    <p>
+      Seguí el marco PACE del programa — planificar, analizar, construir, ejecutar — y
+      documenté cada decisión en un documento de estrategia aparte.
+    </p>
+    <ul>
+      <li>Exploración de 18 columnas: duplicados, nulos, tipos y valores imposibles</li>
+      <li>Duraciones y tarifas negativas llevadas a cero; valores extremos acotados en Q3&nbsp;+&nbsp;6·IQR</li>
+      <li>Variables nuevas conocibles antes del viaje: distancia y duración promedio de cada par origen–destino (4,172 pares) y un indicador de hora punta</li>
+      <li>Codificación de variables categóricas, estandarización y partición entrenamiento/prueba 70/30</li>
+      <li>Regresión por mínimos cuadrados ordinarios con statsmodels, evaluada con R², MAE y RMSE en ambos conjuntos</li>
+    </ul>
+
+    <h2>La decisión que define el modelo</h2>
+    <p>
+      En lugar de la distancia real del viaje, el modelo usa la distancia y duración
+      promedio históricas de esa misma ruta. Es información que el sistema ya tiene cuando
+      el pasajero pide el taxi, así que el modelo puede usarse de verdad. Cuesta algo de
+      precisión frente a usar los datos reales, y a cambio produce una estimación que se
+      puede mostrar antes de que el viaje empiece.
+    </p>
+
+    <figure class="shot">
+      <img src="../assets/img/automatidata-outliers.jpg" alt="Diagrama de caja de fare_amount antes y después de acotar valores extremos" loading="lazy" width="1520" height="590">
+      <figcaption>La tarifa antes y después del tratamiento de valores extremos. Había cobros negativos y un viaje de casi $1,000.</figcaption>
+    </figure>
+
+    <h2>Resultados</h2>
+
+    <dl class="study-facts">
+      <div><dt>R² en prueba</dt><dd>0.874</dd></div>
+      <div><dt>Error absoluto medio</dt><dd>$2.16</dd></div>
+      <div><dt>RMSE</dt><dd>$3.67</dd></div>
+      <div><dt>R² en entrenamiento</dt><dd>0.870</dd></div>
+    </dl>
+
+    <p>
+      El desempeño en prueba es igual al de entrenamiento, así que el modelo no está
+      sobreajustado. Entre las variables continuas, la distancia promedio de la ruta es la
+      que más pesa: una desviación estándar adicional suma unos $5.90 a la tarifa, frente a
+      $3.40 de la duración promedio. La hora punta apenas mueve la estimación.
+    </p>
+
+    <figure class="shot">
+      <img src="../assets/img/automatidata-resultados.jpg" alt="Tarifa real contra predicha, y distribución de los residuos centrada en cero" loading="lazy" width="1654" height="588">
+      <figcaption>Izquierda: tarifa real contra predicha. Derecha: los residuos se concentran alrededor de cero (media 0.02).</figcaption>
+    </figure>
+
+    <h2>Lo que encontré en los datos</h2>
+    <p>
+      Al graficar duración contra tarifa apareció una línea horizontal perfecta en $52:
+      muchos viajes de duración muy distinta con exactamente el mismo precio. Es la
+      tarifa plana entre el aeropuerto JFK y Manhattan. El modelo la absorbe a través del
+      código de tarifa, que resultó ser la variable de mayor efecto sobre el precio.
+    </p>
+
+    <figure class="shot">
+      <img src="../assets/img/automatidata-dispersion.jpg" alt="Dispersión de duración promedio contra tarifa, con líneas horizontales en $52 y $62.50" loading="lazy" width="830" height="590">
+      <figcaption>La línea en $62.50 es el tope que impuse a los valores extremos; la de $52, la tarifa plana del aeropuerto.</figcaption>
+    </figure>
+
+    <h2>Lo que cambiaría</h2>
+    <p>
+      La distancia y la duración promedio están muy correlacionadas entre sí, lo que hace
+      inestables sus coeficientes aunque no afecte la predicción. Revisaría el factor de
+      inflación de la varianza y me quedaría con una de las dos si el objetivo fuera
+      interpretar. Y calcularía los promedios por ruta solo con el conjunto de
+      entrenamiento: calcularlos sobre todos los datos deja pasar información del conjunto
+      de prueba al modelo.
+    </p>
+
+    <h2>Entregables</h2>
+    <p class="download">
+      <a class="button" href="../descargas/automatidata/automatidata-notebook.html">Ver el notebook</a>
+      <a class="button button--quiet" href="../descargas/automatidata/automatidata-regresion.ipynb" download>Notebook · .ipynb</a>
+      <a class="button button--quiet" href="../descargas/automatidata/automatidata-resumen-ejecutivo.pptx" download>Resumen ejecutivo · .pptx</a>
+      <a class="button button--quiet" href="../descargas/automatidata/automatidata-estrategia-pace.docx" download>Estrategia PACE · .docx</a>
+      <a class="button button--quiet" href="../certificados/coursera-google-regression-analysis.pdf">Certificado</a>
+      <a class="button button--quiet" href="https://github.com/RodolfoGaspary/NYC-Taxi-Fare-Regression">Repositorio en GitHub</a>
+    </p>
+
+    <p class="study-note">
+      Proyecto final del curso <em>Regression Analysis: Simplify Complex Data
+      Relationships</em> del programa Google Advanced Data Analytics en Coursera.
+      Automatidata es la consultora ficticia del caso; los datos son una muestra pública de
+      viajes de taxi amarillo de Nueva York de 2017. Entregables en inglés, como se
+      presentaron en el curso.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Perú</p>
+  <p><a href="../index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>
