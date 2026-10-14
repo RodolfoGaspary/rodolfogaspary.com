@@ -7,7 +7,7 @@ step, no dependencies.
 
 ## Why static
 
-The site is nine project case studies, a credentials page and a contact page. That
+The site is ten project case studies, a credentials page and a contact page. That
 does not need a build pipeline. Removing it removes the maintenance, the dependency
 updates and the load time that come with one — and it makes the whole thing
 deployable by pushing to a branch.

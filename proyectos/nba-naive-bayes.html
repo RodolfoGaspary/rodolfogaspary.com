@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Permanencia de jugadores en la NBA — Clasificación Naive Bayes | Rodolfo Gaspary</title>
+<meta name="description" content="Clasificador Naive Bayes gaussiano que predice si un novato de la NBA durará cinco años en la liga. Precisión de 0.84 y sensibilidad de 0.55. Python, scikit-learn.">
+<link rel="canonical" href="https://rodolfogaspary.com/proyectos/nba-naive-bayes.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/nba-naive-bayes.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/nba-naive-bayes.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://rodolfogaspary.com/proyectos/nba-naive-bayes.html">
+<meta property="og:title" content="Permanencia de jugadores en la NBA — Clasificación Naive Bayes | Rodolfo Gaspary">
+<meta property="og:description" content="Clasificador Naive Bayes gaussiano que predice si un novato de la NBA durará cinco años en la liga. Precisión de 0.84 y sensibilidad de 0.55. Python, scikit-learn.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Permanencia de jugadores en la NBA — Clasificación Naive Bayes | Rodolfo Gaspary">
+<meta name="twitter:description" content="Clasificador Naive Bayes gaussiano que predice si un novato de la NBA durará cinco años en la liga. Precisión de 0.84 y sensibilidad de 0.55. Python, scikit-learn.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-es.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Principal">
+    <a href="../index.html">Inicio</a>
+    <a href="../credenciales.html">Credenciales</a>
+    <a href="../CV_Rodolfo_Gaspary_Data_Analyst.pdf">CV</a>
+    <a href="../contacto.html">Contacto</a>
+    <a class="lang-switch" href="../en/projects/nba-naive-bayes.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#trabajo">Volver al índice</a>
+
+  <h1>Permanencia de jugadores en la NBA</h1>
+
+  <p class="study-standfirst">
+    ¿Seguirá un novato en la NBA cinco años después? Un clasificador Naive Bayes gaussiano
+    entrenado con las estadísticas de su primera temporada. Acierta el 84&nbsp;% de las veces
+    que predice una carrera larga, pero deja pasar casi la mitad de ellas.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Rol</dt><dd>Modelado y evaluación, trabajo individual</dd></div>
+    <div><dt>Contexto</dt><dd>Laboratorio · Google Advanced Data Analytics</dd></div>
+    <div><dt>Datos</dt><dd>1,340 jugadores · estadísticas de temporada de novato</dd></div>
+    <div><dt>Herramientas</dt><dd>Python, pandas, scikit-learn</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>El problema</h2>
+    <p>
+      Una firma que asesora a equipos de la NBA quiere saber qué jugadores tienen más
+      probabilidad de aguantar en la liga. El objetivo es binario: si el jugador llega o no a
+      cinco años de carrera. Los predictores son diez estadísticas de su primer año — porcentaje
+      de tiros de campo, triples y libres, rebotes, asistencias, robos, tapones y pérdidas —
+      más dos variables construidas en un laboratorio previo de ingeniería de variables:
+      puntos totales y eficiencia.
+    </p>
+
+    <h2>Cómo lo abordé</h2>
+    <ul>
+      <li>Separación del objetivo y los predictores; partición entrenamiento/prueba 75/25 (1,005 y 335 jugadores)</li>
+      <li>Elección del algoritmo: objetivo binario y predictores continuos, así que Naive Bayes gaussiano</li>
+      <li>Entrenamiento y predicción con scikit-learn</li>
+      <li>Evaluación con exactitud, precisión, sensibilidad, F1 y matriz de confusión</li>
+    </ul>
+
+    <h2>Resultados</h2>
+
+    <dl class="study-facts">
+      <div><dt>Precisión</dt><dd>0.838</dd></div>
+      <div><dt>Sensibilidad</dt><dd>0.548</dd></div>
+      <div><dt>Exactitud</dt><dd>0.654</dd></div>
+      <div><dt>F1</dt><dd>0.663</dd></div>
+    </dl>
+
+    <figure class="shot">
+      <img src="../assets/img/nba-resultados-es.jpg" alt="Matriz de confusión con 105 verdaderos negativos, 22 falsos positivos, 94 falsos negativos y 114 verdaderos positivos, junto a las cuatro métricas comparadas con la línea base de 0.621" loading="lazy" width="1458" height="595">
+      <figcaption>Los 94 falsos negativos son el punto débil: jugadores que sí duraron cinco años y el modelo descartó.</figcaption>
+    </figure>
+
+    <h2>Lo que dicen los números</h2>
+    <p>
+      La exactitud de 65&nbsp;% parece aceptable hasta compararla con la alternativa más
+      simple. El 62&nbsp;% de los jugadores de prueba sí duró cinco años, así que predecir
+      siempre «sí» ya acierta el 62.1&nbsp;% de las veces. El modelo mejora eso en apenas
+      tres puntos. Con la exactitud sola, el modelo parecería útil sin serlo.
+    </p>
+    <p>
+      Su valor está en la precisión. Cuando el modelo dice que un jugador durará, acierta en
+      84 de cada 100 casos; solo se equivoca así 22 veces. A cambio, es tímido: de 208
+      jugadores que duraron, reconoce 114. Sirve para respaldar una apuesta por un jugador,
+      no para descartar a nadie.
+    </p>
+
+    <h2>Lo que cambiaría</h2>
+    <ul>
+      <li>Puntos totales y eficiencia se calculan a partir de otras columnas. Eso rompe el supuesto de independencia de Naive Bayes y cuenta la misma información dos veces; probaría el modelo sin ellas.</li>
+      <li>Los porcentajes de tiro están acotados entre 0 y 100 y no siguen una distribución normal, que es lo que el modelo gaussiano asume.</li>
+      <li>Movería el umbral de decisión con <code>predict_proba</code> para ganar sensibilidad a costa de precisión, según qué error le cueste más al equipo.</li>
+      <li>Usaría una partición estratificada con validación cruzada, y una regresión logística como punto de comparación.</li>
+    </ul>
+
+    <h2>Entregables</h2>
+    <p class="download">
+      <a class="button" href="../descargas/nba-naive-bayes/nba-naive-bayes-notebook.html">Ver el notebook</a>
+      <a class="button button--quiet" href="../descargas/nba-naive-bayes/nba-naive-bayes.ipynb" download>Notebook · .ipynb</a>
+    </p>
+
+    <p class="study-note">
+      Actividad práctica del curso <em>The Nuts and Bolts of Machine Learning</em> del
+      programa Google Advanced Data Analytics en Coursera. Los datos son estadísticas de
+      novatos de la NBA preparadas en el laboratorio anterior de ingeniería de variables.
+      Notebook en inglés, como se presentó en el curso.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Perú</p>
+  <p><a href="../index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>

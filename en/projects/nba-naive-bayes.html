@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NBA career longevity — Naive Bayes classification | Rodolfo Gaspary</title>
+<meta name="description" content="Gaussian Naive Bayes classifier that predicts whether an NBA rookie will last five years in the league. Precision 0.84, recall 0.55. Python, scikit-learn.">
+<link rel="canonical" href="https://rodolfogaspary.com/en/projects/nba-naive-bayes.html">
+<link rel="alternate" hreflang="es" href="https://rodolfogaspary.com/proyectos/nba-naive-bayes.html">
+<link rel="alternate" hreflang="en" href="https://rodolfogaspary.com/en/projects/nba-naive-bayes.html">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rodolfo Gaspary">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://rodolfogaspary.com/en/projects/nba-naive-bayes.html">
+<meta property="og:title" content="NBA career longevity — Naive Bayes classification | Rodolfo Gaspary">
+<meta property="og:description" content="Gaussian Naive Bayes classifier that predicts whether an NBA rookie will last five years in the league. Precision 0.84, recall 0.55. Python, scikit-learn.">
+<meta property="og:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NBA career longevity — Naive Bayes classification | Rodolfo Gaspary">
+<meta name="twitter:description" content="Gaussian Naive Bayes classifier that predicts whether an NBA rookie will last five years in the league. Precision 0.84, recall 0.55. Python, scikit-learn.">
+<meta name="twitter:image" content="https://rodolfogaspary.com/assets/img/og-en.jpg">
+<meta name="theme-color" content="#16233A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/proyectos.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a class="wordmark" href="../../en/index.html">Rodolfo&nbsp;Gaspary</a>
+  <nav class="masthead-nav" aria-label="Main">
+    <a href="../../en/index.html">Home</a>
+    <a href="../../en/credentials.html">Credentials</a>
+    <a href="../../Resume_Rodolfo_Gaspary_Data_Analyst_EN.pdf">Résumé</a>
+    <a href="../../en/contact.html">Contact</a>
+    <a class="lang-switch" href="../../proyectos/nba-naive-bayes.html" hreflang="es" lang="es">Español</a>
+  </nav>
+</header>
+
+<main class="study">
+
+  <a class="study-back" href="../index.html#work">Back to the index</a>
+
+  <h1>NBA career longevity</h1>
+
+  <p class="study-standfirst">
+    Will an NBA rookie still be in the league five years from now? A Gaussian Naive Bayes
+    classifier trained on first-season statistics. It is right 84% of the time it predicts
+    a long career, but it misses almost half of them.
+  </p>
+
+  <dl class="study-facts">
+    <div><dt>Role</dt><dd>Modelling and evaluation, individual work</dd></div>
+    <div><dt>Context</dt><dd>Lab · Google Advanced Data Analytics</dd></div>
+    <div><dt>Data</dt><dd>1,340 players · rookie-season statistics</dd></div>
+    <div><dt>Tools</dt><dd>Python, pandas, scikit-learn</dd></div>
+  </dl>
+
+  <div class="study-body">
+
+    <h2>The problem</h2>
+    <p>
+      A firm that advises NBA teams wants to know which players are most likely to last in
+      the league. The target is binary: whether a player reaches a five-year career. The
+      predictors are ten first-year statistics — field-goal, three-point and free-throw
+      percentages, rebounds, assists, steals, blocks and turnovers — plus two variables built
+      in an earlier feature-engineering lab: total points and efficiency.
+    </p>
+
+    <h2>Approach</h2>
+    <ul>
+      <li>Target and predictors separated; 75/25 train/test split (1,005 and 335 players)</li>
+      <li>Algorithm choice: binary target and continuous predictors, so Gaussian Naive Bayes</li>
+      <li>Training and prediction with scikit-learn</li>
+      <li>Evaluation with accuracy, precision, recall, F1 and a confusion matrix</li>
+    </ul>
+
+    <h2>Results</h2>
+
+    <dl class="study-facts">
+      <div><dt>Precision</dt><dd>0.838</dd></div>
+      <div><dt>Recall</dt><dd>0.548</dd></div>
+      <div><dt>Accuracy</dt><dd>0.654</dd></div>
+      <div><dt>F1</dt><dd>0.663</dd></div>
+    </dl>
+
+    <figure class="shot">
+      <img src="../../assets/img/nba-resultados-en.jpg" alt="Confusion matrix with 105 true negatives, 22 false positives, 94 false negatives and 114 true positives, next to the four metrics compared with the 0.621 baseline" loading="lazy" width="1464" height="593">
+      <figcaption>The 94 false negatives are the weak spot: players who did last five years and the model ruled out.</figcaption>
+    </figure>
+
+    <h2>What the numbers say</h2>
+    <p>
+      65% accuracy looks acceptable until it is compared with the simplest alternative. 62%
+      of the test players did last five years, so always predicting "yes" is already right
+      62.1% of the time. The model improves on that by barely three points. Judged on
+      accuracy alone, it would look useful without being so.
+    </p>
+    <p>
+      Its value is in precision. When the model says a player will last, it is right in 84
+      cases out of 100; it makes that mistake only 22 times. The trade-off is that it is
+      cautious: of 208 players who lasted, it recognises 114. It can back a bet on a player,
+      not rule anyone out.
+    </p>
+
+    <h2>What I would change</h2>
+    <ul>
+      <li>Total points and efficiency are computed from other columns. That breaks Naive Bayes' independence assumption and counts the same information twice; I would test the model without them.</li>
+      <li>Shooting percentages are bounded between 0 and 100 and are not normally distributed, which is what the Gaussian model assumes.</li>
+      <li>I would move the decision threshold with <code>predict_proba</code> to gain recall at the cost of precision, depending on which error costs the team more.</li>
+      <li>I would use a stratified split with cross-validation, and a logistic regression as a point of comparison.</li>
+    </ul>
+
+    <h2>Deliverables</h2>
+    <p class="download">
+      <a class="button" href="../../descargas/nba-naive-bayes/nba-naive-bayes-notebook.html">View the notebook</a>
+      <a class="button button--quiet" href="../../descargas/nba-naive-bayes/nba-naive-bayes.ipynb" download>Notebook · .ipynb</a>
+    </p>
+
+    <p class="study-note">
+      Practice lab for <em>The Nuts and Bolts of Machine Learning</em>, part of the Google
+      Advanced Data Analytics programme on Coursera. The data is NBA rookie statistics
+      prepared in the previous feature-engineering lab.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <p>Rodolfo Gaspary · Lima, Peru</p>
+  <p><a href="../../en/index.html">rodolfogaspary.com</a></p>
+  <p class="colophon-links"><a href="https://www.linkedin.com/in/rodolfo-gaspary">LinkedIn</a> · <a href="https://github.com/RodolfoGaspary">GitHub</a></p>
+</footer>
+
+</body>
+</html>
